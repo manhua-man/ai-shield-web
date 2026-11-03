@@ -11,7 +11,7 @@
 **AI-Shield** is an industrial adversarial defense compiler written in pure Rust. It protects JavaScript, TypeScript, Electron, Node.js, and client applications against autonomous AI reverse-engineering agents.
 
 - 🌐 **Interactive Web Sandbox**: [https://manhua-man.github.io/ai-shield-web/](https://manhua-man.github.io/ai-shield-web/)
-- 📦 **CLI Tool & SDK**: [Download v1.0.0 Release (Windows x64)](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.0)
+- 📦 **CLI Tool & SDK**: [Download v1.0.0 Release (Windows x64 · macOS arm64 · Linux x64)](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.0)
 
 ---
 
