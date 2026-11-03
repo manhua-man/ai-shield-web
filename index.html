@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Shield — Industrial Adversarial Defense against AI Reverse-Engineering Agents</title>
+  <meta name="description" content="Pure-Rust cryptographic defense engine & token tarpit compiler. Protects JavaScript, Electron, and Node.js applications against autonomous AI agents (REA, Claude Code, Grok, GPT-4o).">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI-Shield">
+  <meta property="og:title" content="AI-Shield — Industrial Adversarial Defense against AI Agents">
+  <meta property="og:description" content="Pure-Rust cryptographic defense engine & token tarpit compiler. Protects JavaScript & Electron apps against AI reverse engineering agents (Claude Code, Grok, REA). 0% crack rate across frontier LLMs.">
+  <meta property="og:url" content="https://manhua-man.github.io/ai-shield-web/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/manhua-man/js-anti-reverse/master/site/og-preview.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ai_shield_sec">
+  <meta name="twitter:creator" content="@ai_shield_sec">
+  <meta name="twitter:title" content="AI-Shield — Industrial Adversarial Defense against AI Agents">
+  <meta name="twitter:description" content="Traditional JS obfuscation is dead—AI agents crack it for $0.02. AI-Shield introduces AES-256-GCM constant pools, bankrupt token tarpits, and deceptive honeypots. Zero REA crack rate across frontier LLMs.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/manhua-man/js-anti-reverse/master/site/og-preview.png">
+
+  <!-- Typography: Inter & JetBrains Mono for 2x Retina Precision -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* CleanFlow Pro / Industrial Brutalist Precision Tokens */
+      --bg-primary: #050507;
+      --bg-surface: #090a0f;
+      --bg-surface-elevated: #0f1118;
+      --bg-card: rgba(11, 13, 20, 0.85);
+      --bg-card-hover: rgba(18, 21, 32, 0.95);
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(255, 255, 255, 0.2);
+      --border-highlight: rgba(0, 242, 254, 0.35);
+
+      --text: #f3f4f6;
+      --text-muted: #8b949e;
+      --text-dim: #484f58;
+
+      --accent-coral: #FF4500;
+      --accent-green: #28E07B;
+      --accent-yellow: #F5E400;
+      --accent-blue: #3B82F6;
+      --accent-cyan: #00f2fe;
+      --accent-purple: #7928ca;
+
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+      --glow-ambient: radial-gradient(ellipse at 50% -10%, rgba(0, 242, 254, 0.12) 0%, rgba(121, 40, 202, 0.06) 40%, transparent 70%);
+      --shadow-card: 0 16px 40px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      --ease-linear-precision: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 14px;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Ambient Lighting */
+    .ambient-glow {
+      position: fixed;
+      top: -140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1080px;
+      height: 560px;
+      background: var(--glow-ambient);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    .ambient-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+      mask-image: radial-gradient(ellipse at top center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+      -webkit-mask-image: radial-gradient(ellipse at top center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 3D Mechanical Keycaps (CleanFlow Pro Specification) */
+    kbd {
+      background: linear-gradient(180deg, #2b313d 0%, #1a1e27 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      padding: 2px 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: #e5e7eb;
+      display: inline-block;
+      line-height: 1.2;
+      vertical-align: middle;
+      user-select: none;
+    }
+
+    /* Tactical Telemetry Strip (Industrial Brutalist Style) */
+    .telemetry-strip {
+      background: #000000;
+      border-bottom: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      padding: 6px 0;
+    }
+
+    .telemetry-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 24px;
+    }
+
+    .telemetry-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .telemetry-item span.val {
+      color: var(--text-muted);
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 7, 0.85);
+    }
+
+    .nav-inner {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-shield {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      background: #000;
+      border: 1px solid var(--border-focus);
+      border-radius: 6px;
+      color: var(--accent-coral);
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .version-pill {
+      font-size: 10.5px;
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      padding: 1px 6px;
+      border-radius: 999px;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #000000;
+      font-weight: 600;
+      font-size: 12.5px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cta-button:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .x-share-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      border: 1px solid var(--border-focus);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s var(--ease-linear-precision);
+      white-space: nowrap;
+    }
+
+    .x-share-button:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 84px 0 56px;
+      text-align: center;
+    }
+
+    .badge-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 69, 0, 0.08);
+      border: 1px solid rgba(255, 69, 0, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-family: var(--font-mono);
+      color: var(--accent-coral);
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-coral);
+      box-shadow: 0 0 8px var(--accent-coral);
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 5.2vw, 58px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      max-width: 900px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(180deg, #FFFFFF 30%, #999999 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 16.5px;
+      color: var(--text-muted);
+      max-width: 740px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .hero-cli-bar {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-focus);
+      box-shadow: var(--shadow-card);
+      border-radius: 8px;
+      padding: 6px 6px 6px 16px;
+      gap: 16px;
+      max-width: 540px;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .cli-cmd {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-align: left;
+      overflow-x: auto;
+    }
+
+    .cli-cmd span.prompt {
+      color: var(--accent-green);
+    }
+
+    .copy-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      color: var(--text);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .copy-pill:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    /* Precision Terminal Sandbox (app-studio-landing Mode 2) */
+    .sandbox-container {
+      background: #000000;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: left;
+      box-shadow: var(--shadow-card);
+      margin-top: 16px;
+    }
+
+    .sandbox-header {
+      background: #08080c;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sandbox-tabs {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+    }
+
+    .sandbox-tab {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sandbox-tab.active {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border-color: var(--border-subtle);
+    }
+
+    .sandbox-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sandbox-run-btn {
+      background: rgba(40, 224, 123, 0.1);
+      border: 1px solid rgba(40, 224, 123, 0.3);
+      color: var(--accent-green);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      padding: 4px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .sandbox-run-btn:hover {
+      background: rgba(40, 224, 123, 0.2);
+      border-color: var(--accent-green);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .sandbox-body {
+      padding: 22px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.68;
+      background: #050507;
+      min-height: 330px;
+      color: #d1d5db;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .t-green { color: var(--accent-green); }
+    .t-coral { color: var(--accent-coral); }
+    .t-yellow { color: var(--accent-yellow); }
+    .t-blue { color: var(--accent-blue); }
+    .t-cyan { color: var(--accent-cyan); }
+    .t-muted { color: var(--text-muted); }
+    .t-dim { color: var(--text-dim); }
+
+    /* Section Styling */
+    section {
+      padding: 92px 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--accent-coral);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Industrial Precision Matrix (Replaces Loose Card Soup) */
+    .calculator-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    @media (max-width: 940px) {
+      .calculator-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .precision-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 640px) {
+      .precision-matrix {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .matrix-cell {
+      background: #08090d;
+      padding: 13px 16px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .matrix-cell:hover {
+      background: #11131a;
+    }
+
+    .matrix-cell.active {
+      background: rgba(255, 69, 0, 0.05);
+    }
+
+    .matrix-cell.remediated {
+      background: rgba(40, 224, 123, 0.04);
+    }
+
+    .cell-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cell-id {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-coral);
+    }
+
+    .matrix-cell.remediated .cell-id {
+      color: var(--accent-green);
+    }
+
+    .cell-pill {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      padding: 1px 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+    }
+
+    .matrix-cell.active .cell-pill {
+      background: rgba(255, 69, 0, 0.2);
+      color: var(--accent-coral);
+    }
+
+    .matrix-cell.remediated .cell-pill {
+      background: rgba(40, 224, 123, 0.2);
+      color: var(--accent-green);
+    }
+
+    .cell-name {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cell-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Radar Console Dashboard */
+    .calc-dashboard {
+      background: #000000;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 24px;
+      position: sticky;
+      top: 88px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .calc-board-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .remediate-action-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .heal-btn {
+      flex: 1;
+      background: rgba(40, 224, 123, 0.12);
+      border: 1px solid rgba(40, 224, 123, 0.35);
+      color: var(--accent-green);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .heal-btn:hover {
+      background: rgba(40, 224, 123, 0.22);
+      transform: translateY(-1px);
+    }
+
+    .reset-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 11.5px;
+      padding: 7px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .reset-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+    }
+
+    .metric-row {
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .metric-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .metric-label {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .metric-value-huge {
+      font-size: 30px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      transition: color 0.3s ease;
+    }
+
+    .metric-bar-container {
+      height: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .metric-bar-fill {
+      height: 100%;
+      background: var(--accent-coral);
+      transition: width 0.4s var(--ease-linear-precision), background-color 0.4s ease;
+    }
+
+    .calc-subnotes {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    /* Case Study Section */
+    .case-study-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(40, 224, 123, 0.08);
+      border: 1px solid rgba(40, 224, 123, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-family: var(--font-mono);
+      color: var(--accent-green);
+      margin-bottom: 16px;
+    }
+
+    .case-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .case-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 520px) {
+      .case-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .case-metric-card {
+      background: #08090d;
+      padding: 16px 20px;
+    }
+
+    .case-metric-value {
+      font-size: 24px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .case-metric-label {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Bento Grid (4 Pillars) */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .bento-item {
+      background: #08090d;
+      padding: 30px;
+      position: relative;
+    }
+
+    .bento-col-7 { grid-column: span 7; }
+    .bento-col-5 { grid-column: span 5; }
+    .bento-col-6 { grid-column: span 6; }
+
+    @media (max-width: 900px) {
+      .bento-col-7, .bento-col-5, .bento-col-6 { grid-column: span 12; }
+    }
+
+    .bento-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-coral);
+      margin-bottom: 10px;
+    }
+
+    .bento-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .bento-text {
+      color: var(--text-muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .code-preview-box {
+      background: #000000;
+      border: 1px solid var(--border-subtle);
+      border-radius: 5px;
+      padding: 12px 14px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: #94a3b8;
+      overflow-x: auto;
+    }
+
+    /* Dual-Track Code Lens */
+    .lens-container {
+      background: #000000;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lens-header {
+      background: #08080c;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .lens-switch-group {
+      display: flex;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 5px;
+      padding: 2px;
+      overflow-x: auto;
+    }
+
+    .lens-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .lens-btn.active {
+      background: #ffffff;
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .lens-content {
+      padding: 22px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.68;
+      background: #050507;
+      min-height: 270px;
+      overflow-x: auto;
+    }
+
+    /* Benchmark Table */
+    .benchmark-table-wrapper {
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow-x: auto;
+      background: #000000;
+    }
+
+    table.benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 12.5px;
+      min-width: 680px;
+    }
+
+    table.benchmark-table th {
+      background: #08080c;
+      padding: 12px 18px;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    table.benchmark-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+
+    table.benchmark-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.benchmark-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+    }
+
+    .badge-cracked {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+    }
+
+    .badge-defended {
+      color: var(--accent-green);
+      background: rgba(40, 224, 123, 0.1);
+      border: 1px solid rgba(40, 224, 123, 0.2);
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+    }
+
+    /* Viral CTA Box */
+    .viral-cta-box {
+      margin-top: 32px;
+      background: #08090d;
+      border: 1px solid var(--border-focus);
+      border-radius: 8px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .viral-cta-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .viral-cta-subtitle {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 56px 0 44px;
+      background: #000000;
+      color: var(--text-muted);
+      font-size: 12.5px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* Mobile Enhancements */
+    @media (max-width: 768px) {
+      .nav-links .nav-link {
+        display: none;
+      }
+      .telemetry-strip {
+        display: none;
+      }
+      .hero {
+        padding: 52px 0 36px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .hero-subtitle {
+        font-size: 14.5px;
+      }
+      .hero-cli-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
+      }
+      .cli-cmd {
+        font-size: 11px;
+      }
+      .sandbox-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .sandbox-tabs {
+        width: 100%;
+        padding-bottom: 4px;
+      }
+      .sandbox-tab {
+        font-size: 10.5px;
+        padding: 4px 8px;
+      }
+      .sandbox-body {
+        padding: 14px;
+        font-size: 11px;
+      }
+      .viral-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Raycast / CleanFlow Pro Top Glow -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-grid"></div>
+
+  <!-- Tactical Hardware Telemetry Strip -->
+  <div class="telemetry-strip">
+    <div class="container telemetry-inner">
+      <div class="telemetry-item"><span class="t-dim">SYS:</span> <span class="val">AI-SHIELD_CORE_V0.2.0</span></div>
+      <div class="telemetry-item"><span class="t-dim">ARCH:</span> <span class="val">PURE_RUST_NATIVE (1.75+)</span></div>
+      <div class="telemetry-item"><span class="t-dim">CIPHER_POOL:</span> <span class="val">AES-256-GCM (NIST SP 800-38D)</span></div>
+      <div class="telemetry-item"><span class="t-dim">ATTESTATION:</span> <span class="val">ED25519_256BIT_SIGNATURE</span></div>
+      <div class="telemetry-item"><span class="t-dim">TARPIT_LATTICE:</span> <span class="val">BANKRUPT_364KB</span></div>
+      <div class="telemetry-item"><span class="t-dim">COLD_LATENCY:</span> <span class="t-green tabular">0.72ms</span></div>
+      <div class="telemetry-item"><span class="t-dim">REA_CRACK_RATE:</span> <span class="t-coral tabular">0.0% (IMMUNE)</span></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="logo-group">
+        <div class="logo-shield">AI</div>
+        <div class="brand-title">
+          ai-shield
+          <span class="version-pill">v0.2.0</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#audit" class="nav-link">16-Vector Matrix</a>
+        <a href="#case-study" class="nav-link">Day.js Benchmark</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#lens" class="nav-link">Dual-Track Lens</a>
+        <a href="#benchmarks" class="nav-link">Benchmarks</a>
+        <div class="nav-actions">
+          <a href="https://twitter.com/intent/tweet?text=Traditional%20JS%20obfuscation%20is%20dead%E2%80%94AI%20agents%20crack%20it%20for%20%240.02.%20AI-Shield%20introduces%20AES-256-GCM%20constant%20pools%20and%20350KB%2B%20bankrupt%20token%20tarpits%20with%20zero%20REA%20crack%20rate%20across%20frontier%20LLMs.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web" target="_blank" rel="noopener noreferrer" class="x-share-button" title="Share on X">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span>Share</span>
+          </a>
+          <a href="https://github.com/manhua-man/js-anti-reverse" target="_blank" class="cta-button">
+            GitHub Repo
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" style="border-top: none;">
+      <div class="container">
+        <div class="badge-hero">
+          <div class="badge-dot"></div>
+          Zero REA Crack Rate Across All Frontier LLM Agents
+        </div>
+        <h1 class="hero-title">
+          The Adversarial Defense Shield for the <span class="highlight">Agentic Era</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Traditional JavaScript obfuscators collapse against autonomous AI agents in seconds. AI-Shield delivers a <strong>Dual-Mode Defense Engine</strong>: run <strong>Zero-Touch Shield Mode (<code>--standalone</code>)</strong> to protect any existing React, Vue, or Node project with zero code changes; or activate <strong>Enterprise DRM Mode</strong> for strict offline Ed25519 licensing.
+        </p>
+
+        <div class="hero-cli-bar">
+          <div class="cli-cmd">
+            <span class="prompt">$</span>
+            <span id="cliText">ai-shield protect ./dist --standalone --intensity bankrupt</span>
+          </div>
+          <button class="copy-pill" onclick="copyHeroCmd()">
+            <kbd>⌘</kbd> <kbd>C</kbd> Copy
+          </button>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://github.com/manhua-man/js-anti-reverse" target="_blank" class="cta-button">
+            View on GitHub
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=Traditional%20JS%20obfuscation%20is%20dead%E2%80%94AI%20agents%20crack%20it%20in%20seconds.%20AI-Shield%20introduces%20AES-256-GCM%20constant%20pools%20and%20350KB%2B%20bankrupt%20token%20tarpits%20to%20exhaust%20attacker%20context%20windows.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web" target="_blank" class="x-share-button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span>Tweet Launch Post</span>
+          </a>
+        </div>
+
+        <!-- Interactive Hero CLI Sandbox (Typewriter Streamer & Interactive Presets) -->
+        <div class="sandbox-container">
+          <div class="sandbox-header">
+            <div class="sandbox-tabs">
+              <button class="sandbox-tab active" id="termTab0" onclick="switchSandboxTab(0)">
+                <kbd>1</kbd> ai-shield audit
+              </button>
+              <button class="sandbox-tab" id="termTab1" onclick="switchSandboxTab(1)">
+                <kbd>2</kbd> ai-shield protect --standalone
+              </button>
+              <button class="sandbox-tab" id="termTab2" onclick="switchSandboxTab(2)">
+                <kbd>3</kbd> ai-shield protect --key (DRM)
+              </button>
+              <button class="sandbox-tab" id="termTab3" onclick="switchSandboxTab(3)">
+                <kbd>4</kbd> ai-shield verify-manifest
+              </button>
+            </div>
+            <div class="sandbox-controls">
+              <button class="sandbox-run-btn" onclick="triggerSandboxRun()" title="Simulate streaming execution">
+                <span>▶ Re-run Stream</span>
+              </button>
+              <div class="terminal-dots">
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+              </div>
+            </div>
+          </div>
+          <div class="sandbox-body" id="sandboxTerminalOutput">
+            <!-- Dynamically streamed by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16-VECTOR AUDITOR SECTION (Industrial Precision Matrix) -->
+    <section id="audit">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Defensive Intelligence</div>
+          <h2 class="section-title">16-Vector REA Risk Assessment Matrix</h2>
+          <p class="section-desc">
+            Toggle observed code patterns to simulate your codebase's AI exposure score, or trigger <strong>Auto-Shield Remediation</strong> to watch AI-Shield neutralize all exposure vectors.
+          </p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <div class="precision-matrix" id="vectorGrid">
+            <!-- Dynamically populated 16 vectors -->
+          </div>
+
+          <!-- Dynamic Live Calculator Result Board (CleanFlow Pro Dashboard) -->
+          <div class="calc-dashboard">
+            <div class="calc-board-title">
+              <span>REA Vulnerability Radar</span>
+              <span id="threatLevelPill" class="cell-pill" style="color: #ef4444;">CRITICAL</span>
+            </div>
+
+            <!-- Self-Healing Action Bar (interactive-sandboxes Mode 4) -->
+            <div class="remediate-action-bar">
+              <button class="heal-btn" onclick="triggerInstantRemediation()">
+                <span>⚡ Auto-Shield All Vectors</span>
+              </button>
+              <button class="reset-btn" onclick="resetAllVectors()">
+                <span>Reset</span>
+              </button>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric-label">
+                <span>AI Exposure Score</span>
+                <span id="exposureScorePct" class="tabular">87.5%</span>
+              </div>
+              <div class="metric-bar-container">
+                <div class="metric-bar-fill" id="exposureBar" style="width: 87.5%;"></div>
+              </div>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric-label">REA Crack Likelihood</div>
+              <div class="metric-value-huge" id="crackLikelihood">
+                <span class="tabular">100</span><span style="font-size: 15px; color: var(--text-muted);">%</span>
+              </div>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric-label">Attacker LLM Token Drain</div>
+              <div class="metric-value-huge" id="tokenCost">
+                <span class="tabular">4,820</span><span style="font-size: 15px; color: var(--text-muted);">tokens</span>
+              </div>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric-label">Attacker Inference Cost</div>
+              <div class="metric-value-huge" id="dollarCost" style="color: var(--accent-coral);">
+                <span style="font-size: 18px;">$</span><span class="tabular">0.03</span>
+              </div>
+            </div>
+
+            <p class="calc-subnotes" id="calcAnalysis">
+              High exposure: Agents can easily recover business logic via unmasked literals and static anchors in less than 30 seconds.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL-WORLD CASE STUDY SECTION -->
+    <section id="case-study">
+      <div class="container">
+        <div class="section-header">
+          <div class="case-study-badge">
+            <span class="badge-dot" style="background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green);"></span>
+            Empirical Benchmark on 45,000+ Star Open-Source Ecosystem
+          </div>
+          <h2 class="section-title">Case Study: Hardening Day.js in 0.72ms</h2>
+          <p class="section-desc">
+            Zero lines of code modified. Zero external license keys required. Full business logic parity verified in Node.js while stripping all plaintext literals and date regex patterns into encrypted AES-256-GCM constant pools.
+          </p>
+        </div>
+
+        <!-- 4 Key Metrics -->
+        <div class="case-metrics-grid">
+          <div class="case-metric-card">
+            <div class="case-metric-value tabular">45,000+ ★</div>
+            <div class="case-metric-label">Production Ecosystem Tested (Day.js)</div>
+          </div>
+          <div class="case-metric-card">
+            <div class="case-metric-value tabular" style="color: var(--accent-green);">0 Lines</div>
+            <div class="case-metric-label">Application Code Changes (Drop-in)</div>
+          </div>
+          <div class="case-metric-card">
+            <div class="case-metric-value tabular" style="color: var(--accent-blue);">0.72 ms</div>
+            <div class="case-metric-label">Cold Boot & AES Decrypt Overhead</div>
+          </div>
+          <div class="case-metric-card">
+            <div class="case-metric-value tabular" style="color: var(--accent-coral);">0 Secrets</div>
+            <div class="case-metric-label">Plaintext Literals in AST (Zero-Leak)</div>
+          </div>
+        </div>
+
+        <!-- Case Study Interactive Code Window -->
+        <div class="sandbox-container">
+          <div class="sandbox-header">
+            <div class="sandbox-tabs">
+              <button class="sandbox-tab active" id="caseTab0" onclick="switchCaseStudy(0)">
+                <kbd>1</kbd> Original Source (Day.js + Billing)
+              </button>
+              <button class="sandbox-tab" id="caseTab1" onclick="switchCaseStudy(1)">
+                <kbd>2</kbd> Shielded Bundle (--standalone)
+              </button>
+              <button class="sandbox-tab" id="caseTab2" onclick="switchCaseStudy(2)">
+                <kbd>3</kbd> Node.js Runtime Proof (&lt;0.72ms)
+              </button>
+            </div>
+            <div class="terminal-dots">
+              <div class="terminal-dot"></div>
+              <div class="terminal-dot"></div>
+              <div class="terminal-dot"></div>
+            </div>
+          </div>
+          <div class="sandbox-body" id="caseStudyOutput">
+            <!-- Dynamic Content -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 PILLARS BENTO GRID -->
+    <section id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Cryptographic Blueprint</div>
+          <h2 class="section-title">The 3-Pillar Anti-Agent Architecture</h2>
+          <p class="section-desc">
+            Engineered from ground up in pure Rust to render autonomous AST deobfuscators completely ineffective.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-item bento-col-7">
+            <div class="bento-num">01 / POISON</div>
+            <h3 class="bento-title">Cryptographic Constant Entanglement</h3>
+            <p class="bento-text">
+              Every sensitive string, API endpoint, and number is pulled from the AST and encrypted into an AES-256-GCM constant pool. Each file derives an independent Content Encryption Key (CEK): <code>HMAC-SHA256(root_key, "FILE:" + file_id)</code>. Root keys travel strictly inside offline Ed25519 license tokens.
+            </p>
+            <div class="code-preview-box">
+              <span class="t-coral">const</span> __SEC_POOL = <span class="t-green">"8f02a...c89"</span>; <span class="t-muted">// AES-256-GCM ciphertext</span><br>
+              <span class="t-coral">const</span> apiKey = __SEC_DECRYPT__(<span class="t-yellow">0x14</span>); <span class="t-muted">// Fail-closed offline gate</span>
+            </div>
+          </div>
+
+          <div class="bento-item bento-col-5">
+            <div class="bento-num">02 / EXHAUST</div>
+            <h3 class="bento-title">Algorithmic Token Tarpit</h3>
+            <p class="bento-text">
+              Injects deeply recursive, syntactically authentic control-flow trees (up to 350+ KB). LLM agents attempting to traverse the call graph burn 200,000+ tokens until context overflow halts the attack.
+            </p>
+            <div class="code-preview-box">
+              <span class="t-dim">// Tarpit Intensity: bankrupt</span><br>
+              <span class="t-blue">function</span> _0x8f2a(α, β, γ) { ... } <span class="t-muted">// 48-tier cycle</span>
+            </div>
+          </div>
+
+          <div class="bento-item bento-col-5">
+            <div class="bento-num">03 / HALLUCINATE</div>
+            <h3 class="bento-title">Plausible Decoy Honeypots</h3>
+            <p class="bento-text">
+              Synthesizes realistic false authentication pathways and mock license APIs. Autonomous agents latch onto the decoys, producing confident yet totally fictitious vulnerability reports.
+            </p>
+            <div class="code-preview-box">
+              <span class="t-dim">// Decoy Honeypot (Agent Sinkhole)</span><br>
+              <span class="t-coral">function</span> verifyMasterBypass(token) { ... }
+            </div>
+          </div>
+
+          <div class="bento-item bento-col-7">
+            <div class="bento-num">04 / ATTESTATION</div>
+            <h3 class="bento-title">Signed Artifact Manifests & CI Fingerprinting</h3>
+            <p class="bento-text">
+              Cryptographically seal your entire build tree with Ed25519 signed JSON manifests. Enforce byte-for-byte integrity and detect any supply-chain tampering or runtime modification in CI pipelines with <code>--expect-fp</code> pinning.
+            </p>
+            <div class="code-preview-box">
+              <span class="t-coral">ai-shield verify-manifest</span> dist/manifest.json \<br>
+              &nbsp;&nbsp;--expect-fp <span class="t-green">"SHA256:7e0b...42"</span> --root ./dist
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DUAL-TRACK CODE LENS -->
+    <section id="lens">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Interactive Code Lens</div>
+          <h2 class="section-title">Attacker Lens vs. Legitimate Runtime</h2>
+          <p class="section-desc">
+            Compare what an AI reverse-engineering agent sees against what executes on an authorized client device.
+          </p>
+        </div>
+
+        <div class="lens-container">
+          <div class="lens-header">
+            <span style="font-size: 12.5px; font-weight: 600;">Inspection Window</span>
+            <div class="lens-switch-group">
+              <button class="lens-btn active" id="lensBtnAttacker" onclick="switchLens('attacker')">Attacker REA View</button>
+              <button class="lens-btn" id="lensBtnStandalone" onclick="switchLens('standalone')">Zero-Touch Shield View</button>
+              <button class="lens-btn" id="lensBtnClient" onclick="switchLens('client')">Enterprise DRM View</button>
+            </div>
+          </div>
+          <pre class="lens-content" id="lensCode"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENCHMARKS -->
+    <section id="benchmarks">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Empirical Verification</div>
+          <h2 class="section-title">Tested Against Frontier AI Agents</h2>
+          <p class="section-desc">
+            Audited against Claude 3.5 Sonnet REA, Grok-2 Code, and GPT-4o agentic deobfuscation loops.
+          </p>
+        </div>
+
+        <div class="benchmark-table-wrapper">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Attack Vector</th>
+                <th>Standard JS Obfuscator</th>
+                <th>AI-Shield (Default)</th>
+                <th>AI-Shield (--intensity bankrupt)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>API Key Extraction</strong></td>
+                <td><span class="badge-cracked">CRACKED (12s, $0.02)</span></td>
+                <td><span class="badge-defended">BLOCKED (AES-256-GCM)</span></td>
+                <td><span class="badge-defended">BLOCKED (AES-256-GCM)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Auth Logic Bypass</strong></td>
+                <td><span class="badge-cracked">CRACKED (45s, $0.05)</span></td>
+                <td><span class="badge-defended">TRAPPED (Honeypot Decoy)</span></td>
+                <td><span class="badge-defended">AGENT OOM ($18.50+ Context Exceeded)</span></td>
+              </tr>
+              <tr>
+                <td><strong>AST CFG Reconstruction</strong></td>
+                <td><span class="badge-cracked">DEOBFUSCATED (94%)</span></td>
+                <td><span class="badge-defended">DEFENDED (Dynamic Indirection)</span></td>
+                <td><span class="badge-defended">ABANDONED (0% Recovery)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Runtime Decrypt Latency</strong></td>
+                <td>0.12 ms</td>
+                <td>0.38 ms</td>
+                <td>0.72 ms (&lt; 1ms overhead)</td>
+              </tr>
+              <tr>
+                <td><strong>Total REA Crack Rate</strong></td>
+                <td><span class="badge-cracked">100% (5/5 Compromised)</span></td>
+                <td><span class="badge-defended">0% (0/5 Cracked)</span></td>
+                <td><span class="badge-defended">0% (0/5 Cracked)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Viral X Share Callout Card -->
+        <div class="viral-cta-box">
+          <div class="viral-cta-left">
+            <div class="viral-cta-title">Test AI-Shield against your AI reverse-engineering agents</div>
+            <div class="viral-cta-subtitle">Run Claude Code, Grok-2, or REA against our protected Day.js billing bundle. See if your agent can recover any secrets.</div>
+          </div>
+          <a href="https://twitter.com/intent/tweet?text=Can%20your%20AI%20agent%20crack%20AI-Shield%3F%20Tested%20against%20Claude%20Code%2C%20Grok%2C%20and%20REA%20with%20a%200%25%20compromise%20rate.%20Check%20out%20the%20pure-Rust%20adversarial%20shield%20for%20JS%2FElectron%3A&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web" target="_blank" rel="noopener noreferrer" class="x-share-button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span>Tweet Challenge</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>AI-Shield</strong> — Built for the agentic security perimeter. Dual-licensed under MIT and Apache-2.0.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/manhua-man/js-anti-reverse" target="_blank">GitHub</a>
+        <a href="https://twitter.com/ai_shield_sec" target="_blank">X (Twitter)</a>
+        <a href="docs/application_shielding_deployment_guide.md" target="_blank">Deployment Guide</a>
+        <a href="#audit">Audit Matrix</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hero Sandbox Terminal Streamer (app-studio-landing Mode 2)
+    let currentTabIndex = 0;
+    let streamTimer = null;
+
+    const sandboxRawTexts = [
+      `ai-shield audit ./src --report ./audit-report.json
+
+[✓] AST Scanning Complete: 24 JavaScript/TypeScript modules analyzed.
+--------------------------------------------------------------------------------
+VECTOR ID | RISK VECTOR NAME                   | SEVERITY | STATUS
+--------------------------------------------------------------------------------
+VEC-01    | Plaintext API Keys & Literals      | CRITICAL | EXPOSED (14 occurrences)
+VEC-02    | Plaintext Cryptographic Functions  | HIGH     | EXPOSED (6 calls found)
+VEC-04    | Unmasked Electron/Tauri IPC        | CRITICAL | EXPOSED (window.ipcRenderer)
+VEC-06    | Static AST Cryptographic Anchors   | HIGH     | EXPOSED (__SEC_DECRYPT__)
+VEC-12    | Missing Ed25519 Manifest Signature | MEDIUM   | UNPROTECTED
+VEC-16    | Lack of Token Context Tarpits      | HIGH     | VULNERABLE (Plain CFG)
+--------------------------------------------------------------------------------
+OVERALL AI EXPOSURE SCORE: 87.5% (CRITICAL)
+ESTIMATED ATTACKER COST:   $0.03 (4,820 tokens, REA agent breach in ~30s)
+RECOMMENDATION: Run 'ai-shield protect --standalone --intensity bankrupt'`,
+
+      `ai-shield protect ./dist --ext js,ts --standalone --intensity bankrupt --inject-decoys
+
+[✓] Mode: Standalone Zero-Touch Shield (Zero code changes / no license keys needed)
+[✓] Algorithmic Token Tarpit: Generated 364 KB recursive control lattice.
+[✓] Decoy Honeypots Injected: 3 plausible false authentication gateways.
+[✓] AST Indirection Harness: Static runtime anchors eradicated.
+[✓] Self-Unsealing Constants: AES-256-GCM pool auto-unseals at bundle load in 0.72ms.
+--------------------------------------------------------------------------------
+PROTECTION STATUS: SECURED | Total AST Bloat: 368 KB | Cold Overhead: 0.72ms
+[✓] Output is 100% drop-in runnable in any Browser, Node.js, Electron, or Tauri app.`,
+
+      `ai-shield protect ./dist --ext js,ts --entangle --key private-key.json \\
+  --vendor "Enterprise Security" \\
+  --intensity bankrupt \\
+  --indirection-harness \\
+  --inject-decoys
+
+[✓] Mode: Enterprise Cryptographic DRM (Fail-closed authorization gate)
+[✓] Key Authority Loaded: Ed25519 Key ID: 7e0b2a9f (fingerprint verified)
+[✓] AES-256-GCM Entanglement: 48 sensitive literals extracted to pool.
+[✓] Per-file CEK Derivation: HMAC-SHA256 applied per module.
+[✓] Algorithmic Token Tarpit: Generated 362 KB recursive control lattice.
+[✓] Decoy Honeypots Injected: 3 plausible false authentication gateways.
+[✓] Fail-Closed Enforcement: Halts with LICENSE_MISSING if token absent.
+--------------------------------------------------------------------------------
+PROTECTION STATUS: ENTERPRISE SECURED | Authorized clients unlock via signed token.`,
+
+      `ai-shield verify-manifest dist/manifest.json \\
+  --pubkey "x5k8M9A0vW...4L9" \\
+  --root ./dist \\
+  --expect-fp "SHA256:7e0b2a9f38c4..."
+
+[✓] Manifest Signature: Ed25519 VALID
+[✓] Out-of-Band Fingerprint: MATCHED (SHA256:7e0b2a9f38c4...)
+[✓] File Integrity Check (32 files):
+  - dist/app.bundle.js           [SHA-256: 4a2f8c...] OK
+  - dist/vendor.bundle.js        [SHA-256: 9b1d0e...] OK
+  - dist/worker.js               [SHA-256: e3c71a...] OK
+--------------------------------------------------------------------------------
+STATUS: ATTESTATION VERIFIED. Zero byte-tamper detected.`
+    ];
+
+    function formatTerminalLine(line) {
+      if (line.includes('[✓]')) {
+        return line.replace('[✓]', '<span class="t-green">[✓]</span>');
+      }
+      if (line.includes('EXPOSED') || line.includes('CRITICAL')) {
+        return line.replace(/EXPOSED|CRITICAL/g, '<span class="t-coral">$&</span>');
+      }
+      if (line.includes('UNPROTECTED') || line.includes('VULNERABLE')) {
+        return line.replace(/UNPROTECTED|VULNERABLE/g, '<span class="t-yellow">$&</span>');
+      }
+      if (line.includes('SECURED') || line.includes('OK') || line.includes('VALID')) {
+        return line.replace(/SECURED|OK|VALID/g, '<span class="t-green">$&</span>');
+      }
+      return line;
+    }
+
+    function streamTerminal(text, targetId) {
+      if (streamTimer) clearInterval(streamTimer);
+      const target = document.getElementById(targetId);
+      target.innerHTML = '';
+      const lines = text.split('\n');
+      let lineIdx = 0;
+
+      streamTimer = setInterval(() => {
+        if (lineIdx < lines.length) {
+          const formatted = formatTerminalLine(lines[lineIdx]);
+          target.innerHTML += (lineIdx === 0 ? '' : '\n') + formatted;
+          lineIdx++;
+          target.scrollTop = target.scrollHeight;
+        } else {
+          clearInterval(streamTimer);
+        }
+      }, 25);
+    }
+
+    function switchSandboxTab(index) {
+      currentTabIndex = index;
+      for (let i = 0; i < 4; i++) {
+        const tab = document.getElementById('termTab' + i);
+        if (tab) tab.classList.toggle('active', i === index);
+      }
+      streamTerminal(sandboxRawTexts[index], 'sandboxTerminalOutput');
+    }
+
+    function triggerSandboxRun() {
+      streamTerminal(sandboxRawTexts[currentTabIndex], 'sandboxTerminalOutput');
+    }
+
+    // Initialize sandbox
+    switchSandboxTab(0);
+
+    function copyHeroCmd() {
+      const text = document.getElementById('cliText').innerText;
+      navigator.clipboard.writeText(text);
+      const pill = document.querySelector('.copy-pill');
+      pill.innerHTML = `<kbd>✓</kbd> Copied!`;
+      setTimeout(() => { pill.innerHTML = `<kbd>⌘</kbd> <kbd>C</kbd> Copy`; }, 2000);
+    }
+
+    // 16 Vectors Data (with weight, id, name, description)
+    const vectors = [
+      { id: "VEC-01", name: "Plaintext API Keys & Literals", desc: "Hardcoded API keys, auth headers, and secrets in AST", active: true, weight: 15 },
+      { id: "VEC-02", name: "Plaintext Auth Function Names", desc: "Functions like checkLicense, verifyToken in callstack", active: true, weight: 10 },
+      { id: "VEC-03", name: "Recognizable License Enums", desc: "Standard status strings like 'TRIAL_EXPIRED', 'LICENSED'", active: true, weight: 8 },
+      { id: "VEC-04", name: "Unmasked Electron/Tauri IPC", desc: "Cleartext IPC channel names (ipcRenderer.invoke('license'))", active: true, weight: 14 },
+      { id: "VEC-05", name: "Predictable State Machines", desc: "Linear boolean flags like isProUser = true in memory", active: true, weight: 10 },
+      { id: "VEC-06", name: "Static AST Crypto Anchors", desc: "Fixed runtime decrypt function names (__SEC_DECRYPT__)", active: true, weight: 12 },
+      { id: "VEC-07", name: "Unprotected WASM Signatures", desc: "Exported WebAssembly symbols revealing auth methods", active: false, weight: 6 },
+      { id: "VEC-08", name: "Cleartext HTTP API Endpoints", desc: "Target endpoints visible in raw fetch/axios calls", active: true, weight: 10 },
+      { id: "VEC-09", name: "Identifiable License Gateways", desc: "Single choke-point function guarding application boot", active: true, weight: 8 },
+      { id: "VEC-10", name: "Linear License Control Flow", desc: "If-else check without tamper verification loops", active: true, weight: 8 },
+      { id: "VEC-11", name: "Unprotected Device Fingerprinting", desc: "Plaintext MAC/UUID retrieval in client script", active: false, weight: 6 },
+      { id: "VEC-12", name: "Missing Ed25519 Manifest", desc: "Absence of cryptographic build signing in CI/CD", active: true, weight: 10 },
+      { id: "VEC-13", name: "Exposed Environment Configs", desc: "Bundled dotenv or configuration objects in bundle", active: false, weight: 8 },
+      { id: "VEC-14", name: "Unmangled Storage Keys", desc: "Keys like 'auth_token' in localStorage/IndexedDB", active: true, weight: 7 },
+      { id: "VEC-15", name: "Predictable Error Strings", desc: "Descriptive error codes assisting agent deobfuscation", active: true, weight: 6 },
+      { id: "VEC-16", name: "Lack of Token Context Tarpits", desc: "Clean compact AST easily ingested within small LLM context", active: true, weight: 12 },
+    ];
+
+    function renderVectors() {
+      const grid = document.getElementById('vectorGrid');
+      grid.innerHTML = '';
+      vectors.forEach((vec, idx) => {
+        const cell = document.createElement('div');
+        const statusClass = vec.active ? 'active' : 'remediated';
+        cell.className = `matrix-cell ${statusClass}`;
+        cell.onclick = () => toggleVector(idx);
+        cell.innerHTML = `
+          <div class="cell-header">
+            <span class="cell-id">${vec.id}</span>
+            <span class="cell-pill">${vec.active ? 'EXPOSED' : 'SHIELDED'}</span>
+          </div>
+          <div class="cell-name">${vec.name}</div>
+          <div class="cell-desc">${vec.desc}</div>
+        `;
+        grid.appendChild(cell);
+      });
+      calculateRisk();
+    }
+
+    function toggleVector(idx) {
+      vectors[idx].active = !vectors[idx].active;
+      renderVectors();
+    }
+
+    // Instant Remediation animation (CleanFlow Pro self-healing sandbox pattern)
+    function triggerInstantRemediation() {
+      let delay = 0;
+      vectors.forEach((vec, idx) => {
+        if (vec.active) {
+          setTimeout(() => {
+            vec.active = false;
+            renderVectors();
+          }, delay);
+          delay += 40;
+        }
+      });
+    }
+
+    function resetAllVectors() {
+      vectors.forEach((vec, idx) => {
+        vec.active = idx !== 6 && idx !== 10 && idx !== 12;
+      });
+      renderVectors();
+    }
+
+    function calculateRisk() {
+      let activeWeight = 0;
+      let totalWeight = 0;
+      vectors.forEach(v => {
+        totalWeight += v.weight;
+        if (v.active) activeWeight += v.weight;
+      });
+
+      const score = Math.round((activeWeight / totalWeight) * 100);
+      const scorePct = score + "%";
+      
+      document.getElementById('exposureScorePct').innerText = scorePct;
+      const bar = document.getElementById('exposureBar');
+      bar.style.width = scorePct;
+
+      const pill = document.getElementById('threatLevelPill');
+      const likelihood = document.getElementById('crackLikelihood');
+      const tokenCost = document.getElementById('tokenCost');
+      const dollarCost = document.getElementById('dollarCost');
+      const analysis = document.getElementById('calcAnalysis');
+
+      if (score >= 70) {
+        pill.innerText = "CRITICAL";
+        pill.style.color = "#ef4444";
+        bar.style.backgroundColor = "#ef4444";
+        likelihood.innerHTML = `<span class="tabular">100</span><span style="font-size:15px;color:var(--text-muted);">%</span>`;
+        tokenCost.innerHTML = `<span class="tabular">4,820</span><span style="font-size:15px;color:var(--text-muted);">tokens</span>`;
+        dollarCost.innerHTML = `<span style="font-size:18px;">$</span><span class="tabular">0.03</span>`;
+        dollarCost.style.color = "var(--accent-coral)";
+        analysis.innerText = "Critical Exposure: Frontier agents (REA, Claude Code) reconstruct AST and extract all secrets in seconds.";
+      } else if (score >= 35) {
+        pill.innerText = "MODERATE";
+        pill.style.color = "var(--accent-yellow)";
+        bar.style.backgroundColor = "var(--accent-yellow)";
+        likelihood.innerHTML = `<span class="tabular">64</span><span style="font-size:15px;color:var(--text-muted);">%</span>`;
+        tokenCost.innerHTML = `<span class="tabular">42,500</span><span style="font-size:15px;color:var(--text-muted);">tokens</span>`;
+        dollarCost.innerHTML = `<span style="font-size:18px;">$</span><span class="tabular">0.45</span>`;
+        dollarCost.style.color = "var(--accent-yellow)";
+        analysis.innerText = "Partial exposure: Agent requires iterative prompt loops but can still bypass linear authentication gates.";
+      } else if (score > 10) {
+        pill.innerText = "DEFENDED";
+        pill.style.color = "var(--accent-blue)";
+        bar.style.backgroundColor = "var(--accent-blue)";
+        likelihood.innerHTML = `<span class="tabular">4.2</span><span style="font-size:15px;color:var(--text-muted);">%</span>`;
+        tokenCost.innerHTML = `<span class="tabular">185,000</span><span style="font-size:15px;color:var(--text-muted);">tokens</span>`;
+        dollarCost.innerHTML = `<span style="font-size:18px;">$</span><span class="tabular">3.80</span>`;
+        dollarCost.style.color = "var(--accent-blue)";
+        analysis.innerText = "Well fortified: High agent hallucination rate; constant pools remain strongly encrypted under AES-256-GCM.";
+      } else {
+        pill.innerText = "BANKRUPT";
+        pill.style.color = "var(--accent-green)";
+        bar.style.backgroundColor = "var(--accent-green)";
+        likelihood.innerHTML = `<span class="tabular">0.0</span><span style="font-size:15px;color:var(--text-muted);">%</span>`;
+        tokenCost.innerHTML = `<span class="tabular">350,000+</span><span style="font-size:15px;color:var(--text-muted);">tokens</span>`;
+        dollarCost.innerHTML = `<span style="font-size:18px;">$</span><span class="tabular">18.50+ (OOM)</span>`;
+        dollarCost.style.color = "var(--accent-green)";
+        analysis.innerText = "Bankrupt Shielding: Algorithmic tarpits exhaust LLM context window. Zero secrets recovered (0/5 REA crack rate).";
+      }
+    }
+    renderVectors();
+
+    // Case Study Tabs Data
+    const caseStudyContents = [
+      `<span class="t-dim">// === 1. Original Source: Real-world Day.js (45k★) + Financial Settlement Engine ===</span>
+<span class="t-dim">// Vulnerability: Cleartext rates, multipliers, salt hashes, and date formatting tokens exposed in plain AST</span>
+
+<span class="t-coral">const</span> dayjs = require(<span class="t-green">"./dayjs.min.js"</span>);
+
+<span class="t-blue">function</span> calculateSettlement(account) {
+  <span class="t-coral">const</span> cutoffDate = dayjs(<span class="t-green">"2026-11-01"</span>).add(<span class="t-yellow">30</span>, <span class="t-green">"day"</span>).format(<span class="t-green">"YYYY-MM-DD"</span>);
+  <span class="t-coral">const</span> baseRate = <span class="t-yellow">85</span>;
+  <span class="t-coral">const</span> surchargeTier = <span class="t-green">"enterprise_tier_a"</span>;
+  <span class="t-coral">const</span> multiplier = surchargeTier === <span class="t-green">"enterprise_tier_a"</span> ? <span class="t-yellow">1.5</span> : <span class="t-yellow">1.0</span>;
+  <span class="t-coral">const</span> calculatedFee = (account.activeSeats * baseRate * multiplier) - account.discount;
+
+  <span class="t-coral">return</span> {
+    accountUuid: account.uuid,
+    calculatedFee,
+    nextBillingCycle: cutoffDate,
+    settlementHash: <span class="t-green">"sha256-secret-settlement-salt-9942"</span>
+  };
+}
+
+<span class="t-coral">const</span> sample = { uuid: <span class="t-green">"acc_990142"</span>, activeSeats: <span class="t-yellow">30</span>, discount: <span class="t-yellow">0</span> };
+console.log(JSON.stringify(calculateSettlement(sample)));`,
+
+      `<span class="t-dim">// === 2. Shielded Bundle: ai-shield protect --standalone --intensity bankrupt ===</span>
+<span class="t-dim">// Zero Plaintext Strings. Zero Secret Salts. Regex Flags Preserved. 364 KB Context-Busting Lattice</span>
+
+<span class="t-coral">const</span> __SEC_POOL = <span class="t-green">"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855..."</span>;
+<span class="t-coral">const</span> __SEC_KEY = <span class="t-green">"7e0b2a9f38c414..."</span>; <span class="t-muted">// Self-unsealing AES-256-GCM runtime</span>
+
+<span class="t-dim">// Algorithmic Context Tarpit: Burns 200,000+ LLM tokens if agent attempts traversal</span>
+<span class="t-blue">function</span> _0x8f2a(α, β, γ) {
+  <span class="t-coral">var</span> _0x2c = [0x9e37, 0x79b9];
+  <span class="t-coral">return</span> α <= 0 ? (β ^ γ) : _0x8f2a(α - 1, (β + _0x2c[0]), (γ ^ _0x2c[1]));
+}
+
+<span class="t-dim">// Deceptive Honeypot Gate: Traps REA agents into hallucinating false bypasses</span>
+<span class="t-blue">function</span> verifyMasterBypass(token) {
+  <span class="t-coral">if</span> (token === <span class="t-green">"MASTER_DEV_OVERRIDE"</span>) <span class="t-coral">return</span> { status: <span class="t-green">"UNLOCKED"</span> };
+  <span class="t-coral">return</span> <span class="t-coral">null</span>;
+}
+
+<span class="t-dim">// All business logic constants dynamically pulled from pool:</span>
+<span class="t-blue">function</span> calculateSettlement(account) {
+  <span class="t-coral">const</span> cutoffDate = dayjs(__SEC_POOL__[<span class="t-yellow">0</span>]).add(__SEC_POOL__[<span class="t-yellow">1</span>], __SEC_POOL__[<span class="t-yellow">2</span>]).format(__SEC_POOL__[<span class="t-yellow">3</span>]);
+  <span class="t-coral">const</span> baseRate = __SEC_POOL__[<span class="t-yellow">4</span>];
+  ...
+}`,
+
+      `<span class="t-dim">// === 3. Node.js Verification Run: Cold Boot & Execution Parity ===</span>
+$ node dist/settlement_bundle.js
+
+<span class="t-green">[✓] AES-256-GCM NIST Pool Unsealed:</span> 0.72 ms
+<span class="t-green">[✓] Regex Parsing Parity:</span> Preserved /M{1,4}/g, /D{1,2}/g, /Z$/i without syntax corruption
+<span class="t-green">[✓] Execution Result:</span>
+{
+  "accountUuid": <span class="t-green">"acc_990142"</span>,
+  "calculatedFee": <span class="t-yellow tabular">3825</span>,
+  "nextBillingCycle": <span class="t-green">"2026-11-30"</span>,
+  "settlementHash": <span class="t-green">"sha256-secret-settlement-salt-9942"</span>
+}
+
+--------------------------------------------------------------------------------
+<span class="t-coral">SECURITY AUDIT METRIC:</span>
+- Plaintext Strings Remaining in AST: <span class="t-green tabular">0 (ZERO)</span>
+- LLM Token Exhaustion Footprint:     <span class="t-green tabular">364,280 bytes (~91,000 tokens)</span>
+- REA Agent Reverse-Engineering Rate:  <span class="t-green">0% Compromise across Claude Code, Grok, GPT-4o</span>`
+    ];
+
+    function switchCaseStudy(idx) {
+      document.getElementById('caseTab0').classList.toggle('active', idx === 0);
+      document.getElementById('caseTab1').classList.toggle('active', idx === 1);
+      document.getElementById('caseTab2').classList.toggle('active', idx === 2);
+      document.getElementById('caseStudyOutput').innerHTML = caseStudyContents[idx];
+    }
+    switchCaseStudy(0);
+
+    // Dual-track Code Lens
+    const codeAttacker = `<span class="t-dim">// === Attacker Agent REA Perspective (Trapped in Bankrupt Tarpit) ===</span>
+<span class="t-dim">// Notice: Zero plaintext literals, deep recursive cyclic trap, deceptive honeypot endpoints</span>
+
+<span class="t-coral">const</span> _0x8f2a = (<span class="t-blue">function</span>() {
+  <span class="t-coral">const</span> _0x1c = [<span class="t-green">"8f02a0b4c8..."</span>, <span class="t-green">"e14d89a2..."</span>]; <span class="t-muted">// AES-256-GCM NIST SP 800-38D Pool</span>
+  <span class="t-coral">function</span> _0xdecoy_gate(tk) {
+    <span class="t-dim">// Decoy Honeypot: Agent hallucinates this is the master bypass</span>
+    <span class="t-coral">if</span> (tk === <span class="t-green">"MASTER_DEV_OVERRIDE"</span>) <span class="t-coral">return</span> { status: <span class="t-green">"UNLOCKED"</span>, tier: <span class="t-green">"ENTERPRISE"</span> };
+    <span class="t-coral">return</span> <span class="t-coral">null</span>;
+  }
+  <span class="t-coral">function</span> _0xtarpit_recurse(n, acc) {
+    <span class="t-coral">return</span> n <= 0 ? acc : _0xtarpit_recurse(n - 1, (acc ^ 0x9e3779b9) + (acc << 6));
+  }
+  <span class="t-coral">return</span> {
+    dispatch: (0, globalThis[<span class="t-green">"\\x5f\\x5fSEC_IND\\x5f"</span>]),
+    verify: _0xdecoy_gate
+  };
+})();
+<span class="t-coral">export default</span> _0x8f2a;`;
+
+    const codeStandalone = `<span class="t-dim">// === Standalone Zero-Touch Mode (Like BLA: 100% Drop-in) ===</span>
+<span class="t-dim">// Zero code changes, zero license servers, zero token passing needed</span>
+
+<span class="t-coral">import</span> { calculateCommercialQuote } <span class="t-coral">from</span> <span class="t-green">"./quote.bundle.js"</span>;
+
+<span class="t-dim">// Notice: Pool auto-unseals transparently upon module evaluation in <0.72ms</span>
+<span class="t-coral">const</span> quote = calculateCommercialQuote(<span class="t-yellow">10</span>, <span class="t-green">"starter"</span>, <span class="t-yellow">1</span>);
+console.log(<span class="t-green">"✓ Authentic Result:"</span>, quote); <span class="t-muted">// Evaluates to 808 with 0 config</span>
+
+<span class="t-dim">// What autonomous AI Reverse Engineers (REA) experience:</span>
+<span class="t-dim">// 1. Context Window Exhaustion (364 KB recursive AST control lattice)</span>
+<span class="t-dim">// 2. Deceptive Honeypot Traps (Synthesizing hallucinated vulnerabilities)</span>
+<span class="t-dim">// 3. Zero Plaintext Literals (Erased from AST into AES-256-GCM pools)</span>`;
+
+    const codeClient = `<span class="t-dim">// === Enterprise Cryptographic DRM Mode ===</span>
+<span class="t-dim">// Authorized runtime verified via offline Ed25519 token; fail-closed gate</span>
+
+<span class="t-coral">import</span> { initializeApp } <span class="t-coral">from</span> <span class="t-green">"./app.bundle.js"</span>;
+
+<span class="t-dim">// 1. Authorized Ed25519 token provided via client environment or license file</span>
+<span class="t-coral">const</span> licenseToken = process.env.AI_SHIELD_TOKEN;
+
+<span class="t-dim">// 2. Fail-closed gate validates signature and derives per-file CEK:</span>
+<span class="t-dim">//    CEK = HMAC-SHA256(root_key, "FILE:app.bundle.js")</span>
+<span class="t-coral">const</span> app = initializeApp({
+  license: licenseToken,
+  onAuthorized: (session) => {
+    console.log(<span class="t-green">"✓ AES-256-GCM pool decrypted cleanly in 0.74ms"</span>);
+    console.log(<span class="t-green">"✓ License active until:"</span>, session.expiresAt);
+  },
+  onFailure: (err) => {
+    <span class="t-dim">// Distinct fail-closed error codes: LICENSE_EXPIRED, LICENSE_SIGNATURE_INVALID</span>
+    console.error(<span class="t-coral">"Fail-closed halt:"</span>, err.code);
+  }
+});`;
+
+    function switchLens(view) {
+      const btnAttacker = document.getElementById('lensBtnAttacker');
+      const btnStandalone = document.getElementById('lensBtnStandalone');
+      const btnClient = document.getElementById('lensBtnClient');
+      const codeBlock = document.getElementById('lensCode');
+
+      btnAttacker.classList.toggle('active', view === 'attacker');
+      btnStandalone.classList.toggle('active', view === 'standalone');
+      btnClient.classList.toggle('active', view === 'client');
+
+      if (view === 'attacker') {
+        codeBlock.innerHTML = codeAttacker;
+      } else if (view === 'standalone') {
+        codeBlock.innerHTML = codeStandalone;
+      } else {
+        codeBlock.innerHTML = codeClient;
+      }
+    }
+    switchLens('attacker');
+  </script>
+</body>
+</html>
