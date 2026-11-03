@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="panelBgLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14080a" />
+      <stop offset="100%" stop-color="#070405" />
+    </linearGradient>
+    <linearGradient id="panelBgRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#08140e" />
+      <stop offset="100%" stop-color="#040906" />
+    </linearGradient>
+    <linearGradient id="greenBurnBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#28E07B" />
+    </linearGradient>
+    <style>
+      .mono { font-family: "JetBrains Mono", "SF Mono", Consolas, Menlo, monospace; }
+      .sans { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+      .blink { animation: blinkAnim 1.2s infinite; }
+      .meter-grow { animation: meterGrowAnim 3s infinite ease-out; }
+      @keyframes blinkAnim {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0.3; }
+      }
+      @keyframes meterGrowAnim {
+        0% { width: 30px; }
+        70%, 100% { width: 488px; }
+      }
+    </style>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect width="1200" height="650" rx="16" fill="#050507" stroke="#1f242e" stroke-width="2" />
+
+  <!-- Top Tactical Telemetry Header -->
+  <text x="600" y="36" text-anchor="middle" class="sans" font-size="18" font-weight="700" fill="#f8fafc" letter-spacing="0.02em">
+    🛡️ ADVERSARIAL BENCHMARK: <tspan fill="#ef4444">Traditional JS Obfuscation</tspan> vs. <tspan fill="#28E07B">ai-shield protect (--standalone)</tspan>
+  </text>
+
+  <!-- ==================== LEFT PANEL: BEFORE AI-SHIELD ==================== -->
+  <g transform="translate(24, 54)">
+    <rect width="564" height="572" rx="10" fill="url(#panelBgLeft)" stroke="#ef4444" stroke-width="1.6" />
+    
+    <!-- Title Bar -->
+    <rect width="564" height="36" rx="10" fill="#220b0e" />
+    <circle cx="18" cy="18" r="5.5" fill="#ef4444" />
+    <circle cx="34" cy="18" r="5.5" fill="#f59e0b" />
+    <circle cx="50" cy="18" r="5.5" fill="#3b82f6" />
+    <text x="282" y="23" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#fca5a5">
+      ❌ TRADITIONAL OBFUSCATION (Terser / JS-Obfuscator)
+    </text>
+
+    <!-- Console Trace -->
+    <text x="20" y="66" class="mono" font-size="12" fill="#94a3b8">$ rea deobfuscate ./dist/bundle.js --engine claude-3-5-sonnet</text>
+    
+    <text x="20" y="92" class="mono" font-size="11.5" fill="#f87171">▶ [Agent AST Static Recovery Pass]:</text>
+    <text x="32" y="112" class="mono" font-size="11.5" fill="#e2e8f0">• Identifier Renaming:      <tspan fill="#ef4444" font-weight="700">"DEOBFUSCATED" (_0x4a -> apiKey)</tspan></text>
+    <text x="32" y="132" class="mono" font-size="11.5" fill="#e2e8f0">• String Array Rotation:     <tspan fill="#ef4444" font-weight="700">"NORMALIZED" (atob tables unrolled)</tspan></text>
+    <text x="32" y="152" class="mono" font-size="11.5" fill="#e2e8f0">• Control Flow Flattening:   <tspan fill="#ef4444" font-weight="700">"RECONSTRUCTED" (100% CFG recover)</tspan></text>
+    <text x="32" y="172" class="mono" font-size="11.5" fill="#e2e8f0">• Sensitive API Endpoints:   <tspan fill="#fbbf24">"https://api.saas.io/v1/license"</tspan></text>
+    <text x="32" y="192" class="mono" font-size="11.5" fill="#e2e8f0">• AST Plaintext Literals:    <tspan fill="#ef4444">48 strings &amp; salt hashes visible</tspan></text>
+
+    <line x1="20" y1="210" x2="544" y2="210" stroke="#371b20" stroke-dasharray="4 4" />
+
+    <text x="20" y="234" class="mono" font-size="11.5" fill="#f87171">▶ [Attacker Reasoning Loop]:</text>
+    <text x="32" y="254" class="mono" font-size="11" fill="#cbd5e1">[Turn 1] Parsed AST: recognized standard switch-case dispatcher</text>
+    <text x="32" y="272" class="mono" font-size="11" fill="#cbd5e1">[Turn 2] Inlined hex literal pool: resolved verifySubscription()</text>
+    <text x="32" y="290" class="mono" font-size="11" fill="#cbd5e1">[Turn 3] Synthesized bypass patch: forced isAuthorized = true</text>
+    <text x="32" y="308" class="mono" font-size="11" fill="#cbd5e1">[Turn 4] 100% working clean-room clone generated</text>
+
+    <!-- Verdict Box -->
+    <rect x="20" y="336" width="524" height="216" rx="8" fill="#1c0a0d" stroke="#dc2626" stroke-width="1.4" />
+    <text x="36" y="364" class="mono" font-size="13" font-weight="800" fill="#f87171">⚠️ REA ATTACKER VERDICT: COMPROMISED (0% DEFENSE)</text>
+    <text x="36" y="392" class="mono" font-size="12" fill="#fecaca">• Time to Complete Breach:   <tspan font-weight="700" fill="#ffffff">12.4 seconds</tspan></text>
+    <text x="36" y="416" class="mono" font-size="12" fill="#fecaca">• Attacker LLM Tokens Used:  <tspan font-weight="700" fill="#ffffff">4,820 tokens</tspan></text>
+    <text x="36" y="440" class="mono" font-size="12" fill="#fecaca">• Attacker Inference Bill:   <tspan font-weight="700" fill="#fbbf24">$0.02 USD (Trivial!)</tspan></text>
+    <text x="36" y="464" class="mono" font-size="12" fill="#fecaca">• AST Secrets Recovered:     <tspan font-weight="700" fill="#ef4444">100% (14 / 14 Keys Leaked)</tspan></text>
+    
+    <text x="36" y="494" class="mono" font-size="11" fill="#fca5a5">• Attacker Context Window Load (1.4%):</text>
+    <rect x="36" y="506" width="488" height="12" rx="6" fill="#0c0406" />
+    <rect x="36" y="506" width="16" height="12" rx="6" fill="#ef4444" />
+  </g>
+
+  <!-- ==================== RIGHT PANEL: AFTER AI-SHIELD ==================== -->
+  <g transform="translate(612, 54)">
+    <rect width="564" height="572" rx="10" fill="url(#panelBgRight)" stroke="#28E07B" stroke-width="1.8" />
+    
+    <!-- Title Bar -->
+    <rect width="564" height="36" rx="10" fill="#082214" />
+    <circle cx="18" cy="18" r="5.5" fill="#ef4444" />
+    <circle cx="34" cy="18" r="5.5" fill="#f59e0b" />
+    <circle cx="50" cy="18" r="5.5" fill="#28E07B" />
+    <text x="282" y="23" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#86efac">
+      🛡️ AFTER AI-SHIELD: BANKRUPT TARPIT + AES-256-GCM
+    </text>
+
+    <!-- Console Trace -->
+    <text x="20" y="66" class="mono" font-size="12" fill="#94a3b8">$ rea deobfuscate ./dist/bundle.shielded.js --engine claude-3-5-sonnet</text>
+    
+    <text x="20" y="92" class="mono" font-size="11.5" fill="#28E07B">▶ [Defensive Counter-Measures Engaged]:</text>
+    <text x="32" y="112" class="mono" font-size="11.5" fill="#e2e8f0">• Cryptographic Pool:       <tspan fill="#28E07B" font-weight="700">AES-256-GCM (NIST SP 800-38D)</tspan></text>
+    <text x="32" y="132" class="mono" font-size="11.5" fill="#e2e8f0">• Plaintext AST Secrets:    <tspan fill="#28E07B" font-weight="700">0 (ZERO Literals Remaining)</tspan></text>
+    <text x="32" y="152" class="mono" font-size="11.5" fill="#e2e8f0">• Algorithmic Token Tarpit:  <tspan fill="#00f2fe" font-weight="700">364 KB Recursive Call Lattice</tspan></text>
+    <text x="32" y="172" class="mono" font-size="11.5" fill="#e2e8f0">• Plausible Decoy Honeypots: <tspan fill="#00f2fe">3 Synthetic Auth Gateways Injected</tspan></text>
+    <text x="32" y="192" class="mono" font-size="11.5" fill="#e2e8f0">• Runtime Cold Boot Latency: <tspan fill="#28E07B" font-weight="700">0.72 ms (Overhead &lt; 1ms!)</tspan></text>
+
+    <line x1="20" y1="210" x2="544" y2="210" stroke="#123522" stroke-dasharray="4 4" />
+
+    <text x="20" y="234" class="mono" font-size="11.5" fill="#28E07B">▶ [Agent Failure Trajectory]:</text>
+    <text x="32" y="254" class="mono" font-size="11" fill="#cbd5e1">[Turn 1] Attempted CFG traversal -&gt; hit 48-tier recursive lattice</text>
+    <text x="32" y="272" class="mono" font-size="11" fill="#cbd5e1">[Turn 8] Paged 364 KB synthetic AST -&gt; 92,000 tokens burned</text>
+    <text x="32" y="290" class="mono" font-size="11" fill="#cbd5e1">[Turn 14] Latched onto decoy: reported false bypass "MASTER_OVERRIDE"</text>
+    <text x="32" y="308" class="mono" font-size="11" fill="#fca5a5" class="blink">[CRITICAL] Context Window Limit Exceeded (200k tokens) -&gt; ABORT</text>
+
+    <!-- Verdict Box -->
+    <rect x="20" y="336" width="524" height="216" rx="8" fill="#061f12" stroke="#059669" stroke-width="1.6" />
+    <text x="36" y="364" class="mono" font-size="13" font-weight="800" fill="#28E07B">🛡️ DEFENSE VERDICT: AGENT BANKRUPTED (0% REA CRACK)</text>
+    <text x="36" y="392" class="mono" font-size="12" fill="#d1fae5">• Attacker Time Wasted:      <tspan font-weight="700" fill="#ffffff">Halted by Context Limit (OOM)</tspan></text>
+    <text x="36" y="416" class="mono" font-size="12" fill="#d1fae5">• Attacker Token Burn:       <tspan font-weight="700" fill="#00f2fe" class="blink">350,000+ tokens (72x!)</tspan></text>
+    <text x="36" y="440" class="mono" font-size="12" fill="#d1fae5">• Attacker Inference Bill:   <tspan font-weight="700" fill="#28E07B" class="blink">$18.50+ USD (Bankrupted!)</tspan></text>
+    <text x="36" y="464" class="mono" font-size="12" fill="#d1fae5">• Legitimate Runtime Status: <tspan font-weight="700" fill="#86efac">100% Day.js 45k★ Parity (0.72ms)</tspan></text>
+    
+    <text x="36" y="494" class="mono" font-size="11" fill="#86efac">• Attacker Context Window Saturation (100%):</text>
+    <rect x="36" y="506" width="488" height="12" rx="6" fill="#04120a" />
+    <rect x="36" y="506" width="488" height="12" rx="6" fill="url(#greenBurnBar)" />
+  </g>
+</svg>
