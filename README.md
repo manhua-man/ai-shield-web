@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/release-coming%20soon-28E07B.svg?style=flat-square)]()
 
+![AI-Shield Key Visual](ai-shield-key-visual.png)
+
 **AI-Shield** is an industrial adversarial defense compiler written in pure Rust. It protects JavaScript, TypeScript, Electron, Node.js, and client applications against autonomous AI reverse-engineering agents.
 
 - 🌐 **Interactive Web Sandbox**: [https://manhua-man.github.io/ai-shield-web/](https://manhua-man.github.io/ai-shield-web/)
