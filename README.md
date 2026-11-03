@@ -4,14 +4,14 @@
 
 [![Rust](https://img.shields.io/badge/rust-1.75%2B-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?style=flat-square)](LICENSE)
-[![Status](https://img.shields.io/badge/release-coming%20soon-28E07B.svg?style=flat-square)]()
+[![Release](https://img.shields.io/badge/release-v1.0.0-28E07B.svg?style=flat-square)](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.0)
 
 ![AI-Shield Key Visual](ai-shield-key-visual.png)
 
 **AI-Shield** is an industrial adversarial defense compiler written in pure Rust. It protects JavaScript, TypeScript, Electron, Node.js, and client applications against autonomous AI reverse-engineering agents.
 
 - 🌐 **Interactive Web Sandbox**: [https://manhua-man.github.io/ai-shield-web/](https://manhua-man.github.io/ai-shield-web/)
-- 📦 **CLI Tool & SDK**: Public open-source distribution coming very soon.
+- 📦 **CLI Tool & SDK**: [Download v1.0.0 Release (Windows x64)](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.0)
 
 ---
 
@@ -27,7 +27,7 @@ AI-Shield inverts this dynamic through a **3-Pillar Anti-Agent Architecture**:
 
 ---
 
-## 🚀 CLI Tool Capabilities (Coming to Open Source)
+## 🚀 CLI Tool Quickstart
 
 The upcoming open-source CLI release equips developers with production-grade defense utilities:
 
