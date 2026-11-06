@@ -1,63 +1,48 @@
-# AI-Shield 🛡️
+# AI-Shield
 
-> Pure-Rust Industrial Adversarial Defense CLI against Frontier AI Deobfuscation Agents (Claude, GPT, Gemini, Grok)
+JavaScript protection and native application packaging. This public repository contains the website, documentation and binary releases. The core source is maintained in a separate private repository and is not included here.
 
-[![Rust](https://img.shields.io/badge/rust-1.75%2B-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
-[![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?style=flat-square)](LICENSE)
-[![Release](https://img.shields.io/badge/release-v1.0.0-28E07B.svg?style=flat-square)](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.0)
+- [Website](https://manhua-man.github.io/ai-shield-web/)
+- [Download v1.0.1](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.1)
+- [Release notes and verification scope](RELEASE-NOTES.md)
 
-![AI-Shield Key Visual](ai-shield-key-visual.png)
+## Download
 
-**AI-Shield** is an industrial adversarial defense compiler written in pure Rust. It protects JavaScript, TypeScript, Electron, Node.js, and client applications against autonomous AI reverse-engineering agents.
+Download the archive for your operating system and keep the CLI and loader in the same directory. Each release includes [SHA256SUMS.txt](https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/SHA256SUMS.txt), licenses, third-party notices and build revision information.
 
-- 🌐 **Interactive Web Sandbox**: [https://manhua-man.github.io/ai-shield-web/](https://manhua-man.github.io/ai-shield-web/)
-- 📦 **CLI Tool & SDK**: [Download v1.0.0 Release (Windows x64 · macOS arm64 · Linux x64)](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.0)
+| Platform | Archive |
+| --- | --- |
+| Windows x64 | [ZIP](https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-windows-x64.zip) |
+| Linux x64 (musl) | [tar.gz](https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-linux-x64.tar.gz) |
+| macOS Apple Silicon | [tar.gz](https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-macos-arm64.tar.gz) |
 
----
+Linux/macOS users must preserve executable permissions when extracting. The macOS binaries are not notarized. Node.js and Python runtimes are not bundled.
 
-## ⚡ What is AI-Shield?
+## Usage
 
-Traditional client-side obfuscation (identifier mangling, control flow flattening) is obsolete against modern LLM reasoning. Frontier models reverse minified bundles in seconds for pennies.
+Run protection on a copy of your built JavaScript and validate your application's behavior before deployment:
 
-AI-Shield inverts this dynamic through a **3-Pillar Anti-Agent Architecture**:
-
-1. **POISON (AES-256-GCM Constant Pools)**: Eliminates plaintext strings, API endpoints, and sensitive numbers from the AST into a hardware-accelerated WebCrypto runtime envelope.
-2. **EXHAUST (Token Tarpits)**: Injects recursive, non-polynomial control-flow lattices that rapidly exhaust LLM context windows (350,000+ tokens burned, causing agent OOM / abort).
-3. **HALLUCINATE (Plausible Decoy Honeypots)**: Synthesizes deceptive, realistic authentication branches that trap agent attention heads into exploring fictional logic.
-
----
-
-## 🚀 CLI Tool Quickstart
-
-The upcoming open-source CLI release equips developers with production-grade defense utilities:
-
-```bash
-# 1. Pre-flight 16-Vector REA Vulnerability Audit
-ai-shield audit ./dist --report ./audit-report.json
-
-# 2. Zero-Touch Standalone Shield (0 code modifications needed)
+```sh
+ai-shield --version
 ai-shield protect ./dist --ext js --standalone --intensity bankrupt --inject-decoys
-
-# 3. Enterprise Ed25519 Cryptographic Gate (Offline License Token)
-ai-shield protect ./dist --ext js --entangle --key private-key.json --intensity bankrupt
-
-# 4. CI/CD Signed Manifest Attestation
-ai-shield manifest ./dist --key private-key.json --out dist/manifest.json
-ai-shield verify-manifest dist/manifest.json --pubkey "<KEY>" --root ./dist
+ai-shield pack ./application --entry main.js --out ./protected-application
 ```
 
----
+On Windows PowerShell, use `./ai-shield.exe` when invoking the executable from the current directory. Use `ai-shield --help` and subcommand `--help` for available options.
 
-## 🧪 Verified Benchmark Performance
+## What v1.0.1 fixes
 
-- **Client Startup Overhead**: Strictly **+0.72ms** (tested on Day.js 45,000★ test harness).
-- **Test Suite Conformance**: **1,842 / 1,842 unit tests passing** (100% ECMA-262 logic parity).
-- **Crack Rate**: **0% logic recovered** across frontier AI agents.
+- Packed applications inherit the caller's working directory. Cleanup preserves new or changed data in the extraction directory and reports its location.
+- Automatic entry selection is deterministic; ambiguous bundles require an explicit `--entry`.
+- Standalone protection enables its constant pool and completes unlocking before application code runs.
+- JavaScript transformation preserves tested CommonJS exports, ESM startup, object keys/shorthand, Unicode escapes, regular expressions, shebangs and strict-mode directives.
 
----
+The verification scope includes real Node.js, Python and native-process execution, argument/exit-code checks, asset reads and repeated-launch persistence. External Microsoft Edge testing covers protected classic scripts, multiple constant pools, ESM and UI interaction. See the release notes for platform-specific results; these checks do not certify arbitrary applications.
 
-## 📢 Public Release Status
+## Boundaries
 
-The **AI-Shield CLI Tool & Runtime SDK** is being prepared for its public open-source release on GitHub and crates.io.
+Standalone output includes its decryption key. It raises inspection effort and is not an authorization boundary. Do not store server secrets in client applications. Protection does not guarantee resistance to any particular reverse-engineering tool or model.
 
-Star and watch this repository for the official v1.0 binary and package drop!
+Persist data in the inherited working directory or an explicit stable data directory. Use `__dirname` / `__file__` for reading bundled assets. A changed extraction directory is retained to avoid data loss, but it is not automatically reused on the next launch. Background child processes and self-updating applications are outside the current acceptance scope.
+
+The repository retains the project's existing [MIT license](LICENSE); third-party licenses are included with each archive. Public source archives generated by GitHub contain this website and documentation only.

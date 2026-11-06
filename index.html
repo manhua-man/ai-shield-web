@@ -1,16 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Shield — Industrial Adversarial Defense against AI Reverse-Engineering Agents</title>
-  <meta name="description" content="Pure-Rust cryptographic defense engine & token tarpit compiler. Protects JavaScript, Electron, and Node.js applications against autonomous AI agents (REA, Claude Code, Grok, GPT-4o).">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090a0f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='sans-serif' font-size='30' font-weight='700' fill='%2328E07B'%3EAI%3C/text%3E%3C/svg%3E">
+  <title>AI-Shield v1.0.1 — JavaScript Protection & Application Packaging</title>
+  <meta name="description" content="AI-Shield v1.0.1 repairs JavaScript transformation, synchronous startup, and packaged application data handling. Private core, public binary distribution.">
 
   <!-- Open Graph Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AI-Shield">
-  <meta property="og:title" content="AI-Shield — Industrial Adversarial Defense against AI Agents">
-  <meta property="og:description" content="Pure-Rust cryptographic defense engine & token tarpit compiler. Protects JavaScript & Electron apps against AI reverse engineering agents (Claude Code, Grok, REA). 0% crack rate across frontier LLMs.">
+  <meta property="og:title" content="AI-Shield v1.0.1 — Compatibility Repair Release">
+  <meta property="og:description" content="Eight compatibility fixes, 60 local Windows tests, and an Edge browser parity check. See release notes for verified scope and remaining platform checks.">
   <meta property="og:url" content="https://manhua-man.github.io/ai-shield-web/">
   <meta property="og:image" content="https://manhua-man.github.io/ai-shield-web/og-preview.png">
 
@@ -18,8 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ai_shield_sec">
   <meta name="twitter:creator" content="@ai_shield_sec">
-  <meta name="twitter:title" content="AI-Shield — Industrial Adversarial Defense against AI Agents">
-  <meta name="twitter:description" content="Traditional JS obfuscation is dead—AI agents crack it for $0.02. AI-Shield introduces AES-256-GCM constant pools, bankrupt token tarpits, and deceptive honeypots. Zero REA crack rate across frontier LLMs.">
+  <meta name="twitter:title" content="AI-Shield v1.0.1 — Compatibility Repair Release">
+  <meta name="twitter:description" content="AI-Shield v1.0.1: synchronous constant-pool startup, safer JavaScript transforms, and packaged application data preservation. Private core with public binaries.">
   <meta name="twitter:image" content="https://manhua-man.github.io/ai-shield-web/og-preview.png">
 
   <!-- Typography: Inter & JetBrains Mono for 2x Retina Precision -->
@@ -74,6 +75,15 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-size: 14px;
+    }
+
+    .section-desc a {
+      color: var(--accent-green);
+      text-underline-offset: 3px;
+    }
+
+    .section-desc a:hover {
+      color: var(--text);
     }
 
     .tabular {
@@ -1051,6 +1061,12 @@
 
     /* Mobile Enhancements */
     @media (max-width: 768px) {
+      .brand-title {
+        white-space: nowrap;
+      }
+      .brand-title .version-pill {
+        display: none;
+      }
       .nav-links .nav-link {
         display: none;
       }
@@ -1113,13 +1129,13 @@
   <!-- Tactical Hardware Telemetry Strip -->
   <div class="telemetry-strip">
     <div class="container telemetry-inner">
-      <div class="telemetry-item"><span class="t-dim">SYS:</span> <span class="val">AI-SHIELD_CORE_V0.2.0</span></div>
-      <div class="telemetry-item"><span class="t-dim">ARCH:</span> <span class="val">PURE_RUST_NATIVE (1.75+)</span></div>
-      <div class="telemetry-item"><span class="t-dim">CIPHER_POOL:</span> <span class="val">AES-256-GCM (NIST SP 800-38D)</span></div>
-      <div class="telemetry-item"><span class="t-dim">ATTESTATION:</span> <span class="val">ED25519_256BIT_SIGNATURE</span></div>
-      <div class="telemetry-item"><span class="t-dim">TARPIT_LATTICE:</span> <span class="val">BANKRUPT_364KB</span></div>
-      <div class="telemetry-item"><span class="t-dim">COLD_LATENCY:</span> <span class="t-green tabular">0.72ms</span></div>
-      <div class="telemetry-item"><span class="t-dim">REA_CRACK_RATE:</span> <span class="t-coral tabular">0.0% (IMMUNE)</span></div>
+      <div class="telemetry-item"><span class="t-dim">SYS:</span> <span class="val">AI-SHIELD_V1.0.1</span></div>
+      <div class="telemetry-item"><span class="t-dim">ARCH:</span> <span class="val">RUST_CORE (1.89+)</span></div>
+      <div class="telemetry-item"><span class="t-dim">CIPHER_POOL:</span> <span class="val">SYNC_AES-256-GCM</span></div>
+      <div class="telemetry-item"><span class="t-dim">ATTESTATION:</span> <span class="val">ED25519_SIGNATURES</span></div>
+      <div class="telemetry-item"><span class="t-dim">REPAIR_SCOPE:</span> <span class="val">8_CONFIRMED_FIXES</span></div>
+      <div class="telemetry-item"><span class="t-dim">LOCAL_TESTS:</span> <span class="t-green tabular">60 / 60 WINDOWS</span></div>
+      <div class="telemetry-item"><span class="t-dim">BROWSER_CHECK:</span> <span class="t-green tabular">EDGE 156 PARITY</span></div>
     </div>
   </div>
 
@@ -1130,24 +1146,24 @@
         <div class="logo-shield">AI</div>
         <div class="brand-title">
           ai-shield
-          <span class="version-pill">v0.2.0</span>
+          <span class="version-pill">v1.0.1</span>
         </div>
       </a>
       <nav class="nav-links">
-        <a href="#audit" class="nav-link">16-Vector Matrix</a>
-        <a href="#case-study" class="nav-link">Day.js Benchmark</a>
+        <a href="#audit" class="nav-link">Pattern Explorer</a>
+        <a href="#case-study" class="nav-link">Release Validation</a>
         <a href="#architecture" class="nav-link">Architecture</a>
-        <a href="#lens" class="nav-link">Dual-Track Lens</a>
-        <a href="#benchmarks" class="nav-link">Benchmarks</a>
+        <a href="#lens" class="nav-link">Modes</a>
+        <a href="#benchmarks" class="nav-link">Fixes &amp; Scope</a>
         <div class="nav-actions">
-          <a href="https://twitter.com/intent/tweet?text=Traditional%20JS%20obfuscation%20is%20dead%E2%80%94AI%20agents%20crack%20it%20for%20%240.02.%20AI-Shield%20introduces%20AES-256-GCM%20constant%20pools%20and%20350KB%2B%20bankrupt%20token%20tarpits%20with%20zero%20REA%20crack%20rate%20across%20frontier%20LLMs.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web" target="_blank" rel="noopener noreferrer" class="x-share-button" title="Share on X">
+          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.1%20repairs%20JavaScript%20startup%2C%20module%20semantics%2C%20and%20packaged%20data%20handling.%20See%20verified%20scope%20and%20release%20notes.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" rel="noopener noreferrer" class="x-share-button" title="Share on X">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
             <span>Share</span>
           </a>
-          <a href="https://github.com/manhua-man/ai-shield-web" target="_blank" class="cta-button">
-            GitHub Repo
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.1" target="_blank" rel="noopener noreferrer" class="cta-button">
+            Downloads
           </a>
         </div>
       </nav>
@@ -1160,13 +1176,13 @@
       <div class="container">
         <div class="badge-hero">
           <div class="badge-dot"></div>
-          Zero REA Crack Rate Across All Frontier LLM Agents
+          v1.0.1 · Eight compatibility fixes
         </div>
         <h1 class="hero-title">
-          The Adversarial Defense Shield for the <span class="highlight">Agentic Era</span>.
+          Protect your code.<br>Preserve its <span class="highlight">behavior</span>.
         </h1>
         <p class="hero-subtitle">
-          Traditional JavaScript obfuscators collapse against autonomous AI agents in seconds. AI-Shield delivers a <strong>Dual-Mode Defense Engine</strong>: run <strong>Zero-Touch Shield Mode (<code>--standalone</code>)</strong> to protect any existing React, Vue, or Node project with zero code changes; or activate <strong>Enterprise DRM Mode</strong> for strict offline Ed25519 licensing.
+          AI-Shield combines JavaScript obfuscation, encrypted constant pools, and application packaging. <strong>v1.0.1 repairs startup, module exports, syntax handling, and persistent data paths.</strong> Choose standalone obfuscation or an enterprise Ed25519 license gate. The core remains private; binaries and release notes are distributed publicly.
         </p>
 
         <div class="hero-cli-bar">
@@ -1180,16 +1196,25 @@
         </div>
 
         <div class="hero-actions">
-          <a href="https://github.com/manhua-man/ai-shield-web" target="_blank" class="cta-button">
-            View on GitHub
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.1" target="_blank" rel="noopener noreferrer" class="cta-button">
+            Download v1.0.1
           </a>
-          <a href="https://twitter.com/intent/tweet?text=Traditional%20JS%20obfuscation%20is%20dead%E2%80%94AI%20agents%20crack%20it%20in%20seconds.%20AI-Shield%20introduces%20AES-256-GCM%20constant%20pools%20and%20350KB%2B%20bankrupt%20token%20tarpits%20to%20exhaust%20attacker%20context%20windows.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web" target="_blank" class="x-share-button">
+          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.1%20repairs%20JavaScript%20startup%2C%20module%20semantics%2C%20and%20packaged%20data%20handling.%20See%20verified%20scope%20and%20release%20notes.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" class="x-share-button">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            <span>Tweet Launch Post</span>
+            <span>Share v1.0.1</span>
           </a>
         </div>
+
+        <p class="section-desc" style="margin: 20px auto 0; font-size: 13px;">
+          Binary downloads:
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-windows-x64.zip">Windows x64</a> ·
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-linux-x64.tar.gz">Linux x64</a> ·
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-macos-arm64.tar.gz">macOS arm64</a>.
+          <a href="RELEASE-NOTES.md">Release notes and validation scope.</a>
+        </p>
+        <p class="section-desc" style="margin: 12px auto 0; font-size: 13px;">CLI transcripts below are illustrative replays. No files are processed in this browser.</p>
 
         <!-- Interactive Hero CLI Sandbox (Typewriter Streamer & Interactive Presets) -->
         <div class="sandbox-container">
@@ -1202,15 +1227,15 @@
                 <kbd>2</kbd> ai-shield protect --standalone
               </button>
               <button class="sandbox-tab" id="termTab2" onclick="switchSandboxTab(2)">
-                <kbd>3</kbd> ai-shield protect --key (DRM)
+                <kbd>3</kbd> ai-shield protect --entangle
               </button>
               <button class="sandbox-tab" id="termTab3" onclick="switchSandboxTab(3)">
                 <kbd>4</kbd> ai-shield verify-manifest
               </button>
             </div>
             <div class="sandbox-controls">
-              <button class="sandbox-run-btn" onclick="triggerSandboxRun()" title="Simulate streaming execution">
-                <span>▶ Re-run Stream</span>
+              <button class="sandbox-run-btn" onclick="triggerSandboxRun()" title="Replay an illustrative CLI transcript; no command runs in this browser">
+                <span>▶ Replay Example</span>
               </button>
               <div class="terminal-dots">
                 <div class="terminal-dot"></div>
@@ -1230,10 +1255,10 @@
     <section id="audit">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">Defensive Intelligence</div>
-          <h2 class="section-title">16-Vector REA Risk Assessment Matrix</h2>
+          <div class="section-eyebrow">Interactive Heuristic Demo</div>
+          <h2 class="section-title">16-Pattern Exposure Explorer</h2>
           <p class="section-desc">
-            Toggle observed code patterns to simulate your codebase's AI exposure score, or trigger <strong>Auto-Shield Remediation</strong> to watch AI-Shield neutralize all exposure vectors.
+            Toggle patterns to explore a fixed, heuristic weighting. <strong>This demo does not scan your files or run an attack.</strong> Its score is neither a compromise probability nor evidence that a selected control works.
           </p>
         </div>
 
@@ -1245,14 +1270,14 @@
           <!-- Dynamic Live Calculator Result Board (CleanFlow Pro Dashboard) -->
           <div class="calc-dashboard">
             <div class="calc-board-title">
-              <span>REA Vulnerability Radar</span>
-              <span id="threatLevelPill" class="cell-pill" style="color: #ef4444;">CRITICAL</span>
+              <span>Illustrative Pattern Score</span>
+              <span id="threatLevelPill" class="cell-pill" style="color: #ef4444;">MANY SELECTED</span>
             </div>
 
             <!-- Self-Healing Action Bar (interactive-sandboxes Mode 4) -->
             <div class="remediate-action-bar">
               <button class="heal-btn" onclick="triggerInstantRemediation()">
-                <span>⚡ Auto-Shield All Vectors</span>
+                <span>⚡ Clear Demo Selections</span>
               </button>
               <button class="reset-btn" onclick="resetAllVectors()">
                 <span>Reset</span>
@@ -1261,37 +1286,37 @@
 
             <div class="metric-row">
               <div class="metric-label">
-                <span>AI Exposure Score</span>
-                <span id="exposureScorePct" class="tabular">87.5%</span>
+                <span>Weighted Selection Score</span>
+                <span id="exposureScorePct" class="tabular">87%</span>
               </div>
               <div class="metric-bar-container">
-                <div class="metric-bar-fill" id="exposureBar" style="width: 87.5%;"></div>
+                <div class="metric-bar-fill" id="exposureBar" style="width: 87%;"></div>
               </div>
             </div>
 
             <div class="metric-row">
-              <div class="metric-label">REA Crack Likelihood</div>
+              <div class="metric-label">Selected Patterns</div>
               <div class="metric-value-huge" id="crackLikelihood">
-                <span class="tabular">100</span><span style="font-size: 15px; color: var(--text-muted);">%</span>
+                <span class="tabular">13</span><span style="font-size: 15px; color: var(--text-muted);"> / 16</span>
               </div>
             </div>
 
             <div class="metric-row">
-              <div class="metric-label">Attacker LLM Token Drain</div>
+              <div class="metric-label">Selected Weight</div>
               <div class="metric-value-huge" id="tokenCost">
-                <span class="tabular">4,820</span><span style="font-size: 15px; color: var(--text-muted);">tokens</span>
+                <span class="tabular">130</span><span style="font-size: 15px; color: var(--text-muted);"> / 150 points</span>
               </div>
             </div>
 
             <div class="metric-row">
-              <div class="metric-label">Attacker Inference Cost</div>
+              <div class="metric-label">Attack Outcome</div>
               <div class="metric-value-huge" id="dollarCost" style="color: var(--accent-coral);">
-                <span style="font-size: 18px;">$</span><span class="tabular">0.03</span>
+                <span style="font-size: 24px;">Not measured</span>
               </div>
             </div>
 
             <p class="calc-subnotes" id="calcAnalysis">
-              High exposure: Agents can easily recover business logic via unmasked literals and static anchors in less than 30 seconds.
+              Heuristic demonstration only. Changing selections does not protect an application or establish resistance to reverse engineering.
             </p>
           </div>
         </div>
@@ -1304,31 +1329,31 @@
         <div class="section-header">
           <div class="case-study-badge">
             <span class="badge-dot" style="background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green);"></span>
-            Empirical Benchmark on 45,000+ Star Open-Source Ecosystem
+            Local Windows acceptance · 2026-11-07
           </div>
-          <h2 class="section-title">Case Study: Hardening Day.js in 0.72ms</h2>
+          <h2 class="section-title">What v1.0.1 has verified</h2>
           <p class="section-desc">
-            Zero lines of code modified. Zero external license keys required. Full business logic parity verified in Node.js while stripping all plaintext literals and date regex patterns into encrypted AES-256-GCM constant pools.
+            Protected and original fixtures were executed and compared in Node.js, Python, native processes, and external Microsoft Edge. These checks establish behavior for the tested paths. Release CI also passed all 60 tests on Windows x64, Linux x64 musl, and macOS arm64. End-user installation and OS trust prompts are outside this acceptance scope.
           </p>
         </div>
 
         <!-- 4 Key Metrics -->
         <div class="case-metrics-grid">
           <div class="case-metric-card">
-            <div class="case-metric-value tabular">45,000+ ★</div>
-            <div class="case-metric-label">Production Ecosystem Tested (Day.js)</div>
+            <div class="case-metric-value tabular">8 fixes</div>
+            <div class="case-metric-label">Confirmed defects repaired</div>
           </div>
           <div class="case-metric-card">
-            <div class="case-metric-value tabular" style="color: var(--accent-green);">0 Lines</div>
-            <div class="case-metric-label">Application Code Changes (Drop-in)</div>
+            <div class="case-metric-value tabular" style="color: var(--accent-green);">60 / 60</div>
+            <div class="case-metric-label">Local Windows workspace tests</div>
           </div>
           <div class="case-metric-card">
-            <div class="case-metric-value tabular" style="color: var(--accent-blue);">0.72 ms</div>
-            <div class="case-metric-label">Cold Boot & AES Decrypt Overhead</div>
+            <div class="case-metric-value tabular" style="color: var(--accent-blue);">Edge 156</div>
+            <div class="case-metric-label">Browser behavior compared</div>
           </div>
           <div class="case-metric-card">
-            <div class="case-metric-value tabular" style="color: var(--accent-coral);">0 Secrets</div>
-            <div class="case-metric-label">Plaintext Literals in AST (Zero-Leak)</div>
+            <div class="case-metric-value tabular" style="color: var(--accent-coral);">1 → 2</div>
+            <div class="case-metric-label">cwd state across two launches</div>
           </div>
         </div>
 
@@ -1337,13 +1362,13 @@
           <div class="sandbox-header">
             <div class="sandbox-tabs">
               <button class="sandbox-tab active" id="caseTab0" onclick="switchCaseStudy(0)">
-                <kbd>1</kbd> Original Source (Day.js + Billing)
+                <kbd>1</kbd> Tested JavaScript Paths
               </button>
               <button class="sandbox-tab" id="caseTab1" onclick="switchCaseStudy(1)">
-                <kbd>2</kbd> Shielded Bundle (--standalone)
+                <kbd>2</kbd> Packaged Application Paths
               </button>
               <button class="sandbox-tab" id="caseTab2" onclick="switchCaseStudy(2)">
-                <kbd>3</kbd> Node.js Runtime Proof (&lt;0.72ms)
+                <kbd>3</kbd> Acceptance Results &amp; Limits
               </button>
             </div>
             <div class="terminal-dots">
@@ -1364,30 +1389,30 @@
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">Cryptographic Blueprint</div>
-          <h2 class="section-title">The 3-Pillar Anti-Agent Architecture</h2>
+          <h2 class="section-title">Protection tools with explicit boundaries</h2>
           <p class="section-desc">
-            Engineered from ground up in pure Rust to render autonomous AST deobfuscators completely ineffective.
+            Use each layer for its intended role, and validate your own application before distributing protected output.
           </p>
         </div>
 
         <div class="bento-grid">
           <div class="bento-item bento-col-7">
-            <div class="bento-num">01 / POISON</div>
-            <h3 class="bento-title">Cryptographic Constant Entanglement</h3>
+            <div class="bento-num">01 / CONSTANT POOLS</div>
+            <h3 class="bento-title">Synchronous AES-GCM Constant Pools</h3>
             <p class="bento-text">
-              Every sensitive string, API endpoint, and number is pulled from the AST and encrypted into an AES-256-GCM constant pool. Each file derives an independent Content Encryption Key (CEK): <code>HMAC-SHA256(root_key, "FILE:" + file_id)</code>. Root keys travel strictly inside offline Ed25519 license tokens.
+              Eligible JavaScript literals move into an AES-256-GCM pool that unlocks synchronously before business code runs. Standalone output includes its decryption key: it provides obfuscation and ciphertext integrity, not access control or a place to hide client-side secrets. Enterprise mode retains an Ed25519 license gate.
             </p>
             <div class="code-preview-box">
               <span class="t-coral">const</span> __SEC_POOL = <span class="t-green">"8f02a...c89"</span>; <span class="t-muted">// AES-256-GCM ciphertext</span><br>
-              <span class="t-coral">const</span> apiKey = __SEC_DECRYPT__(<span class="t-yellow">0x14</span>); <span class="t-muted">// Fail-closed offline gate</span>
+              <span class="t-coral">const</span> apiKey = __SEC_DECRYPT__(<span class="t-yellow">0x14</span>); <span class="t-muted">// Read after synchronous pool initialization</span>
             </div>
           </div>
 
           <div class="bento-item bento-col-5">
-            <div class="bento-num">02 / EXHAUST</div>
+            <div class="bento-num">02 / OBFUSCATION</div>
             <h3 class="bento-title">Algorithmic Token Tarpit</h3>
             <p class="bento-text">
-              Injects deeply recursive, syntactically authentic control-flow trees (up to 350+ KB). LLM agents attempting to traverse the call graph burn 200,000+ tokens until context overflow halts the attack.
+              Optional generated control flow increases output complexity and size. The effect on an analyst or AI agent depends on the target and tooling. This release makes no measured token-cost, exhaustion, or prevention claim.
             </p>
             <div class="code-preview-box">
               <span class="t-dim">// Tarpit Intensity: bankrupt</span><br>
@@ -1396,13 +1421,13 @@
           </div>
 
           <div class="bento-item bento-col-5">
-            <div class="bento-num">03 / HALLUCINATE</div>
+            <div class="bento-num">03 / DECOYS</div>
             <h3 class="bento-title">Plausible Decoy Honeypots</h3>
             <p class="bento-text">
-              Synthesizes realistic false authentication pathways and mock license APIs. Autonomous agents latch onto the decoys, producing confident yet totally fictitious vulnerability reports.
+              Optional decoy branches add analysis noise. They are not real authorization checks and do not establish resistance to reverse engineering. Keep business secrets and authoritative access decisions on a trusted server.
             </p>
             <div class="code-preview-box">
-              <span class="t-dim">// Decoy Honeypot (Agent Sinkhole)</span><br>
+              <span class="t-dim">// Illustrative decoy; not an authorization gate</span><br>
               <span class="t-coral">function</span> verifyMasterBypass(token) { ... }
             </div>
           </div>
@@ -1411,7 +1436,7 @@
             <div class="bento-num">04 / ATTESTATION</div>
             <h3 class="bento-title">Signed Artifact Manifests & CI Fingerprinting</h3>
             <p class="bento-text">
-              Cryptographically seal your entire build tree with Ed25519 signed JSON manifests. Enforce byte-for-byte integrity and detect any supply-chain tampering or runtime modification in CI pipelines with <code>--expect-fp</code> pinning.
+              Ed25519-signed manifests check listed artifact hashes when verification runs. Pin a trusted public key or an independently verified fingerprint with <code>--expect-fp</code>. A valid signature does not itself enforce continuous runtime integrity.
             </p>
             <div class="code-preview-box">
               <span class="t-coral">ai-shield verify-manifest</span> dist/manifest.json \<br>
@@ -1427,9 +1452,9 @@
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">Interactive Code Lens</div>
-          <h2 class="section-title">Attacker Lens vs. Legitimate Runtime</h2>
+          <h2 class="section-title">Standalone and Enterprise Modes</h2>
           <p class="section-desc">
-            Compare what an AI reverse-engineering agent sees against what executes on an authorized client device.
+            Illustrative snippets explain the output and startup boundary. They are not executable production output or evidence of a successful defense.
           </p>
         </div>
 
@@ -1437,9 +1462,9 @@
           <div class="lens-header">
             <span style="font-size: 12.5px; font-weight: 600;">Inspection Window</span>
             <div class="lens-switch-group">
-              <button class="lens-btn active" id="lensBtnAttacker" onclick="switchLens('attacker')">Attacker REA View</button>
-              <button class="lens-btn" id="lensBtnStandalone" onclick="switchLens('standalone')">Zero-Touch Shield View</button>
-              <button class="lens-btn" id="lensBtnClient" onclick="switchLens('client')">Enterprise DRM View</button>
+              <button class="lens-btn active" id="lensBtnAttacker" onclick="switchLens('attacker')">Output Sketch</button>
+              <button class="lens-btn" id="lensBtnStandalone" onclick="switchLens('standalone')">Standalone Mode</button>
+              <button class="lens-btn" id="lensBtnClient" onclick="switchLens('client')">Enterprise Mode</button>
             </div>
           </div>
           <pre class="lens-content" id="lensCode"></pre>
@@ -1451,69 +1476,44 @@
     <section id="benchmarks">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">Empirical Verification</div>
-          <h2 class="section-title">Tested Against Frontier AI Agents</h2>
+          <div class="section-eyebrow">v1.0.1 Repair Record</div>
+          <h2 class="section-title">Eight repairs. Defined acceptance scope.</h2>
           <p class="section-desc">
-            Audited against Claude 5.5 REA, Grok-2 Code, and GPT-4o agentic deobfuscation loops.
+            The results below are from local Windows acceptance, including release binaries. Performance and AI attack resistance were not benchmarked in this release. <a href="RELEASE-NOTES.md">Read the release notes.</a>
           </p>
         </div>
 
         <div class="benchmark-table-wrapper">
           <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Attack Vector</th>
-                <th>Standard JS Obfuscator</th>
-                <th>AI-Shield (Default)</th>
-                <th>AI-Shield (--intensity bankrupt)</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Repair</th><th>Verified behavior</th><th>Evidence scope</th></tr></thead>
             <tbody>
-              <tr>
-                <td><strong>API Key Extraction</strong></td>
-                <td><span class="badge-cracked">CRACKED (12s, $0.02)</span></td>
-                <td><span class="badge-defended">BLOCKED (AES-256-GCM)</span></td>
-                <td><span class="badge-defended">BLOCKED (AES-256-GCM)</span></td>
-              </tr>
-              <tr>
-                <td><strong>Auth Logic Bypass</strong></td>
-                <td><span class="badge-cracked">CRACKED (45s, $0.05)</span></td>
-                <td><span class="badge-defended">TRAPPED (Honeypot Decoy)</span></td>
-                <td><span class="badge-defended">AGENT OOM ($18.50+ Context Exceeded)</span></td>
-              </tr>
-              <tr>
-                <td><strong>AST CFG Reconstruction</strong></td>
-                <td><span class="badge-cracked">DEOBFUSCATED (94%)</span></td>
-                <td><span class="badge-defended">DEFENDED (Dynamic Indirection)</span></td>
-                <td><span class="badge-defended">ABANDONED (0% Recovery)</span></td>
-              </tr>
-              <tr>
-                <td><strong>Runtime Decrypt Latency</strong></td>
-                <td>0.12 ms</td>
-                <td>0.38 ms</td>
-                <td>0.72 ms (&lt; 1ms overhead)</td>
-              </tr>
-              <tr>
-                <td><strong>Total REA Crack Rate</strong></td>
-                <td><span class="badge-cracked">100% (5/5 Compromised)</span></td>
-                <td><span class="badge-defended">0% (0/5 Cracked)</span></td>
-                <td><span class="badge-defended">0% (0/5 Cracked)</span></td>
-              </tr>
+              <tr><td><strong>Packaged data</strong></td><td>Caller cwd is preserved; two launches advanced state from 1 to 2.</td><td>Node, Python, native fixtures</td></tr>
+              <tr><td><strong>Standalone encryption</strong></td><td>The flag enables encryption; ciphertext tampering stops startup.</td><td>CLI output executed and compared</td></tr>
+              <tr><td><strong>Startup ordering</strong></td><td>Constant pools unlock synchronously before business code.</td><td>Node ESM and Edge</td></tr>
+              <tr><td><strong>CommonJS exports</strong></td><td>Existing exports survive protection.</td><td>Three require() export patterns</td></tr>
+              <tr><td><strong>Property names</strong></td><td>Shorthand and static property keys retain their meaning.</td><td>Object, closure, default-parameter fixtures</td></tr>
+              <tr><td><strong>String escapes</strong></td><td>Decoded string values and conservative surrogate handling.</td><td>Unicode, hex, surrogate fixtures</td></tr>
+              <tr><td><strong>Directives and shebang</strong></td><td>Hashbang position and strict-mode directives are retained.</td><td>Node execution at two intensities</td></tr>
+              <tr><td><strong>Entry selection</strong></td><td>Ambiguous, missing, or out-of-bounds entries require explicit handling.</td><td>Pack E2E fixtures</td></tr>
             </tbody>
           </table>
         </div>
 
+        <p class="section-desc" style="margin-top: 24px; font-size: 14px;">
+          <strong>Data paths:</strong> keep persistent files in the caller's working directory or an explicit data directory. If an app changes its temporary extraction directory (<code>__dirname</code> / <code>__file__</code>), the loader preserves that directory and reports its location, but the next launch does not reuse it. Background child processes and self-updates remain unverified.
+        </p>
+
         <!-- Viral X Share Callout Card -->
         <div class="viral-cta-box">
           <div class="viral-cta-left">
-            <div class="viral-cta-title">Test AI-Shield against your AI reverse-engineering agents</div>
-            <div class="viral-cta-subtitle">Run Claude Code, Grok-2, or REA against our protected Day.js billing bundle. See if your agent can recover any secrets.</div>
+            <div class="viral-cta-title">Download the repair release and validate your application</div>
+            <div class="viral-cta-subtitle">Public distribution includes CLI and loader binaries. The core implementation remains private. Consult release assets for current platform availability.</div>
           </div>
-          <a href="https://twitter.com/intent/tweet?text=Can%20your%20AI%20agent%20crack%20AI-Shield%3F%20Tested%20against%20Claude%20Code%2C%20Grok%2C%20and%20REA%20with%20a%200%25%20compromise%20rate.%20Check%20out%20the%20pure-Rust%20adversarial%20shield%20for%20JS%2FElectron%3A&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web" target="_blank" rel="noopener noreferrer" class="x-share-button">
+          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.1%20repairs%20JavaScript%20startup%2C%20module%20semantics%2C%20and%20packaged%20data%20handling.%20See%20verified%20scope%20and%20release%20notes.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" rel="noopener noreferrer" class="x-share-button">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            <span>Tweet Challenge</span>
+            <span>Share the Release</span>
           </a>
         </div>
       </div>
@@ -1523,18 +1523,18 @@
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>AI-Shield</strong> — Built for the agentic security perimeter. Dual-licensed under MIT and Apache-2.0.
+        <strong>AI-Shield</strong> — Private core. Public binary distribution. See release materials for applicable terms.
       </div>
       <div class="footer-links">
         <a href="https://github.com/manhua-man/ai-shield-web" target="_blank">GitHub</a>
         <a href="https://twitter.com/ai_shield_sec" target="_blank">X (Twitter)</a>
-        <a href="docs/application_shielding_deployment_guide.md" target="_blank">Deployment Guide</a>
-        <a href="#audit">Audit Matrix</a>
+        <a href="RELEASE-NOTES.md">Release Notes</a>
+        <a href="THIRD_PARTY_NOTICES.txt">Third-party notices</a>
+        <a href="#audit">Heuristic Demo</a>
       </div>
     </div>
   </footer>
 
-  <script>
   <script src="app.js"></script>
 </body>
 </html>
