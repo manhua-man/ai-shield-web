@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090a0f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='sans-serif' font-size='30' font-weight='700' fill='%2328E07B'%3EAI%3C/text%3E%3C/svg%3E">
-  <title>AI-Shield v1.0.1 — JavaScript Protection & Application Packaging</title>
-  <meta name="description" content="AI-Shield v1.0.1 repairs JavaScript transformation, synchronous startup, and packaged application data handling. Private core, public binary distribution.">
+  <title>AI-Shield v1.0.2 — JavaScript Protection & Application Packaging</title>
+  <meta name="description" content="AI-Shield v1.0.2 adds the executable suffix for Windows packaged output and provides platform-specific launch commands. Private core, public binary distribution.">
 
   <!-- Open Graph Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AI-Shield">
-  <meta property="og:title" content="AI-Shield v1.0.1 — Compatibility Repair Release">
-  <meta property="og:description" content="Eight compatibility fixes, 60 local Windows tests, and an Edge browser parity check. See release notes for verified scope and remaining platform checks.">
+  <meta property="og:title" content="AI-Shield v1.0.2 — Compatibility Repair Release">
+  <meta property="og:description" content="Windows PE packaging preserves existing .exe suffixes and appends .exe when missing. See release notes for current validation status and historical acceptance results.">
   <meta property="og:url" content="https://manhua-man.github.io/ai-shield-web/">
   <meta property="og:image" content="https://manhua-man.github.io/ai-shield-web/og-preview.png">
 
@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ai_shield_sec">
   <meta name="twitter:creator" content="@ai_shield_sec">
-  <meta name="twitter:title" content="AI-Shield v1.0.1 — Compatibility Repair Release">
-  <meta name="twitter:description" content="AI-Shield v1.0.1: synchronous constant-pool startup, safer JavaScript transforms, and packaged application data preservation. Private core with public binaries.">
+  <meta name="twitter:title" content="AI-Shield v1.0.2 — Compatibility Repair Release">
+  <meta name="twitter:description" content="AI-Shield v1.0.2: Windows executable-name repair and platform-specific protect, pack, and launch examples. Private core with public binaries.">
   <meta name="twitter:image" content="https://manhua-man.github.io/ai-shield-web/og-preview.png">
 
   <!-- Typography: Inter & JetBrains Mono for 2x Retina Precision -->
@@ -1129,13 +1129,13 @@
   <!-- Tactical Hardware Telemetry Strip -->
   <div class="telemetry-strip">
     <div class="container telemetry-inner">
-      <div class="telemetry-item"><span class="t-dim">SYS:</span> <span class="val">AI-SHIELD_V1.0.1</span></div>
+      <div class="telemetry-item"><span class="t-dim">SYS:</span> <span class="val">AI-SHIELD_V1.0.2</span></div>
       <div class="telemetry-item"><span class="t-dim">ARCH:</span> <span class="val">RUST_CORE (1.89+)</span></div>
       <div class="telemetry-item"><span class="t-dim">CIPHER_POOL:</span> <span class="val">SYNC_AES-256-GCM</span></div>
       <div class="telemetry-item"><span class="t-dim">ATTESTATION:</span> <span class="val">ED25519_SIGNATURES</span></div>
-      <div class="telemetry-item"><span class="t-dim">REPAIR_SCOPE:</span> <span class="val">8_CONFIRMED_FIXES</span></div>
-      <div class="telemetry-item"><span class="t-dim">LOCAL_TESTS:</span> <span class="t-green tabular">60 / 60 WINDOWS</span></div>
-      <div class="telemetry-item"><span class="t-dim">BROWSER_CHECK:</span> <span class="t-green tabular">EDGE 156 PARITY</span></div>
+      <div class="telemetry-item"><span class="t-dim">REPAIR_SCOPE:</span> <span class="val">WINDOWS_EXE_NAMING</span></div>
+      <div class="telemetry-item"><span class="t-dim">V1.0.1_TESTS:</span> <span class="t-green tabular">60 / 60 WINDOWS</span></div>
+      <div class="telemetry-item"><span class="t-dim">V1.0.1_BROWSER:</span> <span class="t-green tabular">EDGE 156 PARITY</span></div>
     </div>
   </div>
 
@@ -1146,7 +1146,7 @@
         <div class="logo-shield">AI</div>
         <div class="brand-title">
           ai-shield
-          <span class="version-pill">v1.0.1</span>
+          <span class="version-pill">v1.0.2</span>
         </div>
       </a>
       <nav class="nav-links">
@@ -1156,13 +1156,13 @@
         <a href="#lens" class="nav-link">Modes</a>
         <a href="#benchmarks" class="nav-link">Fixes &amp; Scope</a>
         <div class="nav-actions">
-          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.1%20repairs%20JavaScript%20startup%2C%20module%20semantics%2C%20and%20packaged%20data%20handling.%20See%20verified%20scope%20and%20release%20notes.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" rel="noopener noreferrer" class="x-share-button" title="Share on X">
+          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.2%20repairs%20Windows%20executable%20output%20names%20and%20adds%20platform-specific%20protect%2C%20pack%2C%20and%20launch%20examples.%20See%20release%20notes%20for%20validation%20status.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" rel="noopener noreferrer" class="x-share-button" title="Share on X">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
             <span>Share</span>
           </a>
-          <a href="https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.1" target="_blank" rel="noopener noreferrer" class="cta-button">
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.2" target="_blank" rel="noopener noreferrer" class="cta-button">
             Downloads
           </a>
         </div>
@@ -1176,19 +1176,19 @@
       <div class="container">
         <div class="badge-hero">
           <div class="badge-dot"></div>
-          v1.0.1 · Eight compatibility fixes
+          v1.0.2 · Windows executable-name repair
         </div>
         <h1 class="hero-title">
           Protect your code.<br>Preserve its <span class="highlight">behavior</span>.
         </h1>
         <p class="hero-subtitle">
-          AI-Shield combines JavaScript obfuscation, encrypted constant pools, and application packaging. <strong>v1.0.1 repairs startup, module exports, syntax handling, and persistent data paths.</strong> Choose standalone obfuscation or an enterprise Ed25519 license gate. The core remains private; binaries and release notes are distributed publicly.
+          AI-Shield combines JavaScript obfuscation, encrypted constant pools, and application packaging. <strong>v1.0.2 appends a missing .exe suffix when packaging with a Windows loader, so the output can be launched directly.</strong> Choose standalone obfuscation or an enterprise Ed25519 license gate. The core remains private; binaries and release notes are distributed publicly.
         </p>
 
         <div class="hero-cli-bar">
           <div class="cli-cmd">
             <span class="prompt">$</span>
-            <span id="cliText">ai-shield protect ./dist --standalone --intensity bankrupt</span>
+            <span id="cliText">.\ai-shield.exe protect .\dist --ext js --standalone --intensity bankrupt --inject-decoys</span>
           </div>
           <button class="copy-pill" onclick="copyHeroCmd()">
             <kbd>⌘</kbd> <kbd>C</kbd> Copy
@@ -1196,35 +1196,35 @@
         </div>
 
         <div class="hero-actions">
-          <a href="https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.1" target="_blank" rel="noopener noreferrer" class="cta-button">
-            Download v1.0.1
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.2" target="_blank" rel="noopener noreferrer" class="cta-button">
+            Download v1.0.2
           </a>
-          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.1%20repairs%20JavaScript%20startup%2C%20module%20semantics%2C%20and%20packaged%20data%20handling.%20See%20verified%20scope%20and%20release%20notes.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" class="x-share-button">
+          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.2%20repairs%20Windows%20executable%20output%20names%20and%20adds%20platform-specific%20protect%2C%20pack%2C%20and%20launch%20examples.%20See%20release%20notes%20for%20validation%20status.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" class="x-share-button">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            <span>Share v1.0.1</span>
+            <span>Share v1.0.2</span>
           </a>
         </div>
 
         <p class="section-desc" style="margin: 20px auto 0; font-size: 13px;">
           Binary downloads:
-          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-windows-x64.zip">Windows x64</a> ·
-          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-linux-x64.tar.gz">Linux x64</a> ·
-          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.1/ai-shield-v1.0.1-macos-arm64.tar.gz">macOS arm64</a>.
-          <a href="RELEASE-NOTES.md">Release notes and validation scope.</a>
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.2/ai-shield-v1.0.2-windows-x64.zip">Windows x64</a> ·
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.2/ai-shield-v1.0.2-linux-x64.tar.gz">Linux x64</a> ·
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.2/ai-shield-v1.0.2-macos-arm64.tar.gz">macOS arm64</a>.
+          <a href="https://github.com/manhua-man/ai-shield-web/releases/download/v1.0.2/SHA256SUMS.txt">SHA256SUMS.txt</a> · <a href="RELEASE-NOTES.md">Release notes and validation scope.</a>
         </p>
-        <p class="section-desc" style="margin: 12px auto 0; font-size: 13px;">CLI transcripts below are illustrative replays. No files are processed in this browser.</p>
+        <p class="section-desc" style="margin: 12px auto 0; font-size: 13px;">Run the commands below from the extracted directory with the CLI and loader together. Node.js/Python runtimes are not bundled. These are command examples; no files are processed in this browser.</p>
 
         <!-- Interactive Hero CLI Sandbox (Typewriter Streamer & Interactive Presets) -->
         <div class="sandbox-container">
           <div class="sandbox-header">
             <div class="sandbox-tabs">
               <button class="sandbox-tab active" id="termTab0" onclick="switchSandboxTab(0)">
-                <kbd>1</kbd> ai-shield audit
+                <kbd>1</kbd> Windows PowerShell
               </button>
               <button class="sandbox-tab" id="termTab1" onclick="switchSandboxTab(1)">
-                <kbd>2</kbd> ai-shield protect --standalone
+                <kbd>2</kbd> Linux / macOS
               </button>
               <button class="sandbox-tab" id="termTab2" onclick="switchSandboxTab(2)">
                 <kbd>3</kbd> ai-shield protect --entangle
@@ -1329,11 +1329,11 @@
         <div class="section-header">
           <div class="case-study-badge">
             <span class="badge-dot" style="background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green);"></span>
-            Local Windows acceptance · 2026-11-07
+            Historical v1.0.1 acceptance · 2026-11-07
           </div>
-          <h2 class="section-title">What v1.0.1 has verified</h2>
+          <h2 class="section-title">Historical v1.0.1 verification</h2>
           <p class="section-desc">
-            Protected and original fixtures were executed and compared in Node.js, Python, native processes, and external Microsoft Edge. These checks establish behavior for the tested paths. Release CI also passed all 60 tests on Windows x64, Linux x64 musl, and macOS arm64. End-user installation and OS trust prompts are outside this acceptance scope.
+            For v1.0.1, protected and original fixtures were executed and compared in Node.js, Python, native processes, and external Microsoft Edge. These checks establish behavior for the tested paths. Release CI also passed all 60 tests on Windows x64, Linux x64 musl, and macOS arm64. End-user installation and OS trust prompts are outside this acceptance scope. The new v1.0.2 launch regression and release validation are pending; see the release notes for current status.
           </p>
         </div>
 
@@ -1476,10 +1476,10 @@
     <section id="benchmarks">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">v1.0.1 Repair Record</div>
+          <div class="section-eyebrow">Historical v1.0.1 Repair Record</div>
           <h2 class="section-title">Eight repairs. Defined acceptance scope.</h2>
           <p class="section-desc">
-            The results below are from local Windows acceptance, including release binaries. Performance and AI attack resistance were not benchmarked in this release. <a href="RELEASE-NOTES.md">Read the release notes.</a>
+            The results below are from historical v1.0.1 Windows acceptance, including release binaries. Performance and AI attack resistance were not benchmarked in this release. <a href="RELEASE-NOTES.md">Read the release notes.</a>
           </p>
         </div>
 
@@ -1500,7 +1500,7 @@
         </div>
 
         <p class="section-desc" style="margin-top: 24px; font-size: 14px;">
-          <strong>Data paths:</strong> keep persistent files in the caller's working directory or an explicit data directory. If an app changes its temporary extraction directory (<code>__dirname</code> / <code>__file__</code>), the loader preserves that directory and reports its location, but the next launch does not reuse it. Background child processes and self-updates remain unverified.
+          <strong>Data paths:</strong> keep persistent files in the caller's working directory or an explicit data directory. If an app changes its temporary extraction directory (<code>__dirname</code> / <code>__file__</code>), the loader preserves that directory and reports its location, but the next launch does not reuse it. Python-generated <code>__pycache__</code> / <code>.pyc</code> files can also trigger this retention notice; that notice alone is not a launch failure. Background child processes and self-updates remain unverified.
         </p>
 
         <!-- Viral X Share Callout Card -->
@@ -1509,7 +1509,7 @@
             <div class="viral-cta-title">Download the repair release and validate your application</div>
             <div class="viral-cta-subtitle">Public distribution includes CLI and loader binaries. The core implementation remains private. Consult release assets for current platform availability.</div>
           </div>
-          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.1%20repairs%20JavaScript%20startup%2C%20module%20semantics%2C%20and%20packaged%20data%20handling.%20See%20verified%20scope%20and%20release%20notes.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" rel="noopener noreferrer" class="x-share-button">
+          <a href="https://twitter.com/intent/tweet?text=AI-Shield%20v1.0.2%20repairs%20Windows%20executable%20output%20names%20and%20adds%20platform-specific%20protect%2C%20pack%2C%20and%20launch%20examples.%20See%20release%20notes%20for%20validation%20status.&url=https%3A%2F%2Fmanhua-man.github.io%2Fai-shield-web%2F" target="_blank" rel="noopener noreferrer" class="x-share-button">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
