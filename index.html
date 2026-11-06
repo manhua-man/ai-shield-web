@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AI-Shield">
   <meta property="og:title" content="AI-Shield v1.0.2 — Compatibility Repair Release">
-  <meta property="og:description" content="Windows PE packaging preserves existing .exe suffixes and appends .exe when missing. See release notes for current validation status and historical acceptance results.">
+  <meta property="og:description" content="Windows output naming checked through public downloads. Release CI passed 61 tests per platform; four output names launched in PowerShell. See documented Python stderr differences and acceptance scope.">
   <meta property="og:url" content="https://manhua-man.github.io/ai-shield-web/">
   <meta property="og:image" content="https://manhua-man.github.io/ai-shield-web/og-preview.png">
 
@@ -1134,8 +1134,8 @@
       <div class="telemetry-item"><span class="t-dim">CIPHER_POOL:</span> <span class="val">SYNC_AES-256-GCM</span></div>
       <div class="telemetry-item"><span class="t-dim">ATTESTATION:</span> <span class="val">ED25519_SIGNATURES</span></div>
       <div class="telemetry-item"><span class="t-dim">REPAIR_SCOPE:</span> <span class="val">WINDOWS_EXE_NAMING</span></div>
-      <div class="telemetry-item"><span class="t-dim">V1.0.1_TESTS:</span> <span class="t-green tabular">60 / 60 WINDOWS</span></div>
-      <div class="telemetry-item"><span class="t-dim">V1.0.1_BROWSER:</span> <span class="t-green tabular">EDGE 156 PARITY</span></div>
+      <div class="telemetry-item"><span class="t-dim">V1.0.2_CI:</span> <span class="t-green tabular">61 / 61 · EACH OS</span></div>
+      <div class="telemetry-item"><span class="t-dim">PUBLIC_BROWSER:</span> <span class="t-green tabular">EDGE 156 PARITY</span></div>
     </div>
   </div>
 
@@ -1329,33 +1329,37 @@
         <div class="section-header">
           <div class="case-study-badge">
             <span class="badge-dot" style="background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green);"></span>
-            Historical v1.0.1 acceptance · 2026-11-07
+            Public v1.0.2 acceptance · 2026-11-07
           </div>
-          <h2 class="section-title">Historical v1.0.1 verification</h2>
+          <h2 class="section-title">Verified from public v1.0.2 downloads</h2>
           <p class="section-desc">
-            For v1.0.1, protected and original fixtures were executed and compared in Node.js, Python, native processes, and external Microsoft Edge. These checks establish behavior for the tested paths. Release CI also passed all 60 tests on Windows x64, Linux x64 musl, and macOS arm64. End-user installation and OS trust prompts are outside this acceptance scope. The new v1.0.2 launch regression and release validation are pending; see the release notes for current status.
+            Release CI passed 61 tests on each of Windows x64, Linux x64 musl and macOS arm64. The three public archives and checksum file matched the CI artifacts. Downloaded Windows binaries produced four output-name variants that launched directly through PowerShell, without renaming. Node.js, protected JavaScript and Edge behavior matched in the tested consumer paths.
           </p>
         </div>
 
         <!-- 4 Key Metrics -->
         <div class="case-metrics-grid">
           <div class="case-metric-card">
-            <div class="case-metric-value tabular">8 fixes</div>
-            <div class="case-metric-label">Confirmed defects repaired</div>
+            <div class="case-metric-value tabular">4 names</div>
+            <div class="case-metric-label">Direct PowerShell launches</div>
           </div>
           <div class="case-metric-card">
-            <div class="case-metric-value tabular" style="color: var(--accent-green);">60 / 60</div>
-            <div class="case-metric-label">Local Windows workspace tests</div>
+            <div class="case-metric-value tabular" style="color: var(--accent-green);">61 / 61</div>
+            <div class="case-metric-label">Release CI tests per platform</div>
           </div>
           <div class="case-metric-card">
             <div class="case-metric-value tabular" style="color: var(--accent-blue);">Edge 156</div>
-            <div class="case-metric-label">Browser behavior compared</div>
+            <div class="case-metric-label">Public CLI output compared</div>
           </div>
           <div class="case-metric-card">
-            <div class="case-metric-value tabular" style="color: var(--accent-coral);">1 → 2</div>
-            <div class="case-metric-label">cwd state across two launches</div>
+            <div class="case-metric-value tabular" style="color: var(--accent-coral);">160 / 162</div>
+            <div class="case-metric-label">Strict packaging checks</div>
           </div>
         </div>
+
+        <p class="section-desc" style="margin: 24px 0; font-size: 14px;">
+          <strong>Two documented differences:</strong> Python imports created caches and triggered the loader's retained-directory notice, so two raw stderr equality checks differed. Python business behavior matched; no unresolved functional failures remained in the tested paths. The result does not claim identical raw streams in every case. <a href="RELEASE-NOTES.md">Read the full scope and historical v1.0.1 results.</a>
+        </p>
 
         <!-- Case Study Interactive Code Window -->
         <div class="sandbox-container">

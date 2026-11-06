@@ -8,7 +8,7 @@
  */
 
 ;
-var __SEC_POOL_429b7862c20ceebf = (function () {
+var __SEC_POOL_50dc38fa78f9be67 = (function () {
 /*! @noble/ciphers 2.4.0 — vendored AES-GCM runtime
 The MIT License (MIT)
 
@@ -41,11 +41,11 @@ function decode(s) {
   return Uint8Array.from(b, function(c) { return c.charCodeAt(0); });
 }
 try {
-  var envelope = decode("-b_DnvzIt_9YoM6A9MmN_uNMJn2OQFJgvjHGiB_JrXruJ_kNm0YfxB_hk72AckCD4iMW6TYk3gsg3dChW2kbpDIJ5gr5WZEaXM3pOKuXqXRQflqwxYcye4H1f0Al451RYXr8s73oDS2fxnwnzVlCgWZHabYQt6oJQwa29PrQK7VcCQxactkT2JH9L5xfnxHo4uiF8V9W2nMk-rl-7tNIyS26Bxnm3FqPmQU2wzjD8C986EJVtegUjEn_JDF5SKNCp06nb3R1mWolcro_IE-fc6mi91hL6iTDi7VkHxV7e8clz6CfswjFbphoUHF3VHu0u2tkV3ALExf0pgr9eHWKl-B6FE2cCO3aDH1i6k1QrVh65PMDisU4JHdrQLULhTCnTfmOg2-tCpo32FHZyuBPhRPm-lI3yzKWuoDnQUAiqRWcpwkGRjVkrIGH4h3xdHkEG3sAGgOYkQf5g8Vq6SE76Db5f7uQuT0Mam2FBEQqdTYEsVSQzp9gSG9hsJW_HVutHokT7-eNB2QYUanF2N2Ne08NtX73AatvHRej4MaD_gm6ExpgHrA-DC0KBTT8hR8QcBT5GDHrtuaNy-78vweN-OcqX_l9oEHABLRNvzxlz47oJhbOOl2ABEbCsCcMAFYn_fjHbVrMv3MCxnqfpph9ItnMpGLVmDxx0O4Zu9jND_DX6N0GI2IKdp5eHRNt7uy68tIlSTpgzB1dCIxv-YiM0z9G4Vp3iIN7NFt5tHLv6RXrMFmnrS8l3i4dWgxj61gzkduZrmvdY_KvYvYmi8mFpujm21OeovaJEvpAgeUp756JejRAZ2-AjaiEMUqiKLe1qbmzS5tWZAccDNfIqxd8eiIpp3SvkRzKkcnx_nzH6vi9-X9dyG6WL6L4_L2xvsVeQEk7n2Ya7XbvdzJP1ZxhgzS3SC2rSYanRdkBLTPym4AW89KPk7lqc8PNmtxZ6XDQbCLdVPNBoIz0fRXcwvL3Tjz35iOktZjCwkopovMP2vxmuypPb5Zj5mDWouGbc9-CcTobL_R3NnHHZ03apar21Fu0I07CGkW8nsUAMXGVoxPJ5C65INQyCTdtP9K4elmWMKgmn5HKNV6WL6v1Xsu7LOV31OOi9xReyWARoYl2YnTcf_rH6eQoLpJIEaViKMmnUIQwdZPNFqiN7uvF5P084lFmNVhdaqH5jJzP_k86wfOopnUBMkxTXk6HhAVHKns8Cq8z4l4BIQOIRkc9Un1owtpGr2vBhyUQxDhc2L1-0zeGh2olnSUv_3RPDS_eJmrY4pbLf3f3gjCxlrr_EI3idpPE9ZfzqYhJPluG2en8aMm8nAobhTeTJZwIfW27VRDAobQHVVzSou3l-ssytKIr_7ugJ3VmPA9-r1EtHZxdUn1uqaaWSIAZgGRyhQTKEAKoLWr5WS1KJK8FnIJP8HKubGc1IkCyUaSTehQr-sF2Bg78vAk8VbmsBvF6G_9knKpV1vMvlzxO4LtuYWeCji_zkvvZJyWLdqbc4hT-_9yzVk84MWhYPlnTgChzV3uRPhzjXTCBs38qxl5WiaxfWlmDUqo0na5nsDniC73rWY2sLpRqWrxm4ZmDTBAQxQFDPpOaVjJ9G4qKU_vWdT17rZU3lzdNiismZWLL7OhiyiXvvwb77SoOs5zJq1Js9QOKVBMTSpCim_RpAEXaJQWGNWY3vvByX28JbA");
+  var envelope = decode("gjK271Me064i0xIXKL_O5JZM9GDA4rCgT_t8PWdhuWhS-OiLbfdb9uNZm94eMs5WiPzJOl0iTFp9cVI00wtNcQUMf9bvSdHqpM3xivqRjtHKzi6ULN42cYFgjsxCEg4ajA42k2oKEGTKXvYSgOA3hZbairjLhMVEzWZxDR16XortBvDbA1FPjMBbTodjXAxkNEoI3-E0A5BDAHZ7OPzb_iHr2q_gOHQghdPL-zD_DKpSBTd601yD-IZxspqKOcrCP4gscooyNBXGUtajZFWeJyO8sS270ZOCwqzl0IIEDblUtu0MmPAPa9PGNOxMkEXiPuVPshlVvPhkUY5907xbtlxhABULPX-D5rAHYfIHNOerxDFdEAAMyLd9IV9Yqj_C3l7YkJEYliZ5kJsl2NNVAq_uHCHKp2D4EcS3jeO2K-48TvkDKruNo5RwGWJuHC_yyaSTmPj3L3Wi-D74sYhG988SDSjijdrBTQY-DHcZR-HNBTe-tdbPVva5e0PHvFGdx9X-5uQd_xheXTgBhS6gGJ2fQ9dEjf__iM2uyAKvspWFgztMcTnJbISUEeWSWG-rLdw2DT1FfMI1G0m7-QhRYpzAEmZ-Nvm7qKhnZ4rt3om-INZyJGRZu9rqMAJS7W3IesQ4Y9iYqD7ldEnZY73Q3RTgPhA_JDlX-peDj8LKWNINHQmrCZqy-LHkVJ4E6LHhihPqVAcXZmc6WJs_bu9FYrO7RwNJLDpr9BkpRVdBMGuEzWKF-N3HT8F-x_jUpCUnlGL629N2vIBVOFPWA48DFZKAAOZki_5nxT1yzhhrV1ybY5VCMQsTyfULyBCA5QyAzIW0vidqQu77q8cfz8GyBVNa2A20demWgQwg5q1VWZ6blFThtMc4R-mTgSuxVlQSXov1wBlzyKlNEBi3nx3tjAiWUINnwUfsaxYj4iRUSWItjr4hGtg08XqTNp8Q7uOGaKLX2KxbnvIkCZNqojH0ST2LNWz813LEN4TrywNcB4gJ--rlsitz-TS7-9EbGvJ1tI7E4ic3-6EnICqrSCcwtUQz0hW17djMt8_5my4pPMM6nvCgIXsa6Gn4dFCYfuxu0rXGNlvmJFw7TGuyAM4XLncmgtDyJJihVnYcK_z1dDHZOXpON2XfaOEC_udpXVQ0VVXQUXRTWIN4eeIyg0hyugwEgW98UVcc-RmrZUERM0JzhKSBBZBcjXnNo4rXZa2pXWjPv70VxmLp6YD5Q09vzm6-ZEBw1uiJvvDI0TzGo5VNRlqEuGde2fI1UkU_8YQwInm5hdKpwgiwb4mEliYoasYLMcyi8Wd1gub--9aDbIUr_EdNU7Ob_Y-31U3ewL-NZZK34m6rYDSHvErNCuw41yBH6BZJqwex2mUi3XXmAxdm7UlX8Iom_4YPcm5qJmZVDCx8i-BFrfAAgYJe_JfwFZUaW69lvBu_rFb0XVubV1dMoRmZyTBrLCjxTbXo83FEAjq-OWlEjKpnSy3bpqKp9vEXDA33tnd2yk7boIekjWsX702W-oixO8MbSD59K3SZTZVA62PApryrTJ_kLD1w4zOnWUZ2rn_xOl72RAsC2S_0TmMN7xKbehw5s-zJ72IYzFa7_m4lNm_fKq5CcFyRm7odK3YOcYHk2N46hYylzjgcOlZDj1seDfRdRFXLDFk-H-Jy98OR8jySMhwTOC-1xekji9A5_w");
   var data = new Uint8Array(envelope.length - 12);
   data.set(envelope.subarray(28));
   data.set(envelope.subarray(12, 28), envelope.length - 28);
-  var key = decode("Yg9Yte8jTe1ildHYF7oAixjiWg8RzwdCWNAez_vccIU");
+  var key = decode("lB9tUQWAI_hL98jcSs-i_3sLMsAWP1DIiz4Lp312_40");
   var plaintext = __secAes.gcm(key, envelope.subarray(0, 12), new TextEncoder().encode('ai-shield: AES-256-GCM constant pool v1')).decrypt(data);
   key.fill(0);
   return JSON.parse(new TextDecoder().decode(plaintext));
@@ -55,7 +55,7 @@ try {
   throw error;
 }
 })();
-var __SEC_UNLOCKED_429b7862c20ceebf = true;
+var __SEC_UNLOCKED_50dc38fa78f9be67 = true;
 
 ;
 // Hero Sandbox Terminal Streamer (app-studio-landing Mode 2)
@@ -107,74 +107,74 @@ Download v1.0.2 and consult its release notes for acceptance scope.`
     ];
 
     function formatTerminalLine(line) {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      if (line.includes(__SEC_POOL_429b7862c20ceebf[0])) {
-        return line.replace(__SEC_POOL_429b7862c20ceebf[1], __SEC_POOL_429b7862c20ceebf[2]);
+      if (line.includes(__SEC_POOL_50dc38fa78f9be67[0])) {
+        return line.replace(__SEC_POOL_50dc38fa78f9be67[1], __SEC_POOL_50dc38fa78f9be67[2]);
       }
-      if (line.includes(__SEC_POOL_429b7862c20ceebf[3]) || line.includes(__SEC_POOL_429b7862c20ceebf[4])) {
-        return line.replace(/EXPOSED|CRITICAL/g, __SEC_POOL_429b7862c20ceebf[5]);
+      if (line.includes(__SEC_POOL_50dc38fa78f9be67[3]) || line.includes(__SEC_POOL_50dc38fa78f9be67[4])) {
+        return line.replace(/EXPOSED|CRITICAL/g, __SEC_POOL_50dc38fa78f9be67[5]);
       }
-      if (line.includes(__SEC_POOL_429b7862c20ceebf[6]) || line.includes(__SEC_POOL_429b7862c20ceebf[7])) {
-        return line.replace(/UNPROTECTED|VULNERABLE/g, __SEC_POOL_429b7862c20ceebf[8]);
+      if (line.includes(__SEC_POOL_50dc38fa78f9be67[6]) || line.includes(__SEC_POOL_50dc38fa78f9be67[7])) {
+        return line.replace(/UNPROTECTED|VULNERABLE/g, __SEC_POOL_50dc38fa78f9be67[8]);
       }
-      if (line.includes(__SEC_POOL_429b7862c20ceebf[9]) || line.includes(__SEC_POOL_429b7862c20ceebf[10]) || line.includes(__SEC_POOL_429b7862c20ceebf[11])) {
-        return line.replace(/SECURED|OK|VALID/g, __SEC_POOL_429b7862c20ceebf[12]);
+      if (line.includes(__SEC_POOL_50dc38fa78f9be67[9]) || line.includes(__SEC_POOL_50dc38fa78f9be67[10]) || line.includes(__SEC_POOL_50dc38fa78f9be67[11])) {
+        return line.replace(/SECURED|OK|VALID/g, __SEC_POOL_50dc38fa78f9be67[12]);
       }
       return line;
     }
 
     function streamTerminal(text, targetId) {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
       if (streamTimer) clearInterval(streamTimer);
       const target = document.getElementById(targetId);
-      target.innerHTML = __SEC_POOL_429b7862c20ceebf[13];
-      const lines = text.split(__SEC_POOL_429b7862c20ceebf[14]);
-      let lineIdx = __SEC_POOL_429b7862c20ceebf[15];
+      target.innerHTML = __SEC_POOL_50dc38fa78f9be67[13];
+      const lines = text.split(__SEC_POOL_50dc38fa78f9be67[14]);
+      let lineIdx = __SEC_POOL_50dc38fa78f9be67[15];
 
       streamTimer = setInterval(() => {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
         if (lineIdx < lines.length) {
           const formatted = formatTerminalLine(lines[lineIdx]);
-          target.innerHTML += (lineIdx === __SEC_POOL_429b7862c20ceebf[16] ? __SEC_POOL_429b7862c20ceebf[17] : __SEC_POOL_429b7862c20ceebf[18]) + formatted;
+          target.innerHTML += (lineIdx === __SEC_POOL_50dc38fa78f9be67[16] ? __SEC_POOL_50dc38fa78f9be67[17] : __SEC_POOL_50dc38fa78f9be67[18]) + formatted;
           lineIdx++;
           target.scrollTop = target.scrollHeight;
         } else {
           clearInterval(streamTimer);
         }
-      }, __SEC_POOL_429b7862c20ceebf[19]);
+      }, __SEC_POOL_50dc38fa78f9be67[19]);
     }
 
     function switchSandboxTab(index) {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
       currentTabIndex = index;
-      for (let i = __SEC_POOL_429b7862c20ceebf[20]; i < __SEC_POOL_429b7862c20ceebf[21]; i++) {
-        const tab = document.getElementById(__SEC_POOL_429b7862c20ceebf[22] + i);
-        if (tab) tab.classList.toggle(__SEC_POOL_429b7862c20ceebf[23], i === index);
+      for (let i = __SEC_POOL_50dc38fa78f9be67[20]; i < __SEC_POOL_50dc38fa78f9be67[21]; i++) {
+        const tab = document.getElementById(__SEC_POOL_50dc38fa78f9be67[22] + i);
+        if (tab) tab.classList.toggle(__SEC_POOL_50dc38fa78f9be67[23], i === index);
       }
-      streamTerminal(sandboxRawTexts[index], __SEC_POOL_429b7862c20ceebf[24]);
+      streamTerminal(sandboxRawTexts[index], __SEC_POOL_50dc38fa78f9be67[24]);
     }
 
     function triggerSandboxRun() {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      streamTerminal(sandboxRawTexts[currentTabIndex], __SEC_POOL_429b7862c20ceebf[25]);
+      streamTerminal(sandboxRawTexts[currentTabIndex], __SEC_POOL_50dc38fa78f9be67[25]);
     }
 
     // Initialize sandbox
     switchSandboxTab(0);
 
     function copyHeroCmd() {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      const text = document.getElementById(__SEC_POOL_429b7862c20ceebf[26]).innerText;
+      const text = document.getElementById(__SEC_POOL_50dc38fa78f9be67[26]).innerText;
       navigator.clipboard.writeText(text);
-      const pill = document.querySelector(__SEC_POOL_429b7862c20ceebf[27]);
+      const pill = document.querySelector(__SEC_POOL_50dc38fa78f9be67[27]);
       pill.innerHTML = `<kbd>✓</kbd> Copied!`;
-      setTimeout(() => { pill.innerHTML = `<kbd>⌘</kbd> <kbd>C</kbd> Copy`; }, __SEC_POOL_429b7862c20ceebf[28]);
+      setTimeout(() => { pill.innerHTML = `<kbd>⌘</kbd> <kbd>C</kbd> Copy`; }, __SEC_POOL_50dc38fa78f9be67[28]);
     }
 
     // 16 Vectors Data (with weight, id, name, description)
@@ -198,21 +198,21 @@ Download v1.0.2 and consult its release notes for acceptance scope.`
     ];
 
     function renderVectors() {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      const grid = document.getElementById(__SEC_POOL_429b7862c20ceebf[29]);
-      grid.innerHTML = __SEC_POOL_429b7862c20ceebf[30];
+      const grid = document.getElementById(__SEC_POOL_50dc38fa78f9be67[29]);
+      grid.innerHTML = __SEC_POOL_50dc38fa78f9be67[30];
       vectors.forEach((vec, idx) => {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-        const cell = document.createElement(__SEC_POOL_429b7862c20ceebf[31]);
-        const statusClass = vec.active ? __SEC_POOL_429b7862c20ceebf[32] : __SEC_POOL_429b7862c20ceebf[33];
+        const cell = document.createElement(__SEC_POOL_50dc38fa78f9be67[31]);
+        const statusClass = vec.active ? __SEC_POOL_50dc38fa78f9be67[32] : __SEC_POOL_50dc38fa78f9be67[33];
         cell.className = `matrix-cell ${statusClass}`;
         cell.onclick = () => toggleVector(idx);
         cell.innerHTML = `
           <div class="cell-header">
             <span class="cell-id">${vec.id}</span>
-            <span class="cell-pill">${vec.active ? __SEC_POOL_429b7862c20ceebf[34] : __SEC_POOL_429b7862c20ceebf[35]}</span>
+            <span class="cell-pill">${vec.active ? __SEC_POOL_50dc38fa78f9be67[34] : __SEC_POOL_50dc38fa78f9be67[35]}</span>
           </div>
           <div class="cell-name">${vec.name}</div>
           <div class="cell-desc">${vec.desc}</div>
@@ -229,39 +229,39 @@ Download v1.0.2 and consult its release notes for acceptance scope.`
 
     // Instant Remediation animation (CleanFlow Pro self-healing sandbox pattern)
     function triggerInstantRemediation() {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      let delay = __SEC_POOL_429b7862c20ceebf[36];
+      let delay = __SEC_POOL_50dc38fa78f9be67[36];
       vectors.forEach((vec, idx) => {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
         if (vec.active) {
           setTimeout(() => {
             vec.active = false;
             renderVectors();
           }, delay);
-          delay += __SEC_POOL_429b7862c20ceebf[37];
+          delay += __SEC_POOL_50dc38fa78f9be67[37];
         }
       });
     }
 
     function resetAllVectors() {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
       vectors.forEach((vec, idx) => {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-        vec.active = idx !== __SEC_POOL_429b7862c20ceebf[38] && idx !== __SEC_POOL_429b7862c20ceebf[39] && idx !== __SEC_POOL_429b7862c20ceebf[40];
+        vec.active = idx !== __SEC_POOL_50dc38fa78f9be67[38] && idx !== __SEC_POOL_50dc38fa78f9be67[39] && idx !== __SEC_POOL_50dc38fa78f9be67[40];
       });
       renderVectors();
     }
 
     function calculateRisk() {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      let activeWeight = __SEC_POOL_429b7862c20ceebf[41];
-      let totalWeight = __SEC_POOL_429b7862c20ceebf[42];
-      let activeCount = __SEC_POOL_429b7862c20ceebf[43];
+      let activeWeight = __SEC_POOL_50dc38fa78f9be67[41];
+      let totalWeight = __SEC_POOL_50dc38fa78f9be67[42];
+      let activeCount = __SEC_POOL_50dc38fa78f9be67[43];
       vectors.forEach(v => {
         totalWeight += v.weight;
         if (v.active) {
@@ -270,90 +270,102 @@ Download v1.0.2 and consult its release notes for acceptance scope.`
         }
       });
 
-      const score = Math.round((activeWeight / totalWeight) * __SEC_POOL_429b7862c20ceebf[44]);
-      const scorePct = score + __SEC_POOL_429b7862c20ceebf[45];
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[46]).innerText = scorePct;
-      const bar = document.getElementById(__SEC_POOL_429b7862c20ceebf[47]);
+      const score = Math.round((activeWeight / totalWeight) * __SEC_POOL_50dc38fa78f9be67[44]);
+      const scorePct = score + __SEC_POOL_50dc38fa78f9be67[45];
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[46]).innerText = scorePct;
+      const bar = document.getElementById(__SEC_POOL_50dc38fa78f9be67[47]);
       bar.style.width = scorePct;
-      const pill = document.getElementById(__SEC_POOL_429b7862c20ceebf[48]);
-      const color = score >= __SEC_POOL_429b7862c20ceebf[49] ? __SEC_POOL_429b7862c20ceebf[50] : score >= __SEC_POOL_429b7862c20ceebf[51] ? __SEC_POOL_429b7862c20ceebf[52] : __SEC_POOL_429b7862c20ceebf[53];
-      pill.innerText = activeCount === __SEC_POOL_429b7862c20ceebf[54] ? __SEC_POOL_429b7862c20ceebf[55] : score >= __SEC_POOL_429b7862c20ceebf[56] ? __SEC_POOL_429b7862c20ceebf[57] : __SEC_POOL_429b7862c20ceebf[58];
+      const pill = document.getElementById(__SEC_POOL_50dc38fa78f9be67[48]);
+      const color = score >= __SEC_POOL_50dc38fa78f9be67[49] ? __SEC_POOL_50dc38fa78f9be67[50] : score >= __SEC_POOL_50dc38fa78f9be67[51] ? __SEC_POOL_50dc38fa78f9be67[52] : __SEC_POOL_50dc38fa78f9be67[53];
+      pill.innerText = activeCount === __SEC_POOL_50dc38fa78f9be67[54] ? __SEC_POOL_50dc38fa78f9be67[55] : score >= __SEC_POOL_50dc38fa78f9be67[56] ? __SEC_POOL_50dc38fa78f9be67[57] : __SEC_POOL_50dc38fa78f9be67[58];
       pill.style.color = color;
       bar.style.backgroundColor = color;
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[59]).innerHTML = `<span class="tabular">${activeCount}</span><span style="font-size:15px;color:var(--text-muted);"> / ${vectors.length}</span>`;
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[60]).innerHTML = `<span class="tabular">${activeWeight}</span><span style="font-size:15px;color:var(--text-muted);"> / ${totalWeight} points</span>`;
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[61]).innerHTML = `<span style="font-size:24px;">Not measured</span>`;
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[62]).innerText = activeCount === __SEC_POOL_429b7862c20ceebf[63]
-        ? __SEC_POOL_429b7862c20ceebf[64]
-        : __SEC_POOL_429b7862c20ceebf[65];
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[59]).innerHTML = `<span class="tabular">${activeCount}</span><span style="font-size:15px;color:var(--text-muted);"> / ${vectors.length}</span>`;
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[60]).innerHTML = `<span class="tabular">${activeWeight}</span><span style="font-size:15px;color:var(--text-muted);"> / ${totalWeight} points</span>`;
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[61]).innerHTML = `<span style="font-size:24px;">Not measured</span>`;
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[62]).innerText = activeCount === __SEC_POOL_50dc38fa78f9be67[63]
+        ? __SEC_POOL_50dc38fa78f9be67[64]
+        : __SEC_POOL_50dc38fa78f9be67[65];
     }
     renderVectors();
 
     // Case Study Tabs Data
     const caseStudyContents = [
-      `<span class="t-dim">// Historical v1.0.1 acceptance: original and protected JavaScript were executed</span>
+      `<span class="t-dim">// v1.0.2: freshly downloaded public CLI; original vs. protected JavaScript</span>
 
-<span class="t-green">[✓] CommonJS</span> — three require() export patterns kept their results
-<span class="t-green">[✓] ESM</span> — synchronous startup; the tested module returned 42
-<span class="t-green">[✓] Syntax</span> — shorthand properties, static keys, closures, default parameters
-<span class="t-green">[✓] Strings</span> — Unicode, hex escapes, surrogate pairs and conservative lone-surrogate handling
-<span class="t-green">[✓] Directives</span> — shebang, top-level and function strict mode
-<span class="t-green">[✓] Tamper check</span> — damaged ciphertext failed before business code
+<span class="t-green">[✓] CommonJS</span> — exports and consumer results matched
+<span class="t-green">[✓] ESM</span> — result 42 and strict-mode behavior matched
+<span class="t-green">[✓] Values</span> — property keys, regex behavior, Chinese and emoji strings retained
+<span class="t-green">[✓] Edge 156</span> — multiple pools, invalid-input handling and saved state matched
 
-<span class="t-dim">External Microsoft Edge 156 + Acorn 8.15.0 / quote fixture:</span>
-  10 seats: <span class="t-yellow">808</span> before and after protection
-  23 seats: <span class="t-yellow">1857</span> before and after protection
-  Chinese value: <span class="t-green">中A</span>; field names retained
-  Multiple classic-script pools and ESM startup matched
-  Reload restored the saved quote; final console: 0 errors / 0 warnings`,
+<span class="t-dim">Current quote scenarios, before and after protection:</span>
+  10 seats / starter / 1 year: <span class="t-yellow">808</span>
+  23 seats / pro / 3 years: <span class="t-yellow">2208</span>
+  100 seats / enterprise / 3 years: <span class="t-yellow">15600</span>
+  Reload restored the saved quote; no browser errors recorded
 
-      `<span class="t-dim">// Historical v1.0.1 acceptance: original and packaged processes were executed</span>
+<span class="t-dim">These are v1.0.2 consumer scenarios. The historical v1.0.1 fixture used</span>
+<span class="t-dim">different inputs; its 808 / 1857 results are retained in the release notes.</span>`,
 
-<span class="t-green">[✓] Runtimes</span> — Node.js, Python, and a native process on Windows
-<span class="t-green">[✓] Arguments</span> — spaces and Chinese text preserved
-<span class="t-green">[✓] Process result</span> — the fixture exit code remained 23
-<span class="t-green">[✓] Assets</span> — packaged files were readable
-<span class="t-green">[✓] Working directory</span> — the caller's cwd was retained
-<span class="t-green">[✓] Persistent state</span> — two launches advanced cwd data from 1 to 2
+      `<span class="t-dim">// v1.0.2: public Windows CLI and loader; isolated packaged applications</span>
+
+<span class="t-green">[✓] Direct PowerShell launch</span> — no filename workaround
+  protected-application.exe → protected-application.exe
+  protected-legacy          → protected-legacy.exe
+  my application.v1         → my application.v1.exe
+  My Application.v1.EXE      → My Application.v1.EXE
+
+<span class="t-green">[✓] Node and protect-then-pack</span> — imports, UTF-8 assets, arguments, stdin,
+stdout/stderr, exit code 23 and cwd state from 1 to 2 matched the baseline.
+Each deployment folder contained only its executable; source files were unavailable.
+Installed Node remained a prerequisite.
+
+<span class="t-yellow">STRICT CHECKS: 160 / 162</span>
+Two raw Python stderr checks differed because ordinary imports created __pycache__.
+The loader retained the extraction directory and emitted its documented notice.
+Caches were not suppressed and stderr was not filtered. Python business behavior
+matched. No unresolved functional failures remained in the tested paths.
+This is not identical raw output in every case.
 
 <span class="t-yellow">DATA DIRECTORY BOUNDARY</span>
 Use cwd or an explicit stable directory for persistent data.
-__dirname / __file__ point to temporary extracted application files.
-If those files change, the loader keeps the directory and reports its path.
-The next launch does not automatically reuse that directory.
-Python __pycache__ / .pyc output can also trigger the retention notice.
-The notice alone does not mean the application failed to start.
-Background child processes and self-updates remain unverified.`,
+Changed extraction directories are retained, but not reused on the next launch.
+Node/Python runtimes are not bundled. Background children and self-updates remain unverified.`,
 
-      `<span class="t-dim">// Historical v1.0.1 local Windows acceptance — 2026-11-07</span>
-$ cargo test --workspace --locked
-<span class="t-green">60 / 60 passed</span> — 52 existing tests + 4 JS E2E + 4 pack E2E
+      `<span class="t-dim">// v1.0.2 release CI and public delivery verification — 2026-11-07</span>
 
-$ cargo build --workspace --release --locked
-<span class="t-green">Build completed</span>
+<span class="t-green">61 / 61 tests per platform</span>
+Windows x64, Linux x64 musl, macOS arm64
+52 unit tests + 4 JavaScript E2E + 5 packaging E2E, including the real-launch regression
+Source revision: 54d53a4e2d10a4c297dfb39e1e4c9efd19e92dc6
 
-$ cargo test --release --locked --test js_e2e --test pack_e2e
-<span class="t-green">8 / 8 passed</span> — release CLI and loader executed
+<span class="t-green">Public downloads verified</span>
+Three platform archives + SHA256SUMS.txt matched CI artifacts byte-for-byte.
+Archive audit: CLI, loader and four documentation/metadata files; no core source.
+Windows ZIP SHA-256:
+2157ed607999462196590f228933f5f1decfd73a0a1ea85048c89417503dcdcf
 
-<span class="t-yellow">V1.0.2 VALIDATION: PENDING</span>
-The new real-launch regression, release CI, protected website, and public downloads
-have not yet been accepted for v1.0.2. The pass counts above are historical v1.0.1.
+<span class="t-green">Published website checked in external Edge</span>
+Platform commands rendered; 390px viewport / 390px document; no browser errors.
 
-<span class="t-yellow">HISTORICAL V1.0.1 SCOPE</span>
-These results cover the tested fixtures and browser paths.
-Windows x64 / Linux x64 musl / macOS arm64: 60 / 60 tests passed in release CI.\nEnd-user installation and OS trust prompts have not been accepted.
+<span class="t-yellow">SCOPE</span>
+Packaging: 160 / 162 strict checks; two documented Python stderr notices.
+No unresolved functional failures in the tested paths. OS trust prompts,
+macOS notarization, background children and self-updates are outside acceptance.
 Performance and AI reverse-engineering resistance were not benchmarked.
-No claim of universal compatibility, secret confidentiality, or an attack success rate.
-See RELEASE-NOTES.md for the repair list and deployment boundaries.`
+
+<span class="t-dim">Historical v1.0.1: 60 / 60 CI tests per platform and 8 / 8 local release</span>
+<span class="t-dim">E2E tests. Those earlier results are separate from this v1.0.2 acceptance.</span>
+See RELEASE-NOTES.md for the full record and deployment boundaries.`
     ];
 
     function switchCaseStudy(idx) {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[66]).classList.toggle(__SEC_POOL_429b7862c20ceebf[67], idx === __SEC_POOL_429b7862c20ceebf[68]);
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[69]).classList.toggle(__SEC_POOL_429b7862c20ceebf[70], idx === __SEC_POOL_429b7862c20ceebf[71]);
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[72]).classList.toggle(__SEC_POOL_429b7862c20ceebf[73], idx === __SEC_POOL_429b7862c20ceebf[74]);
-      document.getElementById(__SEC_POOL_429b7862c20ceebf[75]).innerHTML = caseStudyContents[idx];
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[66]).classList.toggle(__SEC_POOL_50dc38fa78f9be67[67], idx === __SEC_POOL_50dc38fa78f9be67[68]);
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[69]).classList.toggle(__SEC_POOL_50dc38fa78f9be67[70], idx === __SEC_POOL_50dc38fa78f9be67[71]);
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[72]).classList.toggle(__SEC_POOL_50dc38fa78f9be67[73], idx === __SEC_POOL_50dc38fa78f9be67[74]);
+      document.getElementById(__SEC_POOL_50dc38fa78f9be67[75]).innerHTML = caseStudyContents[idx];
     }
     switchCaseStudy(0);
 
@@ -377,7 +389,7 @@ See RELEASE-NOTES.md for the repair list and deployment boundaries.`
 <span class="t-green">2.</span> The bundled key unlocks the pool synchronously before business code.
 <span class="t-green">3.</span> The application continues with its original module exports.
 
-<span class="t-dim">// v1.0.1 tested CommonJS, Node ESM, and Edge startup paths.</span>
+<span class="t-dim">// v1.0.2 public CLI output was checked in CommonJS, Node ESM, and Edge paths.</span>
 <span class="t-dim">// This mode offers obfuscation and ciphertext integrity, not access control.</span>
 <span class="t-dim">// Startup cost depends on your bundle and has not been benchmarked here.</span>`;
 
@@ -394,20 +406,20 @@ See RELEASE-NOTES.md for the repair list and deployment boundaries.`
 <span class="t-dim">// These steps are explanatory; this page does not run a license check.</span>`;
 
     function switchLens(view) {
-; if (!__SEC_UNLOCKED_429b7862c20ceebf) { return 0x1000; }
+; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
 
-      const btnAttacker = document.getElementById(__SEC_POOL_429b7862c20ceebf[76]);
-      const btnStandalone = document.getElementById(__SEC_POOL_429b7862c20ceebf[77]);
-      const btnClient = document.getElementById(__SEC_POOL_429b7862c20ceebf[78]);
-      const codeBlock = document.getElementById(__SEC_POOL_429b7862c20ceebf[79]);
+      const btnAttacker = document.getElementById(__SEC_POOL_50dc38fa78f9be67[76]);
+      const btnStandalone = document.getElementById(__SEC_POOL_50dc38fa78f9be67[77]);
+      const btnClient = document.getElementById(__SEC_POOL_50dc38fa78f9be67[78]);
+      const codeBlock = document.getElementById(__SEC_POOL_50dc38fa78f9be67[79]);
 
-      btnAttacker.classList.toggle(__SEC_POOL_429b7862c20ceebf[80], view === __SEC_POOL_429b7862c20ceebf[81]);
-      btnStandalone.classList.toggle(__SEC_POOL_429b7862c20ceebf[82], view === __SEC_POOL_429b7862c20ceebf[83]);
-      btnClient.classList.toggle(__SEC_POOL_429b7862c20ceebf[84], view === __SEC_POOL_429b7862c20ceebf[85]);
+      btnAttacker.classList.toggle(__SEC_POOL_50dc38fa78f9be67[80], view === __SEC_POOL_50dc38fa78f9be67[81]);
+      btnStandalone.classList.toggle(__SEC_POOL_50dc38fa78f9be67[82], view === __SEC_POOL_50dc38fa78f9be67[83]);
+      btnClient.classList.toggle(__SEC_POOL_50dc38fa78f9be67[84], view === __SEC_POOL_50dc38fa78f9be67[85]);
 
-      if (view === __SEC_POOL_429b7862c20ceebf[86]) {
+      if (view === __SEC_POOL_50dc38fa78f9be67[86]) {
         codeBlock.innerHTML = codeAttacker;
-      } else if (view === __SEC_POOL_429b7862c20ceebf[87]) {
+      } else if (view === __SEC_POOL_50dc38fa78f9be67[87]) {
         codeBlock.innerHTML = codeStandalone;
       } else {
         codeBlock.innerHTML = codeClient;

@@ -1,6 +1,6 @@
 # AI-Shield v1.0.2
 
-Windows executable-name repair release, prepared on 2026-11-07.
+Windows executable-name repair release, published and checked through public downloads on 2026-11-07.
 
 [Download v1.0.2](https://github.com/manhua-man/ai-shield-web/releases/tag/v1.0.2) · [Website](https://manhua-man.github.io/ai-shield-web/)
 
@@ -12,9 +12,44 @@ AI-Shield's core implementation remains private. The public repository distribut
 
 The platform examples now use `./ai-shield` on Unix and `.\ai-shield.exe` in Windows PowerShell. Windows packaging explicitly names `.\protected-application.exe`, followed by `.\protected-application.exe` to launch it. Keep the CLI and loader in the same extracted directory.
 
-## v1.0.2 validation status
+## v1.0.2 verification
 
-Pending: the new real-launch regression, release build/test results, the regenerated protected website, and downloaded public release assets. No v1.0.2 test pass or download verification is claimed yet. Historical v1.0.1 evidence is retained below and labeled separately.
+Release binaries were built from revision `54d53a4e2d10a4c297dfb39e1e4c9efd19e92dc6`. Each platform passed **61 / 61 tests** in release CI: 52 unit tests, 4 JavaScript end-to-end tests and 5 packaging end-to-end tests, including the new real-launch regression.
+
+| Platform | Target | Release CI |
+| --- | --- | --- |
+| Windows x64 | x86_64-pc-windows-msvc | 61 / 61 passed |
+| Linux x64 (musl) | x86_64-unknown-linux-musl | 61 / 61 passed |
+| macOS Apple Silicon | aarch64-apple-darwin | 61 / 61 passed |
+
+The three public archives and `SHA256SUMS.txt` were downloaded without authentication and matched the CI artifacts byte-for-byte. Archive inspection found exactly the CLI, loader, README, project license, third-party notices and build information. Core source and private Git history were not published.
+
+### Public Windows consumer acceptance
+
+Only freshly downloaded public v1.0.2 CLI and loader binaries were used. The Windows ZIP SHA-256 is:
+
+```text
+2157ed607999462196590f228933f5f1decfd73a0a1ea85048c89417503dcdcf
+```
+
+Four output-name cases were generated and launched directly through PowerShell without renaming:
+
+| Requested output | Generated filename |
+| --- | --- |
+| `protected-application.exe` | `protected-application.exe` |
+| `protected-legacy` | `protected-legacy.exe` |
+| `my application.v1` | `my application.v1.exe` |
+| `My Application.v1.EXE` | `My Application.v1.EXE` |
+
+Each generated executable ran from a deployment folder containing only that executable, while its source application directory was unavailable. Node and protected-then-packaged fixtures retained module imports, bundled UTF-8 assets, Chinese/space arguments, multiline stdin, stdout/stderr, exit code 23 and cwd state progressing from 1 to 2 across two launches. Installed Node remained a prerequisite.
+
+The packaging comparison recorded **160 / 162 strict checks**. The two raw stderr equality checks for Python remained different: ordinary helper imports created `__pycache__` files, so the loader retained the changed extraction directory and added its documented notice. Import caches were not suppressed and stderr was not filtered. Python business behavior, assets, arguments, stdin, exit code and persistent state matched. There were **no unresolved functional failures within the tested scope**; the result is acceptance with two documented output differences, not identical raw streams in every case.
+
+The downloaded CLI's JavaScript output also matched the original in Node.js and external Microsoft Edge 156: CommonJS exports, ESM result **42**, strict mode, regex handling, property keys and Chinese/emoji strings were retained. The current quote fixture returned **808**, **2208** and **15600** for its three scenarios; multiple pools, invalid-input handling and state restored after reload matched. These scenarios differ from the historical v1.0.1 fixture below.
+
+The published protected website was checked in external Microsoft Edge. Windows and Unix command examples rendered correctly; the **390px** viewport had a **390px** document width, and no browser errors were recorded. These checks cover the tested paths; end-user OS trust prompts, macOS notarization, background child processes and self-updates remain outside acceptance.
+
+Historical v1.0.1 evidence is retained below and labeled separately.
 
 ## v1.0.2 downloads
 

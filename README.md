@@ -46,7 +46,16 @@ Use `.\ai-shield.exe --help` in PowerShell or `./ai-shield --help` in a Unix she
 
 When the actual loader is a Windows PE executable, `pack` appends `.exe` if the requested output name does not already end in `.exe` (case-insensitive). Existing `.exe` / `.EXE` names remain unchanged; names with dots or other extensions are preserved before appending, so `release.v1` becomes `release.v1.exe`. A Unix loader leaves the requested name unchanged.
 
-Validation of the new real-launch regression, release CI, protected website and public downloads is pending. The following results describe the historical v1.0.1 release; they are not a v1.0.2 acceptance claim.
+## v1.0.2 verification
+
+- Release CI passed **61 / 61 tests on each platform**: Windows x64, Linux x64 musl and macOS arm64. Each run comprised 52 unit tests, 4 JavaScript E2E tests and 5 packaging E2E tests, including the new real-launch regression.
+- The three public archives and `SHA256SUMS.txt` were downloaded without authentication and matched the CI artifacts byte-for-byte. Archive inspection found only the CLI, loader, README, license, third-party notices and build information; core source was not published.
+- Freshly downloaded Windows binaries produced four output-name variants: explicit `.exe`, a missing extension, a name with spaces and `.v1`, and existing uppercase `.EXE`. Each generated executable launched directly through PowerShell in an isolated deployment directory, without renaming.
+- Original and protected Node.js / JavaScript / Edge results matched in the tested consumer paths. Windows packaging recorded **160 / 162 strict checks**: the two differences were raw Python stderr comparisons, because ordinary imports created caches and triggered the documented retained-directory notice. Python business behavior matched, and there were **no unresolved functional failures in the tested paths**. This is not a claim that all raw output streams were identical.
+- The published website was checked in external Microsoft Edge: platform command examples rendered correctly, the 390px layout had no horizontal overflow, and no browser errors were recorded.
+
+Release binaries were built from revision `54d53a4e2d10a4c297dfb39e1e4c9efd19e92dc6`. See the release notes for public-download checksums and scope. The v1.0.1 results below are historical.
+
 
 ## Historical v1.0.1 repairs
 
