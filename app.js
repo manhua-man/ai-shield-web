@@ -4,11 +4,11 @@
  * License & terms:    Security contact: 
  * Issuer key:    Public key (base64url): 
  * Verify with: ai-shield verify-manifest manifest.json --pubkey 
- * Runtime: synchronously unlocks 88 encrypted literals before application startup.
+ * Runtime: synchronously unlocks 79 encrypted literals before application startup.
  */
 
 ;
-var __SEC_POOL_50dc38fa78f9be67 = (function () {
+var __SEC_POOL_0bf4e98c6806dc34 = (function () {
 /*! @noble/ciphers 2.4.0 — vendored AES-GCM runtime
 The MIT License (MIT)
 
@@ -41,11 +41,11 @@ function decode(s) {
   return Uint8Array.from(b, function(c) { return c.charCodeAt(0); });
 }
 try {
-  var envelope = decode("gjK271Me064i0xIXKL_O5JZM9GDA4rCgT_t8PWdhuWhS-OiLbfdb9uNZm94eMs5WiPzJOl0iTFp9cVI00wtNcQUMf9bvSdHqpM3xivqRjtHKzi6ULN42cYFgjsxCEg4ajA42k2oKEGTKXvYSgOA3hZbairjLhMVEzWZxDR16XortBvDbA1FPjMBbTodjXAxkNEoI3-E0A5BDAHZ7OPzb_iHr2q_gOHQghdPL-zD_DKpSBTd601yD-IZxspqKOcrCP4gscooyNBXGUtajZFWeJyO8sS270ZOCwqzl0IIEDblUtu0MmPAPa9PGNOxMkEXiPuVPshlVvPhkUY5907xbtlxhABULPX-D5rAHYfIHNOerxDFdEAAMyLd9IV9Yqj_C3l7YkJEYliZ5kJsl2NNVAq_uHCHKp2D4EcS3jeO2K-48TvkDKruNo5RwGWJuHC_yyaSTmPj3L3Wi-D74sYhG988SDSjijdrBTQY-DHcZR-HNBTe-tdbPVva5e0PHvFGdx9X-5uQd_xheXTgBhS6gGJ2fQ9dEjf__iM2uyAKvspWFgztMcTnJbISUEeWSWG-rLdw2DT1FfMI1G0m7-QhRYpzAEmZ-Nvm7qKhnZ4rt3om-INZyJGRZu9rqMAJS7W3IesQ4Y9iYqD7ldEnZY73Q3RTgPhA_JDlX-peDj8LKWNINHQmrCZqy-LHkVJ4E6LHhihPqVAcXZmc6WJs_bu9FYrO7RwNJLDpr9BkpRVdBMGuEzWKF-N3HT8F-x_jUpCUnlGL629N2vIBVOFPWA48DFZKAAOZki_5nxT1yzhhrV1ybY5VCMQsTyfULyBCA5QyAzIW0vidqQu77q8cfz8GyBVNa2A20demWgQwg5q1VWZ6blFThtMc4R-mTgSuxVlQSXov1wBlzyKlNEBi3nx3tjAiWUINnwUfsaxYj4iRUSWItjr4hGtg08XqTNp8Q7uOGaKLX2KxbnvIkCZNqojH0ST2LNWz813LEN4TrywNcB4gJ--rlsitz-TS7-9EbGvJ1tI7E4ic3-6EnICqrSCcwtUQz0hW17djMt8_5my4pPMM6nvCgIXsa6Gn4dFCYfuxu0rXGNlvmJFw7TGuyAM4XLncmgtDyJJihVnYcK_z1dDHZOXpON2XfaOEC_udpXVQ0VVXQUXRTWIN4eeIyg0hyugwEgW98UVcc-RmrZUERM0JzhKSBBZBcjXnNo4rXZa2pXWjPv70VxmLp6YD5Q09vzm6-ZEBw1uiJvvDI0TzGo5VNRlqEuGde2fI1UkU_8YQwInm5hdKpwgiwb4mEliYoasYLMcyi8Wd1gub--9aDbIUr_EdNU7Ob_Y-31U3ewL-NZZK34m6rYDSHvErNCuw41yBH6BZJqwex2mUi3XXmAxdm7UlX8Iom_4YPcm5qJmZVDCx8i-BFrfAAgYJe_JfwFZUaW69lvBu_rFb0XVubV1dMoRmZyTBrLCjxTbXo83FEAjq-OWlEjKpnSy3bpqKp9vEXDA33tnd2yk7boIekjWsX702W-oixO8MbSD59K3SZTZVA62PApryrTJ_kLD1w4zOnWUZ2rn_xOl72RAsC2S_0TmMN7xKbehw5s-zJ72IYzFa7_m4lNm_fKq5CcFyRm7odK3YOcYHk2N46hYylzjgcOlZDj1seDfRdRFXLDFk-H-Jy98OR8jySMhwTOC-1xekji9A5_w");
+  var envelope = decode("DI6JsRprfZ0FGFvqvBIV2eU54FDeqsjPEurdoHdEIHENAbAiR2cB3R0MQ5JDk76i4JiVvsDmy8QTdLHmN6ZkMFqKhHNIehaFQ4bAu5NIMRtGYsSR3ijC-YC53mRaJfETNjWGl-K9wvq3UOF9qbwqS1X9NtI8-naBXKQbgkHMulMDGkMDuvZP8CxfMfoXCJCi8bb_Iea1zh_N9r12RsTnc1pH07xNopS9lt0GjmwMTUkJZWbUh6e4uinMxSufT0DmNhhSARVNZTkfq8X-_dCv9a0VlaMWHEwlbBhwFg8jwZ2M36eFA2VkQbFaafH3tBYDDjxiunrLOM79xNhaBsyWBVfhVtr9nFucU1OCSwByxBhQregArzVT7LkRd7hfycwJarqSZNeWWa1M-n_rJwk7JMWY8cqvfh_I6AhEKY8H-f-eguS4LW26so2UjGqhhfwjQgQa_wn4uayYhaM6zhnANkCWJdHO-aLVYBwEhurkN8YkIipbDEF7uyIKSvtJtE8Pq3s9-JBCvmNJNcXZa-uyqr0BCH_Q4aZci2C7xXrObNcJ2YZ-dOiiYx9y2meVEYq3gLq-vlcb2WeUFQgNyo21sJTf1feJMoQESYIJfFZ8hpTvGP7ZxKBvYql6Yd124O76z730a2qgV7mhC5vUjY-6_mE4yh7CVFpi-to4LuogeE38CJ2hwKPez12_rqmrI8EBSBIKpayQrdUsY-3JsYPZYXVvxjO7IEGs4NNHTnFnUWKDHWEURaX-ogPQ6b7UH97vv_oMLyX5VWz_OiVy-Ue2ci73Ojiqq4sMbg5wHEIORoNWDHN7UcLnhL5rTSgKjQnl89D3zorPbMC5CQoMWevj_P1J-yH1-jVrhuRW_GowZLltXJVlqVK4MXMGVA2oY2bifPlrndw0ejliRJ6-amppGIrsJ4xFqZbOhDrusE2iTB7DCfPJT2RNPfQD0diYlpV4Y0C5xFE6X1wHa5Pj5r226qQ0q-Qp2AV_FRCNTg5v_rIrdWHWKRWVH4GGEyaWnLo8IkZy-8r0M5c_npBZWm2_rL91GzEXAoETb_BMb55HsgMixY13NyMBMl0jAL4Az_GVsogslVHlO2fIr5tEl_SCpy4tMz6TP5hZE4iRwc5-gKO-h0Vb0Fmw7CKe3_DQIvCf-VpG3NGwy4bGWHrM9sO3I9E1NndY-8VGj-m6CDZidBM2LFvLpA71I7rW_WOjdscKKgCyTxjbsIwziQgVmp4ynIwN4IMbKN-htZcVH8EsGAqHgmp1NrsHPMu0Kz2jNIcDI402O9_Ix6lq68OP1JRBd6gqkPXMu387k0aPwHUA7ZLbeTe3fQhU9i8XrQlKsvOCjzDVWvThtSNcSLx0inYRx6EYi_4_Hxrz0ME4khp1Kjci1xjZ8apou21Ur_cyeFzXLu6FKO78hHdDwXuvL5FZDuHLQHIsg-jAl_94ddKDTZH1NkfyqPiydb1bu0B7rCQKcJPf07L6jrYvcUskBvcC8ySzPPVTA2REXZ5sELg5tKuZ5RN3LkDGiBWN-26zr1ijLAfxRRwXyW-7HMMwgNo6De7N7JQ8ohxJOIdvw1LNdYUAQ9hWS8F1URR87l-0eIzQnHs4cCCCGLfZHWT9Bibk76Gzv-8ezS3xLWTm_o7Ga1Wuis_Rsx6x5oSij1Wp3Ohn6iwJRR3Wkcb46fUHY8PH_EmQLSPtRb6MCPlAn9wc4-NT587VWC7bceBW3Rr96N_vwAD4EGsuxTxsBYdDhMtZez-i7NrGLOhBRR4WaBvJcrstf1AJVhIM8mMUosIjf02gQtwa7IugoDZs_K76g-8y6m0cmerzdFs2QpnN1RrhCryzWsNqEEYfAkksg95wsyfxZFE3qRitpzM3E2pNpi7tp_yqds0p3xye0R1Fu4B65MKJzNW28nBmgxTDT72vq61L2gWbAZu6QKh6xVDJe3E0lxgjHVX4pY7bR4Hdtg7n4Zsl2fNsaCO9cGV6LR78NAxGHhJS7wSemAPsEM_2JFXP1_ecOhU9e5WjNnEkxg6PAavDJd_28D8ptGyF1u-jznEDSFA_KOEHic3DgrESSGEkoMsaK7UatL5ersz_clvtyCFWQ5vs8CiE-5q9dBu6xXR7zQw8n_ZdvjkrQa8XQsU0862L-IB1vueJUQKPgUp3bBxQNyAKmeLydLtGMTdnaOBW1i388cYoL_jcEynD4kOfeFmvSk9GZ79ZF40on179E2yBPccEhx4hLp6ZLkDNkOzCthvBmq9_qhIpMUDAn8DZYemEvGRbUKHqUDb-nVB_0Fc6QT6Y0hHzLWYRchqIoRjEVz99PHt_jR_3EzdqIxOk16zw__Vh87Y5xvJiuzGwwR6RUlZUt3FyGMZYOD76vBXe8-sp5bn07NvAkiHU17w9KlJxN6gH1UJuFzut2tkuVtmsp0yGyn1iRIQEuFvHdhwTxew-88JtRf4ARWp_2aB52kiVhnP3UjT75oo0OXZKO_V2ykyIwt_H4ZwZi4RwyhVhB1HJ_hpGmK8Mme-3rLL7_zuImR3PIH25b9EC7Y3CIx7ADMGfvXEhs7owdRkOC9JEAvzYuDbt6JpIUtYHsrAtCLW-wzRhu-OMyPMV4RcYic7hcneTVNJjoHvbeK85JDZ_hCD239cR0cIaADRvJS1ZRsjTRay0pu8Z0oy44J13skYZQU2cb5ZMMVEroK_XjYCV8f5MtHW45GoSU-prgcs3zUfrozBTtjDfEoyhJogo6Z_SO1NnAHxd26FqqSU6IpVOwMTWy11nmg4kRBoXwgYlr7seEGMg1REIga3QfjbCRsk8RHy_1Emg4hwVV237QuUDmXycliZP2w-74OCR50sE8o2e2nmYZ831yYR15O_gjuqvXvNIr7mRNFSAG4uJXQmz2WrDWi8AelhRArsw5UInkHgPF7Efd4LfP0CHgTOy8wIuRRWp1PNF2-KRFyOXDVX6-E6HgfY7uhMaA1M-Q_E0L3O5wTSvFL4CZJWmtMPnr0DkE1kttvdmX0e7C-GYEVXyYybM8EDKM4VHhVLzbbd-DivF_anRJqO2rKUWpgO-smLO3VxHd5T2I3x4TEx24KXal-mX9hxl3wbGPeApLVT9GKNMBXnfCBYpYQF2FUnfqby5stApAG_309KTgfSoVrXTOiVEEHfF2gK6KPAvcCzFz1zKJdJQKb-4aoCheORHhtMO6vWKHJRpc5NX087fpfuluzZMGiPw89H5LKRc3VhQvhuU9AN4USgDLsN67noEXm0MWu065QOOBP1-CQB_j4Td-1SclYz5bHDOxWRFQrANGFhamBasI7wDh3QOqI_g8ZlNq5Bd0YKFaFDzHpDNeAb52AUPDPFSJ7ELSA_oNUhkbZV21shKi5GU6JzEEoxFnbDnFkZtcchRwRGTxuRoSv-QGP_hVfg3EKd4TNoygaMG-LE2CGYViG6xN4CqxQy2YdmfaPOxlyBOl7CL5gUS1G2g0vr_s5b8D5OQ9OTDlZsAq8URB5WiVPeTq6yG0rpaC1ZmaDmrP6_E5xTXGMSDggCSjE4xqFjjdhJ7PWijl7z0xiD2RzPKLEdQUsuJmNVYHuF83j9pg-Gd70zCsUI4MIldEaMnjq_efHAy-17erkdt5Tko_pKyloIV5jDhUO6TCHw_XwVTZI-nVmrZ3TKXz4L9kcB2lbmoKFxiBrs8PVgfUJRUOKkCI8yRGn2wODxr5kqCKZ-ff9TOLYZh_-q4VvhtJZw2DE2Wz4lmTFKKPU7kkoOkFmAVax5XO9-dfZ4X1VGHiXPiDN_a6cRNci68C2qcY2I27MxM0lKBjSO1JwxMIBJ0F7GAsHfZ8aAbpCAF-EParaVe0knHDHcRpim-x34UEUQW9XwmjzQn2SFr1R4GuakOMVGQVQCFMOQ3oFGGB-p3Rcxbn8RNP6dCqWv5f61I91rRq0iuLvbg2MDZYGzXZULPhTGkdeofEsMbHCx9jjRf5zagp8-CZ7kIbjV2LY0jE0p641TAQjICgTFDC3cn2eoJZqV1dpnwJwaOUjZR0yzIekoktNBLXSqfDBSxxWPUBzvyi5tTObvYYa8zb-FOwA4XEwnf62F0KjMGgNm3yWaqhaxf1jqB9ZWStl_bEloUy_4YyIXDqGyOlSBYY6yyCjuvBoFmjKHygOTJpYeMtMpJfgxvhvl6U-UTdxEBdSfzWuTDlL57Y9JEv4rRraUwKokQFlPhggi9oE9kiZN17g2jxbFmiEFsrhRo75Og_nWxNBAEkuMEjQVS6rVn3-fXfPeJCxuQ7QNJoQNMJ1XPjpitKTPKhRzdvVsc6KFGNnpQgRpN92vyU9K_vP0-Bcv8tcPIVWi2LjznX1I0aMFFPBLN0owfsxG3wX5F3YJUNvrTjyDC63yOtvvP5_oTHcutTguaTBU4OYCna89JS02BlU9fjdgKBgtuKn44rNNrIZT_TmYL0bKJZeriHGpk8TASrGKq97gjznYWTH9LcxBa27ps6oig63Z7AhllQLNLn-3OE51a5hJRPqLbzsoyAGNR7BDeKvQ02zcmkNxhq9vv9SwnpNlmePpoowhBrmlFP-dyI1ZKSqxgRobWjtbzqohyLckox0nd8BKsDLtANEIImMjwPfuxqjMcsSCDAd1cVWojdi7Z290QFrv_aMB8rF1aylMgJPCPcMlN3Sj96s465AhGVbuQhymPzG_PN0xLJfLlySeePVU7Evisj8h6LZREpNkjMPd7imN2VzVJkg4IZhCU42tgFCY1DlRbkecGBmD1HJu6M-vVttmGmcmmHq_Qsp2Aom0LfVdRYjySCfa9kyg5DIQ-IVSH1xBoWbzCk6dmwzcaEsIETDzMuTz17GqgIvCN9xO8GbKxzP_f4e6gxfM3otoMdSYx5uUZWtl3ytT3PcdhURe-EFOZXyjBVqoQnnQne8QXP1NvBYSUxHAn32FRmQF-ImM86PTEjSsTkzus3CU8mfvZ1qM8Rdm3OxOptpxjVUn9X4XWepBW9egJzMk5lfH2z30qMFkaugYinNHvFmMu7Ne_vyxwcCzh_Gg57fj8k0fkshyXiYraIw-CdJvlZliCjouXj9a_cFx_rLQrqOGwfIfKM_0F-HubVWj4CLbiegyG2MxX");
   var data = new Uint8Array(envelope.length - 12);
   data.set(envelope.subarray(28));
   data.set(envelope.subarray(12, 28), envelope.length - 28);
-  var key = decode("lB9tUQWAI_hL98jcSs-i_3sLMsAWP1DIiz4Lp312_40");
+  var key = decode("Rj1Qj-LypCD3fuOU8puwxKWVd2NLhbpqTaB3Rsf9mUA");
   var plaintext = __secAes.gcm(key, envelope.subarray(0, 12), new TextEncoder().encode('ai-shield: AES-256-GCM constant pool v1')).decrypt(data);
   key.fill(0);
   return JSON.parse(new TextDecoder().decode(plaintext));
@@ -55,377 +55,128 @@ try {
   throw error;
 }
 })();
-var __SEC_UNLOCKED_50dc38fa78f9be67 = true;
+var __SEC_UNLOCKED_0bf4e98c6806dc34 = true;
 
 ;
-// Hero Sandbox Terminal Streamer (app-studio-landing Mode 2)
-    let currentTabIndex = 0;
-    let streamTimer = null;
-
-    const sandboxRawTexts = [
-      `# Windows PowerShell — run from the extracted directory
-.\\ai-shield.exe protect .\\dist --ext js --standalone --intensity bankrupt --inject-decoys
-.\\ai-shield.exe pack .\\application --entry main.js --out .\\protected-application.exe
-.\\protected-application.exe
-
-Keep ai-shield.exe and ai-shield-stub.exe in the same directory.
-With a Windows PE loader, a missing .exe suffix is appended.
-Existing .exe / .EXE stays unchanged; release.v1 becomes release.v1.exe.
-Node.js and Python runtimes are not bundled.
-This page shows commands; it does not execute them.`,
-
-      `# Linux / macOS shell — run from the extracted directory
-./ai-shield protect ./dist --ext js --standalone --intensity bankrupt --inject-decoys
-./ai-shield pack ./application --entry main.js --out ./protected-application
-./protected-application
-
-Keep ai-shield and ai-shield-stub in the same directory.
-The Unix loader keeps the requested name; it does not append .exe.
-Preserve executable permissions when extracting.
-Node.js and Python runtimes are not bundled; macOS binaries are not notarized.
-This page shows commands; it does not execute them.`,
-
-      `# Enterprise command example — Linux / macOS shell
-./ai-shield protect ./dist --ext js --entangle --key private-key.json --intensity bankrupt
-
-Enterprise mode retains an Ed25519 license gate.
-Configure the signed license and trusted key for your deployment.
-Check valid, absent, expired, and invalid licenses in your application.
-
-The standalone mode does not provide this authorization boundary.
-No AI attack success rate or startup latency is claimed here.`,
-
-      `# Manifest command example — Linux / macOS shell
-./${'ai-shield'} verify-manifest dist/manifest.json --pubkey YOUR_PUBLIC_KEY --root ./dist
-
-Verification checks the signed manifest and listed artifact hashes.
-Obtain the trusted public key through an independent channel.
-A successful check covers the artifacts at verification time.
-
-This replay does not verify downloaded files or monitor runtime changes.
-Download v1.0.2 and consult its release notes for acceptance scope.`
-    ];
-
-    function formatTerminalLine(line) {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      if (line.includes(__SEC_POOL_50dc38fa78f9be67[0])) {
-        return line.replace(__SEC_POOL_50dc38fa78f9be67[1], __SEC_POOL_50dc38fa78f9be67[2]);
-      }
-      if (line.includes(__SEC_POOL_50dc38fa78f9be67[3]) || line.includes(__SEC_POOL_50dc38fa78f9be67[4])) {
-        return line.replace(/EXPOSED|CRITICAL/g, __SEC_POOL_50dc38fa78f9be67[5]);
-      }
-      if (line.includes(__SEC_POOL_50dc38fa78f9be67[6]) || line.includes(__SEC_POOL_50dc38fa78f9be67[7])) {
-        return line.replace(/UNPROTECTED|VULNERABLE/g, __SEC_POOL_50dc38fa78f9be67[8]);
-      }
-      if (line.includes(__SEC_POOL_50dc38fa78f9be67[9]) || line.includes(__SEC_POOL_50dc38fa78f9be67[10]) || line.includes(__SEC_POOL_50dc38fa78f9be67[11])) {
-        return line.replace(/SECURED|OK|VALID/g, __SEC_POOL_50dc38fa78f9be67[12]);
-      }
-      return line;
-    }
-
-    function streamTerminal(text, targetId) {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      if (streamTimer) clearInterval(streamTimer);
-      const target = document.getElementById(targetId);
-      target.innerHTML = __SEC_POOL_50dc38fa78f9be67[13];
-      const lines = text.split(__SEC_POOL_50dc38fa78f9be67[14]);
-      let lineIdx = __SEC_POOL_50dc38fa78f9be67[15];
-
-      streamTimer = setInterval(() => {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-        if (lineIdx < lines.length) {
-          const formatted = formatTerminalLine(lines[lineIdx]);
-          target.innerHTML += (lineIdx === __SEC_POOL_50dc38fa78f9be67[16] ? __SEC_POOL_50dc38fa78f9be67[17] : __SEC_POOL_50dc38fa78f9be67[18]) + formatted;
-          lineIdx++;
-          target.scrollTop = target.scrollHeight;
-        } else {
-          clearInterval(streamTimer);
-        }
-      }, __SEC_POOL_50dc38fa78f9be67[19]);
-    }
-
-    function switchSandboxTab(index) {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      currentTabIndex = index;
-      for (let i = __SEC_POOL_50dc38fa78f9be67[20]; i < __SEC_POOL_50dc38fa78f9be67[21]; i++) {
-        const tab = document.getElementById(__SEC_POOL_50dc38fa78f9be67[22] + i);
-        if (tab) tab.classList.toggle(__SEC_POOL_50dc38fa78f9be67[23], i === index);
-      }
-      streamTerminal(sandboxRawTexts[index], __SEC_POOL_50dc38fa78f9be67[24]);
-    }
-
-    function triggerSandboxRun() {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      streamTerminal(sandboxRawTexts[currentTabIndex], __SEC_POOL_50dc38fa78f9be67[25]);
-    }
-
-    // Initialize sandbox
-    switchSandboxTab(0);
-
-    function copyHeroCmd() {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      const text = document.getElementById(__SEC_POOL_50dc38fa78f9be67[26]).innerText;
-      navigator.clipboard.writeText(text);
-      const pill = document.querySelector(__SEC_POOL_50dc38fa78f9be67[27]);
-      pill.innerHTML = `<kbd>✓</kbd> Copied!`;
-      setTimeout(() => { pill.innerHTML = `<kbd>⌘</kbd> <kbd>C</kbd> Copy`; }, __SEC_POOL_50dc38fa78f9be67[28]);
-    }
-
-    // 16 Vectors Data (with weight, id, name, description)
-    const vectors = [
-      { id: "VEC-01", name: "Plaintext API Keys & Literals", desc: "Hardcoded API keys, auth headers, and secrets in AST", active: true, weight: 15 },
-      { id: "VEC-02", name: "Plaintext Auth Function Names", desc: "Functions like checkLicense, verifyToken in callstack", active: true, weight: 10 },
-      { id: "VEC-03", name: "Recognizable License Enums", desc: "Standard status strings like 'TRIAL_EXPIRED', 'LICENSED'", active: true, weight: 8 },
-      { id: "VEC-04", name: "Unmasked Electron/Tauri IPC", desc: "Cleartext IPC channel names (ipcRenderer.invoke('license'))", active: true, weight: 14 },
-      { id: "VEC-05", name: "Predictable State Machines", desc: "Linear boolean flags like isProUser = true in memory", active: true, weight: 10 },
-      { id: "VEC-06", name: "Static AST Crypto Anchors", desc: "Fixed runtime decrypt function names (__SEC_DECRYPT__)", active: true, weight: 12 },
-      { id: "VEC-07", name: "Unprotected WASM Signatures", desc: "Exported WebAssembly symbols revealing auth methods", active: false, weight: 6 },
-      { id: "VEC-08", name: "Cleartext HTTP API Endpoints", desc: "Target endpoints visible in raw fetch/axios calls", active: true, weight: 10 },
-      { id: "VEC-09", name: "Identifiable License Gateways", desc: "Single choke-point function guarding application boot", active: true, weight: 8 },
-      { id: "VEC-10", name: "Linear License Control Flow", desc: "If-else check without tamper verification loops", active: true, weight: 8 },
-      { id: "VEC-11", name: "Unprotected Device Fingerprinting", desc: "Plaintext MAC/UUID retrieval in client script", active: false, weight: 6 },
-      { id: "VEC-12", name: "Missing Ed25519 Manifest", desc: "Absence of cryptographic build signing in CI/CD", active: true, weight: 10 },
-      { id: "VEC-13", name: "Exposed Environment Configs", desc: "Bundled dotenv or configuration objects in bundle", active: false, weight: 8 },
-      { id: "VEC-14", name: "Unmangled Storage Keys", desc: "Keys like 'auth_token' in localStorage/IndexedDB", active: true, weight: 7 },
-      { id: "VEC-15", name: "Predictable Error Strings", desc: "Descriptive error codes assisting agent deobfuscation", active: true, weight: 6 },
-      { id: "VEC-16", name: "Lack of Token Context Tarpits", desc: "Clean compact AST easily ingested within small LLM context", active: true, weight: 12 },
-    ];
-
-    function renderVectors() {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      const grid = document.getElementById(__SEC_POOL_50dc38fa78f9be67[29]);
-      grid.innerHTML = __SEC_POOL_50dc38fa78f9be67[30];
-      vectors.forEach((vec, idx) => {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-        const cell = document.createElement(__SEC_POOL_50dc38fa78f9be67[31]);
-        const statusClass = vec.active ? __SEC_POOL_50dc38fa78f9be67[32] : __SEC_POOL_50dc38fa78f9be67[33];
-        cell.className = `matrix-cell ${statusClass}`;
-        cell.onclick = () => toggleVector(idx);
-        cell.innerHTML = `
-          <div class="cell-header">
-            <span class="cell-id">${vec.id}</span>
-            <span class="cell-pill">${vec.active ? __SEC_POOL_50dc38fa78f9be67[34] : __SEC_POOL_50dc38fa78f9be67[35]}</span>
-          </div>
-          <div class="cell-name">${vec.name}</div>
-          <div class="cell-desc">${vec.desc}</div>
-        `;
-        grid.appendChild(cell);
-      });
-      calculateRisk();
-    }
-
-    function toggleVector(idx) {
-      vectors[idx].active = !vectors[idx].active;
-      renderVectors();
-    }
-
-    // Instant Remediation animation (CleanFlow Pro self-healing sandbox pattern)
-    function triggerInstantRemediation() {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      let delay = __SEC_POOL_50dc38fa78f9be67[36];
-      vectors.forEach((vec, idx) => {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-        if (vec.active) {
-          setTimeout(() => {
-            vec.active = false;
-            renderVectors();
-          }, delay);
-          delay += __SEC_POOL_50dc38fa78f9be67[37];
-        }
-      });
-    }
-
-    function resetAllVectors() {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      vectors.forEach((vec, idx) => {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-        vec.active = idx !== __SEC_POOL_50dc38fa78f9be67[38] && idx !== __SEC_POOL_50dc38fa78f9be67[39] && idx !== __SEC_POOL_50dc38fa78f9be67[40];
-      });
-      renderVectors();
-    }
-
-    function calculateRisk() {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      let activeWeight = __SEC_POOL_50dc38fa78f9be67[41];
-      let totalWeight = __SEC_POOL_50dc38fa78f9be67[42];
-      let activeCount = __SEC_POOL_50dc38fa78f9be67[43];
-      vectors.forEach(v => {
-        totalWeight += v.weight;
-        if (v.active) {
-          activeWeight += v.weight;
-          activeCount++;
-        }
-      });
-
-      const score = Math.round((activeWeight / totalWeight) * __SEC_POOL_50dc38fa78f9be67[44]);
-      const scorePct = score + __SEC_POOL_50dc38fa78f9be67[45];
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[46]).innerText = scorePct;
-      const bar = document.getElementById(__SEC_POOL_50dc38fa78f9be67[47]);
-      bar.style.width = scorePct;
-      const pill = document.getElementById(__SEC_POOL_50dc38fa78f9be67[48]);
-      const color = score >= __SEC_POOL_50dc38fa78f9be67[49] ? __SEC_POOL_50dc38fa78f9be67[50] : score >= __SEC_POOL_50dc38fa78f9be67[51] ? __SEC_POOL_50dc38fa78f9be67[52] : __SEC_POOL_50dc38fa78f9be67[53];
-      pill.innerText = activeCount === __SEC_POOL_50dc38fa78f9be67[54] ? __SEC_POOL_50dc38fa78f9be67[55] : score >= __SEC_POOL_50dc38fa78f9be67[56] ? __SEC_POOL_50dc38fa78f9be67[57] : __SEC_POOL_50dc38fa78f9be67[58];
-      pill.style.color = color;
-      bar.style.backgroundColor = color;
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[59]).innerHTML = `<span class="tabular">${activeCount}</span><span style="font-size:15px;color:var(--text-muted);"> / ${vectors.length}</span>`;
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[60]).innerHTML = `<span class="tabular">${activeWeight}</span><span style="font-size:15px;color:var(--text-muted);"> / ${totalWeight} points</span>`;
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[61]).innerHTML = `<span style="font-size:24px;">Not measured</span>`;
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[62]).innerText = activeCount === __SEC_POOL_50dc38fa78f9be67[63]
-        ? __SEC_POOL_50dc38fa78f9be67[64]
-        : __SEC_POOL_50dc38fa78f9be67[65];
-    }
-    renderVectors();
-
-    // Case Study Tabs Data
-    const caseStudyContents = [
-      `<span class="t-dim">// v1.0.2: freshly downloaded public CLI; original vs. protected JavaScript</span>
-
-<span class="t-green">[✓] CommonJS</span> — exports and consumer results matched
-<span class="t-green">[✓] ESM</span> — result 42 and strict-mode behavior matched
-<span class="t-green">[✓] Values</span> — property keys, regex behavior, Chinese and emoji strings retained
-<span class="t-green">[✓] Edge 156</span> — multiple pools, invalid-input handling and saved state matched
-
-<span class="t-dim">Current quote scenarios, before and after protection:</span>
-  10 seats / starter / 1 year: <span class="t-yellow">808</span>
-  23 seats / pro / 3 years: <span class="t-yellow">2208</span>
-  100 seats / enterprise / 3 years: <span class="t-yellow">15600</span>
-  Reload restored the saved quote; no browser errors recorded
-
-<span class="t-dim">These are v1.0.2 consumer scenarios. The historical v1.0.1 fixture used</span>
-<span class="t-dim">different inputs; its 808 / 1857 results are retained in the release notes.</span>`,
-
-      `<span class="t-dim">// v1.0.2: public Windows CLI and loader; isolated packaged applications</span>
-
-<span class="t-green">[✓] Direct PowerShell launch</span> — no filename workaround
-  protected-application.exe → protected-application.exe
-  protected-legacy          → protected-legacy.exe
-  my application.v1         → my application.v1.exe
-  My Application.v1.EXE      → My Application.v1.EXE
-
-<span class="t-green">[✓] Node and protect-then-pack</span> — imports, UTF-8 assets, arguments, stdin,
-stdout/stderr, exit code 23 and cwd state from 1 to 2 matched the baseline.
-Each deployment folder contained only its executable; source files were unavailable.
-Installed Node remained a prerequisite.
-
-<span class="t-yellow">STRICT CHECKS: 160 / 162</span>
-Two raw Python stderr checks differed because ordinary imports created __pycache__.
-The loader retained the extraction directory and emitted its documented notice.
-Caches were not suppressed and stderr was not filtered. Python business behavior
-matched. No unresolved functional failures remained in the tested paths.
-This is not identical raw output in every case.
-
-<span class="t-yellow">DATA DIRECTORY BOUNDARY</span>
-Use cwd or an explicit stable directory for persistent data.
-Changed extraction directories are retained, but not reused on the next launch.
-Node/Python runtimes are not bundled. Background children and self-updates remain unverified.`,
-
-      `<span class="t-dim">// v1.0.2 release CI and public delivery verification — 2026-11-07</span>
-
-<span class="t-green">61 / 61 tests per platform</span>
-Windows x64, Linux x64 musl, macOS arm64
-52 unit tests + 4 JavaScript E2E + 5 packaging E2E, including the real-launch regression
-Source revision: 54d53a4e2d10a4c297dfb39e1e4c9efd19e92dc6
-
-<span class="t-green">Public downloads verified</span>
-Three platform archives + SHA256SUMS.txt matched CI artifacts byte-for-byte.
-Archive audit: CLI, loader and four documentation/metadata files; no core source.
-Windows ZIP SHA-256:
-2157ed607999462196590f228933f5f1decfd73a0a1ea85048c89417503dcdcf
-
-<span class="t-green">Published website checked in external Edge</span>
-Platform commands rendered; 390px viewport / 390px document; no browser errors.
-
-<span class="t-yellow">SCOPE</span>
-Packaging: 160 / 162 strict checks; two documented Python stderr notices.
-No unresolved functional failures in the tested paths. OS trust prompts,
-macOS notarization, background children and self-updates are outside acceptance.
-Performance and AI reverse-engineering resistance were not benchmarked.
-
-<span class="t-dim">Historical v1.0.1: 60 / 60 CI tests per platform and 8 / 8 local release</span>
-<span class="t-dim">E2E tests. Those earlier results are separate from this v1.0.2 acceptance.</span>
-See RELEASE-NOTES.md for the full record and deployment boundaries.`
-    ];
-
-    function switchCaseStudy(idx) {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[66]).classList.toggle(__SEC_POOL_50dc38fa78f9be67[67], idx === __SEC_POOL_50dc38fa78f9be67[68]);
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[69]).classList.toggle(__SEC_POOL_50dc38fa78f9be67[70], idx === __SEC_POOL_50dc38fa78f9be67[71]);
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[72]).classList.toggle(__SEC_POOL_50dc38fa78f9be67[73], idx === __SEC_POOL_50dc38fa78f9be67[74]);
-      document.getElementById(__SEC_POOL_50dc38fa78f9be67[75]).innerHTML = caseStudyContents[idx];
-    }
-    switchCaseStudy(0);
-
-    // Dual-track Code Lens
-    const codeAttacker = `<span class="t-dim">// Illustrative output sketch — abbreviated, not executable output</span>
-
-<span class="t-coral">const</span> encryptedPool = <span class="t-green">"...AES-GCM ciphertext..."</span>;
-<span class="t-coral">const</span> bundledKey = <span class="t-green">"...standalone key included..."</span>;
-
-<span class="t-dim">// Optional generated control flow and decoy branches add analysis noise.</span>
-<span class="t-dim">// They are not real authorization decisions.</span>
-
-<span class="t-dim">// A client that can execute the code can inspect its runtime values.</span>
-<span class="t-dim">// Keep authoritative secrets and access decisions on a trusted server.</span>`;
-
-    const codeStandalone = `<span class="t-dim">// Standalone: Linux / macOS command example; no external license token required</span>
-
-./ai-shield protect ./dist --ext js --standalone --intensity bankrupt
-
-<span class="t-green">1.</span> Eligible constants are encrypted in the output.
-<span class="t-green">2.</span> The bundled key unlocks the pool synchronously before business code.
-<span class="t-green">3.</span> The application continues with its original module exports.
-
-<span class="t-dim">// v1.0.2 public CLI output was checked in CommonJS, Node ESM, and Edge paths.</span>
-<span class="t-dim">// This mode offers obfuscation and ciphertext integrity, not access control.</span>
-<span class="t-dim">// Startup cost depends on your bundle and has not been benchmarked here.</span>`;
-
-    const codeClient = `<span class="t-dim">// Enterprise: Linux / macOS command example; configure a signed license and trusted key</span>
-
-./ai-shield protect ./dist --ext js --entangle --key private-key.json
-
-<span class="t-green">1.</span> Enterprise mode retains the Ed25519 license gate.
-<span class="t-green">2.</span> Configure the license input required by your runtime integration.
-<span class="t-green">3.</span> Validate valid, absent, expired, and invalid license paths before release.
-
-<span class="t-dim">// A license gate has a different role from standalone obfuscation.</span>
-<span class="t-dim">// It does not make client code immune to reverse engineering.</span>
-<span class="t-dim">// These steps are explanatory; this page does not run a license check.</span>`;
-
-    function switchLens(view) {
-; if (!__SEC_UNLOCKED_50dc38fa78f9be67) { return 0x1000; }
-
-      const btnAttacker = document.getElementById(__SEC_POOL_50dc38fa78f9be67[76]);
-      const btnStandalone = document.getElementById(__SEC_POOL_50dc38fa78f9be67[77]);
-      const btnClient = document.getElementById(__SEC_POOL_50dc38fa78f9be67[78]);
-      const codeBlock = document.getElementById(__SEC_POOL_50dc38fa78f9be67[79]);
-
-      btnAttacker.classList.toggle(__SEC_POOL_50dc38fa78f9be67[80], view === __SEC_POOL_50dc38fa78f9be67[81]);
-      btnStandalone.classList.toggle(__SEC_POOL_50dc38fa78f9be67[82], view === __SEC_POOL_50dc38fa78f9be67[83]);
-      btnClient.classList.toggle(__SEC_POOL_50dc38fa78f9be67[84], view === __SEC_POOL_50dc38fa78f9be67[85]);
-
-      if (view === __SEC_POOL_50dc38fa78f9be67[86]) {
-        codeBlock.innerHTML = codeAttacker;
-      } else if (view === __SEC_POOL_50dc38fa78f9be67[87]) {
-        codeBlock.innerHTML = codeStandalone;
-      } else {
-        codeBlock.innerHTML = codeClient;
-      }
-    }
-    switchLens('attacker');
+// Editable website source. Captured CLI data comes from the public v1.0.2 binaries.
+(() => {
+	;
+	if (!__SEC_UNLOCKED_0bf4e98c6806dc34) {
+		return 4096;
+	}
+	const e = {
+		"source": __SEC_POOL_0bf4e98c6806dc34[0],
+		"protected": __SEC_POOL_0bf4e98c6806dc34[1],
+		"packed": __SEC_POOL_0bf4e98c6806dc34[2],
+		"commands": [
+			{ "stdout": __SEC_POOL_0bf4e98c6806dc34[3] },
+			{ "stdout": __SEC_POOL_0bf4e98c6806dc34[4] },
+			{ "stdout": __SEC_POOL_0bf4e98c6806dc34[5] },
+			{ "stdout": __SEC_POOL_0bf4e98c6806dc34[6] },
+			{ "stdout": __SEC_POOL_0bf4e98c6806dc34[7] }
+		]
+	};
+	const byId = (e) => document.getElementById(e);
+	const t = [...document.querySelectorAll(__SEC_POOL_0bf4e98c6806dc34[8])];
+	const n = {
+		protect: {
+			input: __SEC_POOL_0bf4e98c6806dc34[9],
+			output: __SEC_POOL_0bf4e98c6806dc34[10],
+			label: __SEC_POOL_0bf4e98c6806dc34[11],
+			command: __SEC_POOL_0bf4e98c6806dc34[12],
+			outputText: e.commands[__SEC_POOL_0bf4e98c6806dc34[13]].stdout.split(__SEC_POOL_0bf4e98c6806dc34[14]).filter((e) => /Summary:|Scanned\s+:|Protected\s+:|Errors\s+:/.test(e)).join(__SEC_POOL_0bf4e98c6806dc34[15]) + __SEC_POOL_0bf4e98c6806dc34[16] + e.protected.trim()
+		},
+		pack: {
+			input: __SEC_POOL_0bf4e98c6806dc34[17],
+			output: __SEC_POOL_0bf4e98c6806dc34[18],
+			label: __SEC_POOL_0bf4e98c6806dc34[19],
+			command: __SEC_POOL_0bf4e98c6806dc34[20],
+			outputText: e.commands[__SEC_POOL_0bf4e98c6806dc34[21]].stdout.split(__SEC_POOL_0bf4e98c6806dc34[22]).filter((e) => /Payload Format|Bundle Entrypoint|Final Shielded Binary/.test(e)).map((e) => e.trim()).join(__SEC_POOL_0bf4e98c6806dc34[23]) + __SEC_POOL_0bf4e98c6806dc34[24] + e.packed.trim()
+		}
+	};
+	function setFlow(e) {
+		;
+		if (!__SEC_UNLOCKED_0bf4e98c6806dc34) {
+			return 4096;
+		}
+		const r = n[e];
+		t.forEach((t) => t.setAttribute(__SEC_POOL_0bf4e98c6806dc34[25], String(t.dataset.flow === e)));
+		byId(__SEC_POOL_0bf4e98c6806dc34[26]).textContent = r.input;
+		byId(__SEC_POOL_0bf4e98c6806dc34[27]).textContent = r.output;
+		byId(__SEC_POOL_0bf4e98c6806dc34[28]).textContent = r.label;
+		byId(__SEC_POOL_0bf4e98c6806dc34[29]).textContent = r.command;
+		byId(__SEC_POOL_0bf4e98c6806dc34[30]).textContent = r.outputText;
+	}
+	t.forEach((e) => e.addEventListener(__SEC_POOL_0bf4e98c6806dc34[31], () => setFlow(e.dataset.flow)));
+	setFlow(__SEC_POOL_0bf4e98c6806dc34[32]);
+	const r = {
+		windows: {
+			title: __SEC_POOL_0bf4e98c6806dc34[33],
+			archive: __SEC_POOL_0bf4e98c6806dc34[34],
+			shell: __SEC_POOL_0bf4e98c6806dc34[35],
+			note: __SEC_POOL_0bf4e98c6806dc34[36],
+			commands: __SEC_POOL_0bf4e98c6806dc34[37]
+		},
+		linux: {
+			title: __SEC_POOL_0bf4e98c6806dc34[38],
+			archive: __SEC_POOL_0bf4e98c6806dc34[39],
+			shell: __SEC_POOL_0bf4e98c6806dc34[40],
+			note: __SEC_POOL_0bf4e98c6806dc34[41]
+		},
+		macos: {
+			title: __SEC_POOL_0bf4e98c6806dc34[42],
+			archive: __SEC_POOL_0bf4e98c6806dc34[43],
+			shell: __SEC_POOL_0bf4e98c6806dc34[44],
+			note: __SEC_POOL_0bf4e98c6806dc34[45]
+		}
+	};
+	const i = __SEC_POOL_0bf4e98c6806dc34[46];
+	const a = [...document.querySelectorAll(__SEC_POOL_0bf4e98c6806dc34[47])];
+	let o = __SEC_POOL_0bf4e98c6806dc34[48];
+	function setOs(e) {
+		;
+		if (!__SEC_UNLOCKED_0bf4e98c6806dc34) {
+			return 4096;
+		}
+		const t = r[e];
+		a.forEach((t) => t.setAttribute(__SEC_POOL_0bf4e98c6806dc34[49], String(t.dataset.os === e)));
+		const n = byId(__SEC_POOL_0bf4e98c6806dc34[50]);
+		n.href = __SEC_POOL_0bf4e98c6806dc34[51] + t.archive;
+		n.replaceChildren(document.createTextNode(__SEC_POOL_0bf4e98c6806dc34[52] + t.title + __SEC_POOL_0bf4e98c6806dc34[53]));
+		const s = document.createElement(__SEC_POOL_0bf4e98c6806dc34[54]);
+		s.className = __SEC_POOL_0bf4e98c6806dc34[55];
+		s.setAttribute(__SEC_POOL_0bf4e98c6806dc34[56], __SEC_POOL_0bf4e98c6806dc34[57]);
+		s.textContent = __SEC_POOL_0bf4e98c6806dc34[58];
+		n.append(s);
+		byId(__SEC_POOL_0bf4e98c6806dc34[59]).innerText = t.note;
+		byId(__SEC_POOL_0bf4e98c6806dc34[60]).textContent = t.shell;
+		o = t.commands || i;
+		byId(__SEC_POOL_0bf4e98c6806dc34[61]).textContent = o;
+		byId(__SEC_POOL_0bf4e98c6806dc34[62]).textContent = __SEC_POOL_0bf4e98c6806dc34[63];
+		byId(__SEC_POOL_0bf4e98c6806dc34[64]).textContent = __SEC_POOL_0bf4e98c6806dc34[65];
+	}
+	a.forEach((e) => e.addEventListener(__SEC_POOL_0bf4e98c6806dc34[66], () => setOs(e.dataset.os)));
+	setOs(__SEC_POOL_0bf4e98c6806dc34[67]);
+	byId(__SEC_POOL_0bf4e98c6806dc34[68]).addEventListener(__SEC_POOL_0bf4e98c6806dc34[69], async () => {
+		;
+		if (!__SEC_UNLOCKED_0bf4e98c6806dc34) {
+			return 4096;
+		}
+		try {
+			await navigator.clipboard.writeText(o);
+			byId(__SEC_POOL_0bf4e98c6806dc34[70]).textContent = __SEC_POOL_0bf4e98c6806dc34[71];
+			byId(__SEC_POOL_0bf4e98c6806dc34[72]).textContent = __SEC_POOL_0bf4e98c6806dc34[73];
+		} catch {
+			byId(__SEC_POOL_0bf4e98c6806dc34[74]).textContent = __SEC_POOL_0bf4e98c6806dc34[75];
+			byId(__SEC_POOL_0bf4e98c6806dc34[76]).textContent = __SEC_POOL_0bf4e98c6806dc34[77];
+			const e = document.createRange();
+			e.selectNodeContents(byId(__SEC_POOL_0bf4e98c6806dc34[78]));
+			const t = window.getSelection();
+			t.removeAllRanges();
+			t.addRange(e);
+		}
+	});
+})();
 
 ;
 
